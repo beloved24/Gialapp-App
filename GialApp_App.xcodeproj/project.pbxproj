@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4914FB7F1EE0125C00CDF3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */; };
 		49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D4E1ECDD10200950662 /* AppDelegate.swift */; };
 		49744D511ECDD10200950662 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D501ECDD10200950662 /* ViewController.swift */; };
 		49744D541ECDD10200950662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D521ECDD10200950662 /* Main.storyboard */; };
-		49744D561ECDD10200950662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49744D551ECDD10200950662 /* Assets.xcassets */; };
 		49744D591ECDD10200950662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D571ECDD10200950662 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49744D4B1ECDD10200950662 /* GialApp_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GialApp_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49744D4E1ECDD10200950662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49744D501ECDD10200950662 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49744D531ECDD10200950662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		49744D551ECDD10200950662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49744D581ECDD10200950662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49744D5A1ECDD10200950662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,9 +57,9 @@
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
 				49744D501ECDD10200950662 /* ViewController.swift */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
-				49744D551ECDD10200950662 /* Assets.xcassets */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
+				4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */,
 			);
 			path = GialApp_App;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49744D591ECDD10200950662 /* LaunchScreen.storyboard in Resources */,
-				49744D561ECDD10200950662 /* Assets.xcassets in Resources */,
+				4914FB7F1EE0125C00CDF3AE /* Assets.xcassets in Resources */,
 				49744D541ECDD10200950662 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +304,7 @@
 				49744D5F1ECDD10200950662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

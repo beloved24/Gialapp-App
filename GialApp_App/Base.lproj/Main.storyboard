@@ -1,26 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2XM-gR-vdN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="FMi-Zf-QGp">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Ru-w1-FOK" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ilC-e2-p9q"/>
+                        <viewControllerLayoutGuide type="bottom" id="CX9-kN-VoY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="fLa-e8-YdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhU-QH-AHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="980" y="-436"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M9g-dL-GZz">
+            <objects>
+                <viewController id="2XM-gR-vdN" customClass="ViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zrw-e1-AYy"/>
+                        <viewControllerLayoutGuide type="bottom" id="wq0-Qg-fdG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5aB-bU-f4n" colorLabel="IBBuiltInLabel-Yellow">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_megaride" translatesAutoresizingMaskIntoConstraints="NO" id="uOK-jl-YAe">
+                                <rect key="frame" x="16" y="20" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uOK-jl-YAe" secondAttribute="height" multiplier="1:1" id="GAM-H3-Hh5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilo" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-LJ-USK">
+                                <rect key="frame" x="284" y="20" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1gm-LJ-USK" secondAttribute="height" multiplier="1:1" id="QPr-bv-aWN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auto_start" translatesAutoresizingMaskIntoConstraints="NO" id="wHg-u5-h2t">
+                                <rect key="frame" x="47" y="302.5" width="281" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wHg-u5-h2t" secondAttribute="height" multiplier="294:65" id="jEb-ER-McJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="megaride" translatesAutoresizingMaskIntoConstraints="NO" id="wnV-jk-kdo">
+                                <rect key="frame" x="64" y="630.5" width="247" height="16.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wnV-jk-kdo" secondAttribute="height" multiplier="598:40" id="wdO-gq-PQ3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uOK-jl-YAe" firstAttribute="leading" secondItem="5aB-bU-f4n" secondAttribute="leadingMargin" id="7gU-Pz-gkZ"/>
+                            <constraint firstItem="wq0-Qg-fdG" firstAttribute="top" secondItem="wnV-jk-kdo" secondAttribute="bottom" constant="20" id="AKh-fR-OMd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1gm-LJ-USK" secondAttribute="trailing" id="CoO-s9-tvc"/>
+                            <constraint firstItem="wnV-jk-kdo" firstAttribute="centerX" secondItem="5aB-bU-f4n" secondAttribute="centerX" id="EXE-m5-lEE"/>
+                            <constraint firstItem="uOK-jl-YAe" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" multiplier="1/5" id="IGO-FA-Jst"/>
+                            <constraint firstItem="wHg-u5-h2t" firstAttribute="centerX" secondItem="5aB-bU-f4n" secondAttribute="centerX" id="YVp-RW-Pnu"/>
+                            <constraint firstItem="wHg-u5-h2t" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" multiplier="3/4" id="k9h-bh-gVM"/>
+                            <constraint firstItem="uOK-jl-YAe" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" id="mOa-c2-Aym"/>
+                            <constraint firstItem="1gm-LJ-USK" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" multiplier="1/5" id="nV9-EP-AZt"/>
+                            <constraint firstItem="1gm-LJ-USK" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" id="ql7-FL-4eJ"/>
+                            <constraint firstItem="uOK-jl-YAe" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" id="rLf-RT-MZv"/>
+                            <constraint firstItem="wHg-u5-h2t" firstAttribute="centerY" secondItem="5aB-bU-f4n" secondAttribute="centerY" id="vng-zZ-RUj"/>
+                            <constraint firstItem="wnV-jk-kdo" firstAttribute="height" secondItem="5aB-bU-f4n" secondAttribute="height" multiplier="1/40" id="x2w-kE-Wzl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="2Ru-w1-FOK" kind="show" id="nOg-36-PkM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ra-Ji-cKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-59.820089955022496"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lsr-hI-NNE">
+            <objects>
+                <viewController id="Qvj-WT-Yiy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nqb-0G-Zju"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bbj-fi-4zo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INJ-Da-RGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-Hk-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="704"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="auto_start" width="691" height="190"/>
+        <image name="logo_megaride" width="117" height="113"/>
+        <image name="megaride" width="316" height="24"/>
+        <image name="profilo" width="124" height="120"/>
+    </resources>
 </document>
