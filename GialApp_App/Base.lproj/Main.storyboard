@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2XM-gR-vdN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hgh-l9-uet">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial First-->
         <scene sceneID="FMi-Zf-QGp">
             <objects>
-                <viewController id="2Ru-w1-FOK" sceneMemberID="viewController">
+                <viewController id="2Ru-w1-FOK" userLabel="Tutorial First" customClass="TutorialFistViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ilC-e2-p9q"/>
                         <viewControllerLayoutGuide type="bottom" id="CX9-kN-VoY"/>
@@ -23,12 +23,141 @@
                     <view key="view" contentMode="scaleToFill" id="fLa-e8-YdD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-LG-3Pp">
+                                <rect key="frame" x="215" y="284" width="144" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Conferma e prosegui">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0ZZ-bt-aSn" kind="show" id="H5H-M4-pLe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="metti il telefono di fronte a te" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-0j-NrC">
+                                <rect key="frame" x="77" y="109" width="220" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhU-QH-AHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-60"/>
+            <point key="canvasLocation" x="1912.8" y="-60.719640179910051"/>
+        </scene>
+        <!--Tutorial Second-->
+        <scene sceneID="KV3-3Q-qqX">
+            <objects>
+                <viewController id="0ZZ-bt-aSn" userLabel="Tutorial Second" customClass="TutorialSecondViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AWR-Cv-cxD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yqa-xq-48h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P3m-PD-wBR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUe-gb-9FV">
+                                <rect key="frame" x="215" y="284" width="144" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Conferma e prosegui">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="id9-tz-FYW" kind="show" id="C2z-pB-d2E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2D-oT-pfj">
+                                <rect key="frame" x="85" y="85" width="204" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="fissa il telefono nella posizione in cui lo userai fino alla fine della corsa ">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1sa-p5-Kxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3125.5999999999999" y="-61.619190404797607"/>
+        </scene>
+        <!--Tutorial Third-->
+        <scene sceneID="iIx-dR-Eu4">
+            <objects>
+                <viewController id="id9-tz-FYW" userLabel="Tutorial Third" customClass="TutorialThirdViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LzV-jT-bCH"/>
+                        <viewControllerLayoutGuide type="bottom" id="d4T-9L-KQ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vfd-iA-9G5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE1-rh-YMC">
+                                <rect key="frame" x="215" y="284" width="144" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Conferma e prosegui">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="paB-y4-aGQ" kind="show" id="aR9-C8-Iu3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tocca nell'auto il punto in cui hai posizionato lo smartphone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-hx-uRO">
+                                <rect key="frame" x="83" y="114" width="208" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dM5-LM-4Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4266" y="-60"/>
+        </scene>
+        <!--Tutorial Fourth-->
+        <scene sceneID="Hoa-J1-sq2">
+            <objects>
+                <viewController id="paB-y4-aGQ" userLabel="Tutorial Fourth" customClass="TutorialFourthViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fhP-GB-DkE"/>
+                        <viewControllerLayoutGuide type="bottom" id="sg5-5l-acf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4U4-HM-h6E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sei pronto per la partenza. parti quando vuoi! (e poi appena parte noi gli facciamo vedere le schermate di racing)  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEv-0x-wpx">
+                                <rect key="frame" x="63" y="261" width="266" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jx3-18-5qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5447" y="-62"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="M9g-dL-GZz">
@@ -59,7 +188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a16-zW-tTl">
-                                <rect key="frame" x="16" y="20" width="75" height="75"/>
+                                <rect key="frame" x="16" y="64" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a16-zW-tTl" secondAttribute="height" multiplier="1:1" id="rZd-mR-sXh"/>
                                 </constraints>
@@ -69,7 +198,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz2-md-Q0Q">
-                                <rect key="frame" x="284" y="20" width="75" height="75"/>
+                                <rect key="frame" x="284" y="64" width="75" height="75"/>
                                 <state key="normal" backgroundImage="profilo"/>
                                 <connections>
                                     <segue destination="Qvj-WT-Yiy" kind="show" id="2Mh-Vp-tri"/>
@@ -93,13 +222,14 @@
                             <constraint firstItem="wnV-jk-kdo" firstAttribute="height" secondItem="5aB-bU-f4n" secondAttribute="height" multiplier="1/40" id="x2w-kE-Wzl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EcI-vS-Drq"/>
                     <connections>
                         <outlet property="startButton" destination="SvM-5a-FV6" id="mDj-Me-HtG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ra-Ji-cKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="-59.820089955022496"/>
+            <point key="canvasLocation" x="839.20000000000005" y="-59.820089955022496"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Lsr-hI-NNE">
@@ -117,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-Hk-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="-797"/>
+            <point key="canvasLocation" x="1962" y="-849"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HOZ-Uv-PUn">
@@ -135,7 +265,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvX-M1-2eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-481" y="-797"/>
+            <point key="canvasLocation" x="1961" y="-1612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TBs-3U-0j6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2XM-gR-vdN" kind="relationship" relationship="rootViewController" id="IW1-rU-J3I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FM-dW-rlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-61"/>
         </scene>
     </scenes>
     <resources>

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4914FB7F1EE0125C00CDF3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */; };
+		4914FB881EE41C1200CDF3AE /* TutorialFistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB871EE41C1200CDF3AE /* TutorialFistViewController.swift */; };
+		4914FB8B1EE41C7300CDF3AE /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */; };
+		4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */; };
+		4914FB8F1EE41CEF00CDF3AE /* TutorialFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */; };
 		49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D4E1ECDD10200950662 /* AppDelegate.swift */; };
 		49744D511ECDD10200950662 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D501ECDD10200950662 /* StartViewController.swift */; };
 		49744D541ECDD10200950662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D521ECDD10200950662 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 
 /* Begin PBXFileReference section */
 		4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4914FB871EE41C1200CDF3AE /* TutorialFistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialFistViewController.swift; path = ../TutorialFistViewController.swift; sourceTree = "<group>"; };
+		4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
+		4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
+		4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		49744D4B1ECDD10200950662 /* GialApp_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GialApp_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49744D4E1ECDD10200950662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49744D501ECDD10200950662 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4914FB891EE41C4900CDF3AE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49744D501ECDD10200950662 /* StartViewController.swift */,
+				4914FB871EE41C1200CDF3AE /* TutorialFistViewController.swift */,
+				4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */,
+				4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */,
+				4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		49744D421ECDD10200950662 = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
-				49744D501ECDD10200950662 /* StartViewController.swift */,
+				4914FB891EE41C4900CDF3AE /* View Controllers */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
@@ -137,7 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4914FB8F1EE41CEF00CDF3AE /* TutorialFourthViewController.swift in Sources */,
+				4914FB8B1EE41C7300CDF3AE /* TutorialSecondViewController.swift in Sources */,
 				49744D511ECDD10200950662 /* StartViewController.swift in Sources */,
+				4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */,
+				4914FB881EE41C1200CDF3AE /* TutorialFistViewController.swift in Sources */,
 				49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
