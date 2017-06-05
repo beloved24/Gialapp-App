@@ -24,6 +24,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sfondo_calibr1" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-Zl-tAw" userLabel="backgroung">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-LG-3Pp">
                                 <rect key="frame" x="215" y="284" width="144" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,12 +41,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="metti il telefono di fronte a te" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-0j-NrC">
                                 <rect key="frame" x="77" y="109" width="220" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CX9-kN-VoY" firstAttribute="top" secondItem="QGf-Zl-tAw" secondAttribute="bottom" id="22C-Oz-FW4"/>
+                            <constraint firstAttribute="trailing" secondItem="QGf-Zl-tAw" secondAttribute="trailing" id="HMk-sB-Cb5"/>
+                            <constraint firstItem="QGf-Zl-tAw" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leading" id="N1T-7S-SGA"/>
+                            <constraint firstItem="QGf-Zl-tAw" firstAttribute="top" secondItem="fLa-e8-YdD" secondAttribute="top" id="h34-8G-Qye"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhU-QH-AHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,7 +281,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="C89-Fg-8oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -291,5 +300,6 @@
         <image name="logo_megaride" width="117" height="113"/>
         <image name="megaride" width="316" height="24"/>
         <image name="profilo" width="124" height="120"/>
+        <image name="sfondo_calibr1" width="750" height="1334"/>
     </resources>
 </document>
