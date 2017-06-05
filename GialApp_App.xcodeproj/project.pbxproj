@@ -12,6 +12,10 @@
 		49744D541ECDD10200950662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D521ECDD10200950662 /* Main.storyboard */; };
 		49744D561ECDD10200950662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49744D551ECDD10200950662 /* Assets.xcassets */; };
 		49744D591ECDD10200950662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D571ECDD10200950662 /* LaunchScreen.storyboard */; };
+		682FFEDB1ED6C90B00B4566E /* crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = 682FFEDA1ED6C90B00B4566E /* crosshair.png */; };
+		682FFEDD1ED6C9F700B4566E /* Oval.png in Resources */ = {isa = PBXBuildFile; fileRef = 682FFEDC1ED6C9F700B4566E /* Oval.png */; };
+		682FFEDF1EDC01C800B4566E /* estensioni.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682FFEDE1EDC01C800B4566E /* estensioni.swift */; };
+		683156471EE569D300D35354 /* GForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683156461EE569D300D35354 /* GForce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		49744D551ECDD10200950662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49744D581ECDD10200950662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49744D5A1ECDD10200950662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		682FFEDA1ED6C90B00B4566E /* crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosshair.png; sourceTree = "<group>"; };
+		682FFEDC1ED6C9F700B4566E /* Oval.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Oval.png; sourceTree = "<group>"; };
+		682FFEDE1EDC01C800B4566E /* estensioni.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = estensioni.swift; sourceTree = "<group>"; };
+		683156461EE569D300D35354 /* GForce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GForce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,11 @@
 			children = (
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
 				49744D501ECDD10200950662 /* ViewController.swift */,
+				683156461EE569D300D35354 /* GForce.swift */,
+				682FFEDE1EDC01C800B4566E /* estensioni.swift */,
+				682FFEDA1ED6C90B00B4566E /* crosshair.png */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
+				682FFEDC1ED6C9F700B4566E /* Oval.png */,
 				49744D551ECDD10200950662 /* Assets.xcassets */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
@@ -126,6 +138,8 @@
 			files = (
 				49744D591ECDD10200950662 /* LaunchScreen.storyboard in Resources */,
 				49744D561ECDD10200950662 /* Assets.xcassets in Resources */,
+				682FFEDD1ED6C9F700B4566E /* Oval.png in Resources */,
+				682FFEDB1ED6C90B00B4566E /* crosshair.png in Resources */,
 				49744D541ECDD10200950662 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49744D511ECDD10200950662 /* ViewController.swift in Sources */,
+				683156471EE569D300D35354 /* GForce.swift in Sources */,
+				682FFEDF1EDC01C800B4566E /* estensioni.swift in Sources */,
 				49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +320,7 @@
 				49744D5F1ECDD10200950662 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
