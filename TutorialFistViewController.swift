@@ -12,13 +12,17 @@ class TutorialFistViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setNavigationBar()
+        
+     
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+//        navigationController?.navigationBar.barTintColor = UIColor(red: 32, green: 99, blue: 124, alpha: 0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +30,17 @@ class TutorialFistViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setNavigationBar () {
+        let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
+        navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
+        navBarImageTitle.contentMode = .scaleAspectFit
+              //navBarImageTitle.center = navigationItem.titleView?.center
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        navigationItem.titleView = navBarImageTitle
+        
+    }
 
     /*
     // MARK: - Navigation

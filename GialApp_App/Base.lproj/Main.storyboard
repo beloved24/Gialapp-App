@@ -11,6 +11,11 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="911porschav3.ttf">
+            <string>911Porscha</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tutorial First-->
         <scene sceneID="FMi-Zf-QGp">
@@ -28,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-LG-3Pp">
-                                <rect key="frame" x="215" y="284" width="144" height="98"/>
+                                <rect key="frame" x="225" y="283" width="134" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Conferma e prosegui">
@@ -38,12 +43,15 @@
                                     <segue destination="0ZZ-bt-aSn" kind="show" id="H5H-M4-pLe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="metti il telefono di fronte a te" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-0j-NrC">
-                                <rect key="frame" x="77" y="109" width="220" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="metti il telefono di fronte a te e conferma" textAlignment="center" lineBreakMode="clip" numberOfLines="7" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="vE0-0j-NrC">
+                                <rect key="frame" x="16" y="92" width="343" height="192"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vE0-0j-NrC" secondAttribute="height" multiplier="343:192" id="spP-UN-Lvu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="911Porscha" family="911 Porscha" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +59,10 @@
                             <constraint firstItem="CX9-kN-VoY" firstAttribute="top" secondItem="QGf-Zl-tAw" secondAttribute="bottom" id="22C-Oz-FW4"/>
                             <constraint firstAttribute="trailing" secondItem="QGf-Zl-tAw" secondAttribute="trailing" id="HMk-sB-Cb5"/>
                             <constraint firstItem="QGf-Zl-tAw" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leading" id="N1T-7S-SGA"/>
+                            <constraint firstItem="vE0-0j-NrC" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leadingMargin" id="P0t-OH-hhx"/>
                             <constraint firstItem="QGf-Zl-tAw" firstAttribute="top" secondItem="fLa-e8-YdD" secondAttribute="top" id="h34-8G-Qye"/>
+                            <constraint firstItem="vE0-0j-NrC" firstAttribute="trailing" secondItem="fLa-e8-YdD" secondAttribute="trailingMargin" id="lK1-aL-rpV"/>
+                            <constraint firstItem="vE0-0j-NrC" firstAttribute="top" secondItem="ilC-e2-p9q" secondAttribute="bottom" constant="28" id="zfo-vz-6Gm"/>
                         </constraints>
                     </view>
                 </viewController>
