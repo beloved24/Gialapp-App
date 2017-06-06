@@ -29,9 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sfondo_calibr1" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-Zl-tAw" userLabel="backgroung">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cN-LG-3Pp">
                                 <rect key="frame" x="225" y="283" width="134" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,16 +50,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="antonio_meme" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-Tn-gli" userLabel="antonio_meme">
+                                <rect key="frame" x="16" y="333.5" width="343" height="333.5"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.093551628289999994" green="0.38681468369999999" blue="0.49120253320000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CX9-kN-VoY" firstAttribute="top" secondItem="QGf-Zl-tAw" secondAttribute="bottom" id="22C-Oz-FW4"/>
-                            <constraint firstAttribute="trailing" secondItem="QGf-Zl-tAw" secondAttribute="trailing" id="HMk-sB-Cb5"/>
-                            <constraint firstItem="QGf-Zl-tAw" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leading" id="N1T-7S-SGA"/>
                             <constraint firstItem="vE0-0j-NrC" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leadingMargin" id="P0t-OH-hhx"/>
-                            <constraint firstItem="QGf-Zl-tAw" firstAttribute="top" secondItem="fLa-e8-YdD" secondAttribute="top" id="h34-8G-Qye"/>
+                            <constraint firstItem="Z61-Tn-gli" firstAttribute="leading" secondItem="fLa-e8-YdD" secondAttribute="leadingMargin" id="Sum-bt-BaC"/>
+                            <constraint firstItem="Z61-Tn-gli" firstAttribute="height" secondItem="fLa-e8-YdD" secondAttribute="height" multiplier="1/2" id="c4d-4a-Veh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z61-Tn-gli" secondAttribute="trailing" id="dFs-eM-wDb"/>
                             <constraint firstItem="vE0-0j-NrC" firstAttribute="trailing" secondItem="fLa-e8-YdD" secondAttribute="trailingMargin" id="lK1-aL-rpV"/>
                             <constraint firstItem="vE0-0j-NrC" firstAttribute="top" secondItem="ilC-e2-p9q" secondAttribute="bottom" constant="28" id="zfo-vz-6Gm"/>
+                            <constraint firstItem="CX9-kN-VoY" firstAttribute="top" secondItem="Z61-Tn-gli" secondAttribute="bottom" id="zlv-wo-tpg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -307,10 +307,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="antonio_meme" width="612" height="541"/>
         <image name="auto_start" width="691" height="190"/>
         <image name="logo_megaride" width="117" height="113"/>
         <image name="megaride" width="316" height="24"/>
         <image name="profilo" width="124" height="120"/>
-        <image name="sfondo_calibr1" width="750" height="1334"/>
     </resources>
 </document>
