@@ -36,11 +36,14 @@ extension TutorialFistViewController {
         let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
         navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
         navBarImageTitle.contentMode = .scaleAspectFit
-        //navBarImageTitle.center = navigationItem.titleView?.center
+        navigationItem.titleView = navBarImageTitle
+       
+       
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        navigationItem.titleView = navBarImageTitle
+        
         
     }
 

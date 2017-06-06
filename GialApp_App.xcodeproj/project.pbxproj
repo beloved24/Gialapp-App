@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4914FB7F1EE0125C00CDF3AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */; };
+		49107E871EE718CF00CB48C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49107E861EE718CF00CB48C9 /* Assets.xcassets */; };
 		4914FB881EE41C1200CDF3AE /* TutorialFistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB871EE41C1200CDF3AE /* TutorialFistViewController.swift */; };
 		4914FB8B1EE41C7300CDF3AE /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */; };
 		4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49107E861EE718CF00CB48C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4914FB871EE41C1200CDF3AE /* TutorialFistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialFistViewController.swift; path = ../TutorialFistViewController.swift; sourceTree = "<group>"; };
 		4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
 		4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 				49744D521ECDD10200950662 /* Main.storyboard */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
-				4914FB7E1EE0125C00CDF3AE /* Assets.xcassets */,
+				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
 			);
 			path = GialApp_App;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			files = (
 				4914FBA21EE578EA00CDF3AE /* 911porschav3.ttf in Resources */,
 				49744D591ECDD10200950662 /* LaunchScreen.storyboard in Resources */,
-				4914FB7F1EE0125C00CDF3AE /* Assets.xcassets in Resources */,
+				49107E871EE718CF00CB48C9 /* Assets.xcassets in Resources */,
 				49744D541ECDD10200950662 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
