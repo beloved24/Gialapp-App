@@ -10,8 +10,18 @@ import UIKit
 
 class TutorialSecondViewController: UIViewController {
 
+    //MARK: outlets and properties
+    @IBOutlet weak var oAuto: MyCustomImageView!
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        print("per l'iphone modello: \(UIDevice.current.name) \n con orientazione \(String(describing: UIDevice.current.orientation))  \nsi ha per l'immagine dell'auto:\nlarghezza: \(oAuto.frame.width) \nlunghezza \(oAuto.frame.height) ")
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //setNavigationBar()
         // Do any additional setup after loading the view.
@@ -41,8 +51,8 @@ extension TutorialSecondViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         navigationItem.titleView = navBarImageTitle
-        
     }
+    
     
     
 }
