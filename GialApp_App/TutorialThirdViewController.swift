@@ -66,6 +66,9 @@ extension TutorialThirdViewController {
         movingAnimation.beginTime = 0
         movingView.layer.add(movingAnimation, forKey: nil)
         movingView.layer.position = center0
+        movingView.layer.cornerRadius = 10
+        movingView.layer.borderWidth = 2
+        movingView.layer.borderColor = self.view.backgroundColor?.cgColor
         //quà mi setto la dimensione della view in modo da portarla
         UIView.animate(withDuration: durationOfAnimation, animations: {
             movingView.frame = self.frame0
@@ -81,6 +84,9 @@ extension TutorialThirdViewController {
         movingAnimation.beginTime = 0
         movingView.layer.add(movingAnimation, forKey: nil)
         movingView.layer.position = destinationCenter
+        movingView.layer.cornerRadius = 15.0
+        movingView.layer.borderWidth = 4.0
+        movingView.layer.borderColor = self.view.backgroundColor?.cgColor
         //quà mi setto la dimensione della view in modo da portarla
         UIView.animate(withDuration: durationOfAnimation, animations: {
             movingView.frame = destinationFrame
@@ -108,6 +114,22 @@ extension TutorialThirdViewController {
         oView1.addGestureRecognizer(tapToEnlarge1)
         oView2.addGestureRecognizer(tapToEnlarge2)
         oView3.addGestureRecognizer(tapToEnlarge3)
+        
+        oView0.layer.cornerRadius = 10
+        oView0.layer.borderColor = self.view.backgroundColor?.cgColor
+        oView0.layer.borderWidth = 2
+        
+        oView1.layer.cornerRadius = 15.0
+        oView1.layer.borderWidth = 4.0
+        oView1.layer.borderColor = self.view.backgroundColor?.cgColor
+        
+        oView2.layer.cornerRadius = 15.0
+        oView2.layer.borderWidth = 4.0
+        oView2.layer.borderColor = self.view.backgroundColor?.cgColor
+        
+        oView3.layer.cornerRadius = 15.0
+        oView3.layer.borderWidth = 4.0
+        oView3.layer.borderColor = self.view.backgroundColor?.cgColor
         
         
     }
