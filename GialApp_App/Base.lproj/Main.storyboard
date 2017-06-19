@@ -415,9 +415,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="99" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="antonio_landscape" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
+                                        <rect key="frame" x="-0.5" y="0.0" width="375" height="533.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="auto_start" translatesAutoresizingMaskIntoConstraints="NO" id="H3F-Ch-PHj">
+                                        <rect key="frame" x="-1" y="372" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
@@ -437,8 +446,31 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="top" secondItem="vfd-iA-9G5" secondAttribute="top" id="5oH-Df-bjg"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="leading" secondItem="vfd-iA-9G5" secondAttribute="leading" id="bou-eZ-PvY"/>
+                            <constraint firstAttribute="trailing" secondItem="tC8-yG-LmF" secondAttribute="trailing" id="dzv-5I-50p"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="height" secondItem="vfd-iA-9G5" secondAttribute="height" multiplier="4/5" id="ykf-FN-Mcd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5oH-Df-bjg"/>
+                                <exclude reference="bou-eZ-PvY"/>
+                                <exclude reference="dzv-5I-50p"/>
+                                <exclude reference="ykf-FN-Mcd"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="5oH-Df-bjg"/>
+                                <include reference="bou-eZ-PvY"/>
+                                <include reference="dzv-5I-50p"/>
+                                <include reference="ykf-FN-Mcd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="immagineDiProva" destination="Pdd-v1-szw" id="TI8-Hg-nuO"/>
                         <outlet property="oView0" destination="tC8-yG-LmF" id="eo7-Jo-Mek"/>
                         <outlet property="oView1" destination="qbd-cR-994" id="a2N-yE-hDz"/>
                         <outlet property="oView2" destination="g8s-h8-lfs" id="4lG-Io-rfa"/>

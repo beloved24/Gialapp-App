@@ -17,6 +17,7 @@ class TutorialThirdViewController: UIViewController {
     @IBOutlet weak var oView1: UIView!
     @IBOutlet weak var oView2: UIView!
     @IBOutlet weak var oView3: UIView!
+    @IBOutlet weak var immagineDiProva: UIImageView!
     
     var frame123 = CGRect()
     var frame0 = CGRect()
@@ -25,6 +26,7 @@ class TutorialThirdViewController: UIViewController {
     var center2 = CGPoint()
     var center3 = CGPoint()
     let durationOfAnimation = 0.3
+    var frameThumbnailVersioneGrande = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,41 +60,66 @@ extension TutorialThirdViewController {
     }
     
     func movingViewAtCenter (movingView: UIView) {
-        print("inside the tp to enlarge function")
-        let movingAnimation = CABasicAnimation(keyPath: "position")
-        movingAnimation.fromValue = movingView.center
-        movingAnimation.toValue = center0
-        movingAnimation.duration = durationOfAnimation
-        movingAnimation.beginTime = 0
-        movingView.layer.add(movingAnimation, forKey: nil)
-        movingView.layer.position = center0
-        movingView.layer.cornerRadius = 10
-        movingView.layer.borderWidth = 2
-        movingView.layer.borderColor = self.view.backgroundColor?.cgColor
-        //quà mi setto la dimensione della view in modo da portarla
-        UIView.animate(withDuration: durationOfAnimation, animations: {
-            movingView.frame = self.frame0
-        })
-        movingView.tag = 99
+        if let _  = movingView.subviews.first {
+            movingView.subviews.first!.alpha = 0
+            UIView.animate(withDuration: 0.5, animations: {
+                movingView.center = self.center0
+                movingView.frame = self.frame0
+                
+            }, completion: {
+                if $0 {
+                    UIView.animate(withDuration: 0.25, animations: { 
+                        movingView.subviews.first?.frame = self.frameThumbnailVersioneGrande
+                        movingView.subviews.first!.alpha = 1
+                    })
+                    movingView.tag = 99
+                }
+            })
+        }
+        else {
+            UIView.animate(withDuration: 0.5, animations: {
+                movingView.center = self.center0
+                movingView.frame = self.frame0
+            }, completion: {
+                if $0 {
+                    movingView.tag = 99
+                }
+            })
+        }
+    
     }
     
     func movingBackFunction (movingView: UIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
-        let movingAnimation = CABasicAnimation(keyPath: "position")
-        movingAnimation.fromValue = movingView.center
-        movingAnimation.toValue = destinationCenter
-        movingAnimation.duration = durationOfAnimation
-        movingAnimation.beginTime = 0
-        movingView.layer.add(movingAnimation, forKey: nil)
-        movingView.layer.position = destinationCenter
-        movingView.layer.cornerRadius = 15.0
-        movingView.layer.borderWidth = 4.0
-        movingView.layer.borderColor = self.view.backgroundColor?.cgColor
-        //quà mi setto la dimensione della view in modo da portarla
-        UIView.animate(withDuration: durationOfAnimation, animations: {
-            movingView.frame = destinationFrame
-            
-        })
-        movingView.tag = 500
+
+        if let _ = movingView.subviews.first {
+            movingView.subviews.first!.alpha = 0
+            UIView.animate(withDuration: 0.5, animations: {
+                self.frameThumbnailVersioneGrande = (movingView.subviews.first?.frame)!
+                movingView.center = destinationCenter
+                movingView.frame = destinationFrame
+            }, completion: {
+                if $0 {
+                    UIView.animate(withDuration: 0.25, animations: { 
+                        movingView.subviews.first!.frame = movingView.bounds
+                        movingView.subviews.first!.alpha = 1
+                    })
+                    movingView.tag = 500
+                    
+                    print(movingView.frame)
+                    print(movingView.subviews.first!.frame)
+                }
+            })
+        }
+        else {
+                UIView.animate(withDuration: 0.5, animations: {
+                movingView.center = destinationCenter
+                movingView.frame = destinationFrame
+            }, completion: {
+                if $0 {
+                    movingView.tag = 500
+                }
+            })
+        }
         
     }
 
@@ -130,6 +157,9 @@ extension TutorialThirdViewController {
         oView3.layer.cornerRadius = 15.0
         oView3.layer.borderWidth = 4.0
         oView3.layer.borderColor = self.view.backgroundColor?.cgColor
+        
+        
+        
         
         
     }
