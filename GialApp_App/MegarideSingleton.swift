@@ -178,7 +178,6 @@ class Megaride {
     
 
     
-    
     func calcolatore() {
     
         func derivatoreImbardata() -> Double {
@@ -191,14 +190,29 @@ class Megaride {
             return accelerazione
         }
         
-        func calcolatoreForzaZ(dati: Sensoristica, accelerazioneImbardata: Double, output: inout Output) {
+        func risolutoreSistemi(matriceA: [Double], vettoreB: [Double], variabili: UInt) -> [Double] {
+            
+            let A = la_matrix_from_double_buffer(matriceA, variabili, variabili, variabili, la_hint_t(LA_NO_HINT), la_attribute_t(LA_DEFAULT_ATTRIBUTES))
+            
+            let B = la_matrix_from_double_buffer(vettoreB, variabili, 1, 1, la_hint_t(LA_NO_HINT), la_attribute_t(LA_DEFAULT_ATTRIBUTES))
+            
+            let vettoreC = la_solve(A, B)
+            
+            var C: [Double] = [0, 0, 0, 0]
+            
+            la_matrix_to_double_buffer(&C, 1, vettoreC)
+
+            return C
+        }
+        
+        func calcolatoreForzaZ(dati: Sensoristica, output: inout Output) {
             
             //trasferimento di carico longitudinale
             let deltaFz = automobile.massa * automobile.baricentroAltezza/automobile.passo*dati.accelerometro.x
             
             //trasferimento di carico laterale
-            let deltaZ1 = automobile.sigma.sigma1*automobile.massa*dati.accelerometro.y + automobile.gamma.gamma1*automobile.j_zx*accelerazioneImbardata
-            let deltaZ2 = automobile.sigma.sigma2*automobile.massa*dati.accelerometro.y + automobile.gamma.gamma2*automobile.j_zx*accelerazioneImbardata
+            let deltaZ1 = automobile.sigma.sigma1*automobile.massa*dati.accelerometro.y + automobile.gamma.gamma1*automobile.j_zx*output.accelerazioneImbardata
+            let deltaZ2 = automobile.sigma.sigma2*automobile.massa*dati.accelerometro.y + automobile.gamma.gamma2*automobile.j_zx*output.accelerazioneImbardata
             
             //carico statico
             let w1 = automobile.massa*automobile.g*automobile.semipasso.posteriore/automobile.passo - automobile.dragForce*(automobile.h_a - automobile.baricentroAltezza)/automobile.passo
@@ -210,13 +224,47 @@ class Megaride {
             output.forze.posteriore.sinistra.z = w2/2 + deltaFz/2 - deltaZ2
             output.forze.posteriore.destra.z = w2/2 + deltaFz/2 + deltaZ2
         }
-        
+        func calcolatoreForzaX(dati: Sensoristica, output: inout Output) {
+            
+            let A: [Double] = [1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1]
+            
+            let B: [Double] = [output.forze.anteriore.sinistra.z, output.forze.posteriore.sinistra.z, (output.forze.anteriore.sinistra.z + output.forze.anteriore.destra.z), (output.forze.posteriore.sinistra.z+output.forze.posteriore.destra.z)]
+            
+            let C = risolutoreSistemi(matriceA: A, vettoreB: B, variabili: 4)
+            
+            output.forze.anteriore.sinistra.x = C[0]
+            output.forze.anteriore.destra.x = C[1]
+            output.forze.posteriore.sinistra.x = C[2]
+            output.forze.posteriore.destra.x = C[3]
+            
+        }
+        func calcolatoreForzaY(dati: Sensoristica, output: inout Output) {
+            
+            let A11 = 1-output.forze.anteriore.sinistra.z/(output.forze.anteriore.sinistra.z+output.forze.anteriore.destra.z)
+            let A12 = -output.forze.anteriore.sinistra.z/(output.forze.anteriore.sinistra.z+output.forze.anteriore.destra.z)
+            let A23 = 1-output.forze.posteriore.sinistra.z/(output.forze.posteriore.sinistra.z+output.forze.posteriore.destra.z)
+            let A24 = -output.forze.posteriore.sinistra.z/(output.forze.posteriore.sinistra.z+output.forze.posteriore.destra.z)
+            
+            let A: [Double] = [A11, A12, 0, 0, 0, 0, A23, A24, 1, 1, 1, 1, automobile.semipasso.anteriore, automobile.semipasso.anteriore, -automobile.semipasso.posteriore, -automobile.semipasso.posteriore]
+            
+            let B: [Double] = [0, 0, automobile.massa*dati.accelerometro.y, automobile.j_zx*output.accelerazioneImbardata]
+            
+            let C = risolutoreSistemi(matriceA: A, vettoreB: B, variabili: 4)
+
+            output.forze.anteriore.sinistra.y = C[0]
+            output.forze.anteriore.destra.y = C[1]
+            output.forze.posteriore.sinistra.y = C[2]
+            output.forze.posteriore.destra.y = C[3]
+            
+        }
         
         let ultimoFeed: FeedSensoristica? = feeds.last
         var output: Output = Output()
         
         output.accelerazioneImbardata = derivatoreImbardata()
-        calcolatoreForzaZ(dati: (ultimoFeed?.dati)!, accelerazioneImbardata: output.accelerazioneImbardata, output: &output)
+        calcolatoreForzaZ(dati: (ultimoFeed?.dati)!, output: &output)
+        calcolatoreForzaX(dati: (ultimoFeed?.dati)!, output: &output)
+        calcolatoreForzaY(dati: (ultimoFeed?.dati)!, output: &output)
         
     }
 
