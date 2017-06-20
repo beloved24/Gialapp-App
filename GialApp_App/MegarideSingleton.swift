@@ -12,6 +12,15 @@ import Accelerate
 
 class Megaride {
     
+    struct Slip {
+        class Assale {
+            var sinistra: Double = 0
+            var destra: Double = 0
+        }
+
+        var anteriore: Assale = Assale()
+        var posteriore: Assale = Assale()
+    }
     struct Forze {
         
         class Assale {
@@ -29,6 +38,28 @@ class Megaride {
         var posteriore: Assale = Assale()
         
     }
+    struct VelocitaRuote {
+        class Assale {
+            var sinistra: Velocita = Velocita()
+            var destra: Velocita = Velocita()
+        }
+        
+        struct Velocita {
+            var x: Double = 0
+            var y: Double = 0
+        }
+        
+        var anteriore: Assale = Assale()
+        var posteriore: Assale = Assale()
+
+    }
+    struct VelocitaVeicolo {
+        
+        var U: Double = 0
+        var V: Double = 0
+        var r: Double = 0
+    }
+    
     class Automobile {
         
         let g: Double = 9.81
@@ -113,6 +144,7 @@ class Megaride {
         
         var giroscopio: Giroscopio = Giroscopio(primo: 0, secondo: 0, terzo: 0)
         var accelerometro: Accelerometro = Accelerometro(x: 0, y: 0, z: 0)
+        var velocita: Double = 0
         
         struct Giroscopio {
             var primo: Double
@@ -145,12 +177,14 @@ class Megaride {
      
         var accelerazioneImbardata: Double = 0
         var forze: Forze = Forze()
-        var slipRatio: Double = 0
-        var slipAngle: Double = 0
+        var slipAngle = Slip()
+        var slipRatio = Slip()
         var angoloAssetto: Double = 0
         var angoloSterzo: Double = 0
         var slittamentoPneumatici: Double = 0
         var temperatura: Double = 0
+        var velocitaVeicolo: VelocitaVeicolo = VelocitaVeicolo()
+        var velocitaRuote: VelocitaRuote = VelocitaRuote()
         
         var tempo: Double = 0
         
@@ -161,7 +195,6 @@ class Megaride {
         }
         
     }
-    
     
     static let istanzaCondivisa = Megaride()
 
@@ -176,20 +209,7 @@ class Megaride {
     }
     
     
-
-    
     func calcolatore() {
-    
-        func derivatoreImbardata() -> Double {
-            
-            var accelerazione: Double = 0
-            if let ultimoFeed = feeds.last {
-                let penultimoFeed = feeds[feeds.index(before: feeds.endIndex)]
-                accelerazione = (ultimoFeed.dati.giroscopio.terzo-penultimoFeed.dati.giroscopio.terzo)/(ultimoFeed.tempo-penultimoFeed.tempo)
-            }
-            return accelerazione
-        }
-        
         func risolutoreSistemi(matriceA: [Double], vettoreB: [Double], variabili: UInt) -> [Double] {
             
             let A = la_matrix_from_double_buffer(matriceA, variabili, variabili, variabili, la_hint_t(LA_NO_HINT), la_attribute_t(LA_DEFAULT_ATTRIBUTES))
@@ -201,8 +221,17 @@ class Megaride {
             var C: [Double] = [0, 0, 0, 0]
             
             la_matrix_to_double_buffer(&C, 1, vettoreC)
-
+            
             return C
+        }
+        func derivatoreImbardata() -> Double {
+            
+            var accelerazione: Double = 0
+            if let ultimoFeed = feeds.last {
+                let penultimoFeed = feeds[feeds.index(before: feeds.endIndex)]
+                accelerazione = (ultimoFeed.dati.giroscopio.terzo-penultimoFeed.dati.giroscopio.terzo)/(ultimoFeed.tempo-penultimoFeed.tempo)
+            }
+            return accelerazione
         }
         
         func calcolatoreForzaZ(dati: Sensoristica, output: inout Output) {
@@ -257,6 +286,65 @@ class Megaride {
             output.forze.posteriore.destra.y = C[3]
             
         }
+        
+        func calcolatoreSlipAngle(dati: Sensoristica, output: inout Output) {
+            
+            output.slipAngle.anteriore.sinistra = 0
+            output.slipAngle.anteriore.destra = 0
+            output.slipAngle.posteriore.sinistra = 0
+            output.slipAngle.posteriore.destra = 0
+            
+        }
+        func calcolatoreSlipRatio(dati: Sensoristica, output: inout Output) {
+        
+            output.slipRatio.anteriore.sinistra = 0
+            output.slipRatio.anteriore.destra = 0
+            output.slipRatio.posteriore.sinistra = 0
+            output.slipRatio.posteriore.destra = 0
+
+        }
+       
+        func calcolatoreVelocitaVeicolo(dati: Sensoristica, output: inout Output) {
+            let c = tan(-output.slipAngle.posteriore.sinistra)
+            let d = tan(-output.slipAngle.posteriore.destra)
+            
+            let r = dati.giroscopio.terzo
+            
+            let a = automobile.semipasso.posteriore - automobile.carreggiata.posteriore/2*tan(c)
+            let b = automobile.semipasso.posteriore + automobile.carreggiata.posteriore/2*tan(d)
+            
+            output.velocitaVeicolo.U = r*(a-b)/(d-c)
+            output.velocitaVeicolo.V = a+(c*(a-b)/(d-c))
+            output.velocitaVeicolo.r = 1
+            
+        }
+        func calcolatoreVelocitaRuote(dati: Sensoristica, output: inout Output) {
+            let U = output.velocitaVeicolo.U
+            let V = output.velocitaVeicolo.V
+            let r = output.velocitaVeicolo.r
+            
+            output.velocitaRuote.anteriore.sinistra.x = U-r*automobile.carreggiata.anteriore/2
+            output.velocitaRuote.anteriore.destra.x = U+r*automobile.carreggiata.anteriore/2
+            output.velocitaRuote.posteriore.sinistra.x = U-r*automobile.carreggiata.posteriore/2
+            output.velocitaRuote.posteriore.destra.x = U+r*automobile.carreggiata.posteriore/2
+            
+            output.velocitaRuote.anteriore.sinistra.y = V+r*automobile.semipasso.anteriore
+            output.velocitaRuote.anteriore.destra.y = V+r*automobile.semipasso.anteriore
+            output.velocitaRuote.posteriore.sinistra.y = V-r*automobile.semipasso.posteriore
+            output.velocitaRuote.posteriore.destra.y = V-r*automobile.semipasso.posteriore
+
+        }
+        
+        func calcolatoreAngoloAssetto(dati: Sensoristica, output: inout Output) {
+            output.angoloAssetto = atan(output.velocitaVeicolo.V/output.velocitaVeicolo.U)
+        }
+        func calcolatoreAngoloSterzo(dati: Sensoristica, output: inout Output) {
+            
+
+        }
+        
+        
+        
         
         let ultimoFeed: FeedSensoristica? = feeds.last
         var output: Output = Output()
