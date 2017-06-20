@@ -20,16 +20,16 @@ class StartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func setNavigationBar () {
         let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "logo_megaride"))
         navigationItem.titleView = navBarImageTitle
     }
-    
+
 }
 
