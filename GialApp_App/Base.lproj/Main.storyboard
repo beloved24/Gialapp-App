@@ -416,14 +416,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
+                                <rect key="frame" x="7.5" y="18" width="360" height="460"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
                                         <rect key="frame" x="122" y="104" width="130" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGq-gq-8FW" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="-8" width="375" height="498"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="460"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="ov5-Jr-uxj" userLabel="Gradi Ruota AvantiSx">
                                                 <rect key="frame" x="23" y="103" width="96" height="46"/>
@@ -460,7 +460,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ZGq-gq-8FW" secondAttribute="trailing" id="D5s-VD-1XP"/>
                                     <constraint firstAttribute="bottom" secondItem="ZGq-gq-8FW" secondAttribute="bottom" id="cDb-UK-e2w"/>
                                     <constraint firstItem="ZGq-gq-8FW" firstAttribute="leading" secondItem="tC8-yG-LmF" secondAttribute="leading" id="p6e-O5-anh"/>
-                                    <constraint firstItem="ZGq-gq-8FW" firstAttribute="topMargin" secondItem="tC8-yG-LmF" secondAttribute="top" id="rv7-JO-XIR"/>
+                                    <constraint firstAttribute="top" secondItem="ZGq-gq-8FW" secondAttribute="top" id="rv7-JO-XIR"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
@@ -479,8 +479,9 @@
                         <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qbd-cR-994" firstAttribute="bottom" secondItem="d4T-9L-KQ7" secondAttribute="top" multiplier="0.985" id="0d9-cQ-Kca"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.96" id="2fv-1Y-QN6"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="height" secondItem="vfd-iA-9G5" secondAttribute="height" multiplier="0.69" id="3Ck-C6-aEX"/>
                             <constraint firstItem="Des-7W-YhJ" firstAttribute="width" secondItem="g8s-h8-lfs" secondAttribute="width" id="5iL-iO-jJG"/>
-                            <constraint firstItem="tC8-yG-LmF" firstAttribute="top" secondItem="vfd-iA-9G5" secondAttribute="top" id="5oH-Df-bjg"/>
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="centerX" secondItem="vfd-iA-9G5" secondAttribute="centerX" id="62o-iA-3sg"/>
                             <constraint firstItem="Des-7W-YhJ" firstAttribute="trailing" secondItem="vfd-iA-9G5" secondAttribute="trailing" multiplier="0.98" id="6dS-BQ-AIV"/>
                             <constraint firstItem="Des-7W-YhJ" firstAttribute="bottom" secondItem="g8s-h8-lfs" secondAttribute="bottom" id="6jP-Me-ZJ6"/>
@@ -488,26 +489,11 @@
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="height" secondItem="qbd-cR-994" secondAttribute="height" id="GWU-Vk-vsF"/>
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="bottom" secondItem="qbd-cR-994" secondAttribute="bottom" id="LxU-vr-MDc"/>
                             <constraint firstItem="qbd-cR-994" firstAttribute="leading" secondItem="vfd-iA-9G5" secondAttribute="trailing" multiplier="0.02" id="Oc0-NJ-dvi"/>
-                            <constraint firstItem="tC8-yG-LmF" firstAttribute="leading" secondItem="vfd-iA-9G5" secondAttribute="leading" id="bou-eZ-PvY"/>
-                            <constraint firstAttribute="trailing" secondItem="tC8-yG-LmF" secondAttribute="trailing" id="dzv-5I-50p"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="centerX" secondItem="vfd-iA-9G5" secondAttribute="centerX" id="Sio-Om-1RB"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="top" secondItem="vfd-iA-9G5" secondAttribute="topMargin" constant="18" id="Z5W-gZ-h1K"/>
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.92/3" id="mow-OO-wxc"/>
                             <constraint firstItem="qbd-cR-994" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.92/3" id="qJn-OJ-Nhy"/>
-                            <constraint firstItem="g8s-h8-lfs" firstAttribute="top" secondItem="tC8-yG-LmF" secondAttribute="bottom" id="sub-VZ-Yan"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="5oH-Df-bjg"/>
-                                <exclude reference="bou-eZ-PvY"/>
-                                <exclude reference="dzv-5I-50p"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="5oH-Df-bjg"/>
-                                <include reference="bou-eZ-PvY"/>
-                                <include reference="dzv-5I-50p"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="containterView" destination="ZGq-gq-8FW" id="VGl-po-2WG"/>
