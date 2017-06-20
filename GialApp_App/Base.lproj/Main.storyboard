@@ -464,10 +464,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
-                                <rect key="frame" x="129.5" y="490" width="115" height="167"/>
+                                <rect key="frame" x="130" y="490" width="115" height="167"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3">
-                                <rect key="frame" x="253" y="490" width="115" height="167"/>
+                                <rect key="frame" x="252.5" y="490" width="115" height="167"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1">
                                 <rect key="frame" x="7.5" y="490" width="115" height="167"/>
@@ -786,41 +786,41 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="267"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pilota-con-fotocamera" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-f7-axs">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="267"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="267"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="68M-Uu-cdo">
-                                        <rect key="frame" x="202.5" y="0.0" width="172.5" height="267"/>
+                                        <rect key="frame" x="203" y="0.0" width="172" height="267"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RACE NUMBER" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-hW-9K0">
-                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-rv-g9f">
-                                                <rect key="frame" x="0.0" y="53.5" width="172.5" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="53.5" width="172" height="53"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SURNAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-6P-g9K">
-                                                <rect key="frame" x="0.0" y="107" width="172.5" height="53"/>
+                                                <rect key="frame" x="0.0" y="106.5" width="172" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FAVOURITE CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-eS-ES7">
-                                                <rect key="frame" x="0.0" y="160" width="172.5" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="160" width="172" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTHER CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALY-rY-4sE">
-                                                <rect key="frame" x="0.0" y="213.5" width="172.5" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="213.5" width="172" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
@@ -843,7 +843,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ygw-hc-O1e">
-                                <rect key="frame" x="0.0" y="336" width="375" height="331"/>
+                                <rect key="frame" x="0.0" y="338" width="375" height="329"/>
                                 <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sessionCell" rowHeight="101" id="YOn-oB-AJE" customClass="ProfileTableViewCell" customModule="GialApp_App" customModuleProvider="target">
@@ -854,28 +854,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nK-6H-LjC">
-                                                    <rect key="frame" x="0.0" y="2" width="206.5" height="92"/>
+                                                    <rect key="frame" x="0.0" y="2" width="180.5" height="92"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SESSION NAME" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-p1-LiV">
-                                                            <rect key="frame" x="8" y="3" width="198.5" height="20"/>
+                                                            <rect key="frame" x="8" y="3" width="172.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX TYRES TEMP" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-60-dKP">
-                                                            <rect key="frame" x="8" y="35" width="198.5" height="12"/>
+                                                            <rect key="frame" x="8" y="35" width="172.5" height="12"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX G FORCE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BZ-hR-b5S">
-                                                            <rect key="frame" x="8" y="54" width="198.5" height="12"/>
+                                                            <rect key="frame" x="8" y="54" width="172.5" height="12"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX SPEED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-IC-CKq">
-                                                            <rect key="frame" x="8" y="73" width="198.5" height="12"/>
+                                                            <rect key="frame" x="8" y="73" width="172.5" height="12"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -899,10 +899,10 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdD-MH-kmn">
-                                                    <rect key="frame" x="211.5" y="2" width="163.5" height="92"/>
+                                                    <rect key="frame" x="185.5" y="2" width="143" height="92"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session DURATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1D-TZ-v04">
-                                                            <rect key="frame" x="-0.5" y="36" width="163.5" height="21"/>
+                                                            <rect key="frame" x="-0.5" y="36" width="143" height="21"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -948,7 +948,7 @@
                             <constraint firstItem="ygw-hc-O1e" firstAttribute="top" secondItem="nqb-0G-Zju" secondAttribute="bottom" id="QLV-DK-PPx"/>
                             <constraint firstAttribute="bottom" secondItem="FQq-BJ-bdt" secondAttribute="bottom" id="T56-0A-dgt"/>
                             <constraint firstItem="FQq-BJ-bdt" firstAttribute="leading" secondItem="INJ-Da-RGZ" secondAttribute="leading" id="Yof-0g-elJ"/>
-                            <constraint firstItem="ygw-hc-O1e" firstAttribute="top" secondItem="FQq-BJ-bdt" secondAttribute="bottom" constant="5" id="ZD8-9D-Kih"/>
+                            <constraint firstItem="ygw-hc-O1e" firstAttribute="top" secondItem="FQq-BJ-bdt" secondAttribute="bottom" constant="7" id="ZD8-9D-Kih"/>
                             <constraint firstAttribute="trailing" secondItem="FQq-BJ-bdt" secondAttribute="trailing" id="ZNT-ob-tJG"/>
                             <constraint firstItem="FQq-BJ-bdt" firstAttribute="height" secondItem="INJ-Da-RGZ" secondAttribute="height" multiplier="2/5" id="Zl9-L0-xWk"/>
                             <constraint firstItem="FQq-BJ-bdt" firstAttribute="width" secondItem="INJ-Da-RGZ" secondAttribute="width" multiplier="1/2" id="bf5-h2-flA"/>
@@ -1002,12 +1002,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="favouriteCar" destination="5Ki-eS-ES7" id="wio-C0-hmZ"/>
-                        <outlet property="otherCar" destination="ALY-rY-4sE" id="kPK-eA-Iyc"/>
-                        <outlet property="racerName" destination="PB6-rv-g9f" id="dnZ-qY-vkT"/>
-                        <outlet property="racerNumber" destination="fpf-hW-9K0" id="MOF-wb-dev"/>
-                        <outlet property="racerSurname" destination="H2w-6P-g9K" id="FEa-hC-siX"/>
-                        <outlet property="tableView" destination="ygw-hc-O1e" id="1ad-wK-Sz9"/>
+                        <outlet property="favouriteCar" destination="5Ki-eS-ES7" id="eS6-1o-yor"/>
+                        <outlet property="otherCar" destination="ALY-rY-4sE" id="XhH-UO-X2O"/>
+                        <outlet property="racerName" destination="PB6-rv-g9f" id="vNx-ZM-HYE"/>
+                        <outlet property="racerNumber" destination="fpf-hW-9K0" id="rLB-b3-5It"/>
+                        <outlet property="racerSurname" destination="H2w-6P-g9K" id="Skx-fe-SGm"/>
+                        <outlet property="tableView" destination="ygw-hc-O1e" id="DNF-TA-htQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-Hk-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1037,7 +1037,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="C89-Fg-8oR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

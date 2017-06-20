@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 2
+        return 1
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
