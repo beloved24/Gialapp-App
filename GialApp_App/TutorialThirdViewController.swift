@@ -12,12 +12,26 @@ import UIKit
 class TutorialThirdViewController: UIViewController {
 
     //MARK: outlet and properties
-   
+    
+    //MARK: outlet della view 0
     @IBOutlet weak var oView0: UIView!
+    @IBOutlet weak var firstSubviewView0: UIImageView!
+    @IBOutlet weak var oGradiRuotaAvSx: UILabel!
+    @IBOutlet weak var oGradiRuotaAvDx: UILabel!
+    @IBOutlet weak var oGradiRuotaDieSx: UILabel!
+    @IBOutlet weak var oGradiRuotaDieDx: UILabel!
+    
+    //MARK: outlet della view 1
     @IBOutlet weak var oView1: UIView!
+   
     @IBOutlet weak var oView2: UIView!
+    
     @IBOutlet weak var oView3: UIView!
-    @IBOutlet weak var immagineDiProva: UIImageView!
+    
+    @IBOutlet weak var containterView: UIView!
+    
+    let lineaSeparatrice = UIImageView()
+    
     
     var frame123 = CGRect()
     var frame0 = CGRect()
@@ -26,7 +40,7 @@ class TutorialThirdViewController: UIViewController {
     var center2 = CGPoint()
     var center3 = CGPoint()
     let durationOfAnimation = 0.3
-    var frameThumbnailVersioneGrande = CGRect()
+    var frameThumbFirstSubviewView0 = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +83,11 @@ extension TutorialThirdViewController {
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.25, animations: { 
-                        movingView.subviews.first?.frame = self.frameThumbnailVersioneGrande
+                        movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
                         movingView.subviews.first!.alpha = 1
+                        movingView.tag = 99
+                        movingView.subviews[1].alpha = 1
                     })
-                    movingView.tag = 99
                 }
             })
         }
@@ -86,21 +101,28 @@ extension TutorialThirdViewController {
                 }
             })
         }
+        movingView.isUserInteractionEnabled = false
     
     }
     
     func movingBackFunction (movingView: UIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
+        movingView.isUserInteractionEnabled = true
 
         if let _ = movingView.subviews.first {
             movingView.subviews.first!.alpha = 0
+            movingView.subviews[1].alpha = 0
             UIView.animate(withDuration: 0.5, animations: {
-                self.frameThumbnailVersioneGrande = (movingView.subviews.first?.frame)!
+                self.frameThumbFirstSubviewView0 = (movingView.subviews.first?.frame)!
                 movingView.center = destinationCenter
                 movingView.frame = destinationFrame
+                
+                
+                
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.25, animations: { 
                         movingView.subviews.first!.frame = movingView.bounds
+                        movingView.subviews.first?.contentMode = .scaleAspectFit
                         movingView.subviews.first!.alpha = 1
                     })
                     movingView.tag = 500
@@ -142,26 +164,83 @@ extension TutorialThirdViewController {
         oView2.addGestureRecognizer(tapToEnlarge2)
         oView3.addGestureRecognizer(tapToEnlarge3)
         
-        oView0.layer.cornerRadius = 10
-        oView0.layer.borderColor = self.view.backgroundColor?.cgColor
+        oView0.layer.cornerRadius = 10.0
+        oView0.layer.borderColor = view.backgroundColor?.cgColor
         oView0.layer.borderWidth = 2
+        oView0.isUserInteractionEnabled = false
         
         oView1.layer.cornerRadius = 15.0
-        oView1.layer.borderWidth = 4.0
-        oView1.layer.borderColor = self.view.backgroundColor?.cgColor
+        oView1.layer.borderWidth = 1.0
+        oView1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
         oView2.layer.cornerRadius = 15.0
-        oView2.layer.borderWidth = 4.0
-        oView2.layer.borderColor = self.view.backgroundColor?.cgColor
+        oView2.layer.borderWidth = 1.0
+        oView2.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
         oView3.layer.cornerRadius = 15.0
-        oView3.layer.borderWidth = 4.0
-        oView3.layer.borderColor = self.view.backgroundColor?.cgColor
+        oView3.layer.borderWidth = 1.0
+        oView3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
         
         
         
+        //MARK: setting degli elementi della view 0
         
+    
+        
+        //-------------- elemento principale
+        
+        firstSubviewView0.frame.size.width = self.view.frame.width/2.5
+        firstSubviewView0.frame.size.height = self.view.frame.height/2.5
+        firstSubviewView0.center.x = self.view.center.x
+        firstSubviewView0.center.y = self.oView0.center.y - firstSubviewView0.frame.height/5
+        
+        frameThumbFirstSubviewView0 = firstSubviewView0.frame
+        
+        //-------------- labels
+        
+        oGradiRuotaAvSx.frame.size.width = firstSubviewView0.frame.width - 5
+        oGradiRuotaAvSx.frame.size.height = firstSubviewView0.frame.height/5
+        oGradiRuotaAvSx.contentMode = .bottomRight
+        oGradiRuotaAvSx.frame.origin.x = firstSubviewView0.frame.origin.x - oGradiRuotaAvSx.frame.width - 5
+        oGradiRuotaAvSx.frame.origin.y = firstSubviewView0.frame.origin.y
+        oGradiRuotaAvSx.text = "0.0°"
+        oGradiRuotaAvSx.adjustsFontSizeToFitWidth = true
+        //oGradiRuotaAvSx.backgroundColor = UIColor.red
+        
+        
+        oGradiRuotaAvDx.frame.size.width = oGradiRuotaAvSx.frame.width
+        oGradiRuotaAvDx.frame.size.height = oGradiRuotaAvSx.frame.height
+        //oGradiRuotaAvDx.contentMode = .bottomRight
+        oGradiRuotaAvDx.frame.origin.x = firstSubviewView0.frame.origin.x + firstSubviewView0.frame.width
+        oGradiRuotaAvDx.frame.origin.y = firstSubviewView0.frame.origin.y
+        oGradiRuotaAvDx.text = "0.0°"
+        oGradiRuotaAvDx.adjustsFontSizeToFitWidth = true
+        //oGradiRuotaAvDx.backgroundColor = UIColor.red
+        
+        oGradiRuotaDieSx.frame.size.width = oGradiRuotaAvSx.frame.width
+        oGradiRuotaDieSx.frame.size.height = oGradiRuotaAvSx.frame.height
+        oGradiRuotaDieSx.frame.origin.x = oGradiRuotaAvSx.frame.origin.x
+        oGradiRuotaDieSx.frame.origin.y = firstSubviewView0.frame.origin.y + firstSubviewView0.frame.height - oGradiRuotaDieSx.frame.height
+        oGradiRuotaDieSx.text = "0.0°"
+        //oGradiRuotaDieSx.backgroundColor = UIColor.red
+        
+        oGradiRuotaDieDx.frame.size.width = oGradiRuotaAvSx.frame.width
+        oGradiRuotaDieDx.frame.size.height = oGradiRuotaAvDx.frame.height
+        oGradiRuotaDieDx.frame.origin.x = oGradiRuotaAvDx.frame.origin.x
+        oGradiRuotaDieDx.frame.origin.y = oGradiRuotaDieSx.frame.origin.y
+        oGradiRuotaDieDx.text = "0.0°"
+        //oGradiRuotaDieDx.backgroundColor = UIColor.red
+        
+        //----------------- linea di separazione 
+        
+        lineaSeparatrice.image = UIImage(named: "lineaSeparazione")
+        lineaSeparatrice.center.x = firstSubviewView0.center.x
+        lineaSeparatrice.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
+        lineaSeparatrice.backgroundColor = UIColor.red
+        oView0.addSubview(lineaSeparatrice)
+        
+     
     }
     
    
