@@ -75,19 +75,20 @@ extension TutorialThirdViewController {
     
     func movingViewAtCenter (movingView: UIView) {
         if let _  = movingView.subviews.first {
-            movingView.subviews.first!.alpha = 0
+            //movingView.subviews.first!.alpha = 0
             UIView.animate(withDuration: 0.5, animations: {
                 movingView.center = self.center0
                 movingView.frame = self.frame0
+                movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
                 
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.25, animations: { 
-                        movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
-                        movingView.subviews.first!.alpha = 1
-                        movingView.tag = 99
-                        movingView.subviews[1].alpha = 1
+//                        movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
+//                        movingView.subviews.first!.alpha = 1
+                        //movingView.subviews[1].alpha = 1
                     })
+                    movingView.tag = 99
                 }
             })
         }
@@ -109,21 +110,21 @@ extension TutorialThirdViewController {
         movingView.isUserInteractionEnabled = true
 
         if let _ = movingView.subviews.first {
-            movingView.subviews.first!.alpha = 0
+            //movingView.subviews.first!.alpha = 0
             movingView.subviews[1].alpha = 0
             UIView.animate(withDuration: 0.5, animations: {
                 self.frameThumbFirstSubviewView0 = (movingView.subviews.first?.frame)!
                 movingView.center = destinationCenter
                 movingView.frame = destinationFrame
-                
-                
+                movingView.subviews.first!.frame = movingView.bounds
+                movingView.subviews.first?.contentMode = .scaleAspectFit
                 
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.25, animations: { 
-                        movingView.subviews.first!.frame = movingView.bounds
-                        movingView.subviews.first?.contentMode = .scaleAspectFit
-                        movingView.subviews.first!.alpha = 1
+                        //movingView.subviews.first!.frame = movingView.bounds
+//                        movingView.subviews.first?.contentMode = .scaleAspectFit
+                        //movingView.subviews.first!.alpha = 1
                     })
                     movingView.tag = 500
                     
@@ -165,19 +166,19 @@ extension TutorialThirdViewController {
         oView3.addGestureRecognizer(tapToEnlarge3)
         
         oView0.layer.cornerRadius = 10.0
-        oView0.layer.borderColor = view.backgroundColor?.cgColor
-        oView0.layer.borderWidth = 2
+        oView0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        oView0.layer.borderWidth = 1.0
         oView0.isUserInteractionEnabled = false
         
-        oView1.layer.cornerRadius = 15.0
+        oView1.layer.cornerRadius = 10.0
         oView1.layer.borderWidth = 1.0
         oView1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
-        oView2.layer.cornerRadius = 15.0
+        oView2.layer.cornerRadius = 10.0
         oView2.layer.borderWidth = 1.0
         oView2.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
-        oView3.layer.cornerRadius = 15.0
+        oView3.layer.cornerRadius = 10.0
         oView3.layer.borderWidth = 1.0
         oView3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
