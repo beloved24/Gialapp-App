@@ -47,7 +47,7 @@
                                     <fragment content="metti il telefono di fronte a te e conferma">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="24" name="911Porscha"/>
+                                            <font key="NSFont" size="36" name="BebasNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -210,7 +210,7 @@
                                     <fragment content="fissa lo smartphone in auto e tocca il punto in cui l'hai posizionato">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="25" name="911Porscha"/>
+                                            <font key="NSFont" size="36" name="BebasNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="14" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -591,7 +591,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="megaride" translatesAutoresizingMaskIntoConstraints="NO" id="wnV-jk-kdo">
-                                <rect key="frame" x="62.5" y="646.5" width="250" height="15.5"/>
+                                <rect key="frame" x="62.5" y="643.5" width="250" height="15.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wnV-jk-kdo" secondAttribute="height" multiplier="276:17" id="fhE-ZC-Kux"/>
                                 </constraints>
@@ -617,7 +617,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz2-md-Q0Q" userLabel="profilo">
-                                <rect key="frame" x="312.5" y="64" width="62.5" height="62.5"/>
+                                <rect key="frame" x="312.5" y="72" width="62.5" height="62.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qz2-md-Q0Q" secondAttribute="height" multiplier="1:1" id="Bgq-Xk-9LF"/>
                                 </constraints>
@@ -669,7 +669,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.39215686274509803" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qz2-md-Q0Q" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" id="0G3-lL-eXw"/>
+                            <constraint firstItem="qz2-md-Q0Q" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" constant="8" id="0G3-lL-eXw"/>
                             <constraint firstAttribute="trailing" secondItem="qz2-md-Q0Q" secondAttribute="trailing" id="0US-fB-vfW"/>
                             <constraint firstItem="wq0-Qg-fdG" firstAttribute="top" secondItem="wnV-jk-kdo" secondAttribute="bottom" constant="20.5" id="4TS-cM-tyM"/>
                             <constraint firstItem="SvM-5a-FV6" firstAttribute="centerX" secondItem="5aB-bU-f4n" secondAttribute="centerX" id="8ag-A4-BeQ"/>
@@ -681,7 +681,7 @@
                             <constraint firstItem="SvM-5a-FV6" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" constant="-30" id="TfL-G4-qke"/>
                             <constraint firstItem="SvM-5a-FV6" firstAttribute="centerY" secondItem="5aB-bU-f4n" secondAttribute="centerY" id="WSL-xH-RTY"/>
                             <constraint firstItem="a16-zW-tTl" firstAttribute="top" secondItem="Zrw-e1-AYy" secondAttribute="bottom" constant="8" symbolic="YES" id="ZVo-5h-A4i"/>
-                            <constraint firstItem="wq0-Qg-fdG" firstAttribute="top" secondItem="wnV-jk-kdo" secondAttribute="bottom" constant="5" id="aCM-xL-3Y0"/>
+                            <constraint firstItem="wq0-Qg-fdG" firstAttribute="top" secondItem="wnV-jk-kdo" secondAttribute="bottom" constant="8" id="aCM-xL-3Y0"/>
                             <constraint firstItem="wnV-jk-kdo" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" multiplier="1/1.5" id="bIV-Yp-jbm"/>
                             <constraint firstItem="wnV-jk-kdo" firstAttribute="width" secondItem="5aB-bU-f4n" secondAttribute="width" multiplier="1/3" id="c8j-aF-oJe"/>
                             <constraint firstItem="SvM-5a-FV6" firstAttribute="centerX" secondItem="5aB-bU-f4n" secondAttribute="centerX" id="dFg-1b-fy8"/>
@@ -785,46 +785,65 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-BJ-bdt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="267"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pilota-con-fotocamera" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-f7-axs">
-                                        <rect key="frame" x="0.0" y="0.0" width="173" height="267"/>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pilota-con-fotocamera" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-f7-axs">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="267"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="If5-F9-7RU" appends="YES" id="Wrz-F3-Q2Q"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="68M-Uu-cdo">
-                                        <rect key="frame" x="203" y="0.0" width="172" height="267"/>
+                                        <rect key="frame" x="202.5" y="0.0" width="172.5" height="267"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RACE NUMBER" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpf-hW-9K0">
-                                                <rect key="frame" x="0.0" y="0.0" width="172" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.5" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qvj-WT-Yiy" id="5JI-4H-HgL"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-rv-g9f">
-                                                <rect key="frame" x="0.0" y="53.5" width="172" height="53"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="NAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB6-rv-g9f">
+                                                <rect key="frame" x="0.0" y="53.5" width="172.5" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qvj-WT-Yiy" id="hcP-H1-SmL"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SURNAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-6P-g9K">
-                                                <rect key="frame" x="0.0" y="106.5" width="172" height="53.5"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SURNAME" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-6P-g9K">
+                                                <rect key="frame" x="0.0" y="107" width="172.5" height="53"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qvj-WT-Yiy" id="eWy-8y-aLx"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FAVOURITE CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-eS-ES7">
-                                                <rect key="frame" x="0.0" y="160" width="172" height="53.5"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FAVOURITE CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-eS-ES7">
+                                                <rect key="frame" x="0.0" y="160" width="172.5" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qvj-WT-Yiy" id="2Vk-aC-cU3"/>
+                                                </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTHER CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALY-rY-4sE">
-                                                <rect key="frame" x="0.0" y="213.5" width="172" height="53.5"/>
+                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTHER CAR" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALY-rY-4sE">
+                                                <rect key="frame" x="0.0" y="213.5" width="172.5" height="53.5"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qvj-WT-Yiy" id="X2p-oW-ot6"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -846,37 +865,37 @@
                                 <rect key="frame" x="0.0" y="338" width="375" height="329"/>
                                 <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sessionCell" rowHeight="101" id="YOn-oB-AJE" customClass="ProfileTableViewCell" customModule="GialApp_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="101"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sessionCell" rowHeight="130" id="YOn-oB-AJE" customClass="ProfileTableViewCell" customModule="GialApp_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YOn-oB-AJE" id="hbL-tX-Err">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nK-6H-LjC">
-                                                    <rect key="frame" x="0.0" y="2" width="180.5" height="92"/>
+                                                    <rect key="frame" x="0.0" y="2" width="206.5" height="121"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SESSION NAME" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-p1-LiV">
-                                                            <rect key="frame" x="8" y="3" width="172.5" height="20"/>
-                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
+                                                            <rect key="frame" x="8" y="3" width="198.5" height="34"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="28"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX TYRES TEMP" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-60-dKP">
-                                                            <rect key="frame" x="8" y="35" width="172.5" height="12"/>
-                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
+                                                            <rect key="frame" x="8" y="49" width="198.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX G FORCE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BZ-hR-b5S">
-                                                            <rect key="frame" x="8" y="54" width="172.5" height="12"/>
-                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
+                                                            <rect key="frame" x="8" y="73" width="198.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX SPEED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8Y-IC-CKq">
-                                                            <rect key="frame" x="8" y="73" width="172.5" height="12"/>
-                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="10"/>
+                                                            <rect key="frame" x="8" y="97" width="198.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -890,20 +909,20 @@
                                                         <constraint firstItem="N8Y-IC-CKq" firstAttribute="top" secondItem="8BZ-hR-b5S" secondAttribute="bottom" constant="7" id="PeW-Na-pSf"/>
                                                         <constraint firstAttribute="trailing" secondItem="N8Y-IC-CKq" secondAttribute="trailing" id="QH9-JQ-AKT"/>
                                                         <constraint firstItem="ihX-60-dKP" firstAttribute="top" secondItem="JLE-p1-LiV" secondAttribute="bottom" constant="12" id="U6q-6N-WDY"/>
+                                                        <constraint firstItem="JLE-p1-LiV" firstAttribute="top" secondItem="6nK-6H-LjC" secondAttribute="top" constant="3" id="UVT-7j-FRd"/>
                                                         <constraint firstAttribute="trailing" secondItem="8BZ-hR-b5S" secondAttribute="trailing" id="WCD-v9-MUD"/>
                                                         <constraint firstItem="8BZ-hR-b5S" firstAttribute="top" secondItem="ihX-60-dKP" secondAttribute="bottom" constant="7" id="bZk-fP-25j"/>
                                                         <constraint firstAttribute="trailing" secondItem="JLE-p1-LiV" secondAttribute="trailing" id="hUf-c4-k4m"/>
                                                         <constraint firstAttribute="bottom" secondItem="N8Y-IC-CKq" secondAttribute="bottom" constant="7" id="ojx-WM-zWE"/>
                                                         <constraint firstItem="JLE-p1-LiV" firstAttribute="leading" secondItem="6nK-6H-LjC" secondAttribute="leading" constant="8" id="rXH-L5-qXO"/>
-                                                        <constraint firstItem="JLE-p1-LiV" firstAttribute="top" secondItem="6nK-6H-LjC" secondAttribute="top" constant="3" id="z6O-HB-SCV"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdD-MH-kmn">
-                                                    <rect key="frame" x="185.5" y="2" width="143" height="92"/>
+                                                    <rect key="frame" x="211.5" y="2" width="163.5" height="121"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session DURATION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1D-TZ-v04">
-                                                            <rect key="frame" x="-0.5" y="36" width="143" height="21"/>
-                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="17"/>
+                                                            <rect key="frame" x="-0.5" y="49" width="163.5" height="24"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1004,6 +1023,7 @@
                     <connections>
                         <outlet property="favouriteCar" destination="5Ki-eS-ES7" id="eS6-1o-yor"/>
                         <outlet property="otherCar" destination="ALY-rY-4sE" id="XhH-UO-X2O"/>
+                        <outlet property="racerImage" destination="OW1-f7-axs" id="Pic-Ck-Cnv"/>
                         <outlet property="racerName" destination="PB6-rv-g9f" id="vNx-ZM-HYE"/>
                         <outlet property="racerNumber" destination="fpf-hW-9K0" id="rLB-b3-5It"/>
                         <outlet property="racerSurname" destination="H2w-6P-g9K" id="Skx-fe-SGm"/>
@@ -1011,6 +1031,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQM-Hk-vnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="If5-F9-7RU">
+                    <connections>
+                        <action selector="changeImage:" destination="Qvj-WT-Yiy" id="3Rf-Lh-vOl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1959.2" y="-850.52473763118451"/>
         </scene>
@@ -1037,7 +1062,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="C89-Fg-8oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
