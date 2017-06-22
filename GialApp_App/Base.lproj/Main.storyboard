@@ -415,7 +415,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
+                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
                                 <rect key="frame" x="7.5" y="18" width="360" height="460"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
@@ -468,15 +468,15 @@
                                     <constraint firstAttribute="top" secondItem="ZGq-gq-8FW" secondAttribute="top" id="rv7-JO-XIR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
                                 <rect key="frame" x="130" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
                                 <rect key="frame" x="252.5" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
                                 <rect key="frame" x="7.5" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -511,10 +511,10 @@
                         <outlet property="oGradiRuotaAvSx" destination="ov5-Jr-uxj" id="XT9-1G-ic5"/>
                         <outlet property="oGradiRuotaDieDx" destination="0gU-c5-ZxU" id="hOz-fR-LNW"/>
                         <outlet property="oGradiRuotaDieSx" destination="sox-7R-ke6" id="kpY-SH-KCf"/>
-                        <outlet property="oView0" destination="tC8-yG-LmF" id="eo7-Jo-Mek"/>
-                        <outlet property="oView1" destination="qbd-cR-994" id="a2N-yE-hDz"/>
-                        <outlet property="oView2" destination="g8s-h8-lfs" id="4lG-Io-rfa"/>
-                        <outlet property="oView3" destination="Des-7W-YhJ" id="BwP-Ro-hpW"/>
+                        <outlet property="oView0" destination="tC8-yG-LmF" id="QgB-V6-R1J"/>
+                        <outlet property="oView1" destination="qbd-cR-994" id="AWJ-dJ-bIm"/>
+                        <outlet property="oView2" destination="g8s-h8-lfs" id="0gK-Rc-pjp"/>
+                        <outlet property="oView3" destination="Des-7W-YhJ" id="pjs-4L-foq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM5-LM-4Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
