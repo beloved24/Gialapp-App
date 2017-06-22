@@ -15,23 +15,11 @@ class TutorialThirdViewController: UIViewController {
     
     //MARK: outlet della view 0
     @IBOutlet weak var oView0: MyCustomUIView!
-    @IBOutlet weak var firstSubviewView0: UIImageView!
-    @IBOutlet weak var oGradiRuotaAvSx: UILabel!
-    @IBOutlet weak var oGradiRuotaAvDx: UILabel!
-    @IBOutlet weak var oGradiRuotaDieSx: UILabel!
-    @IBOutlet weak var oGradiRuotaDieDx: UILabel!
-    @IBOutlet weak var lineaDiSeparazioneView0: UIImageView!
-    
-    @IBOutlet weak var assettoNumber: UILabel!
-    @IBOutlet weak var axis: UIImageView!
-    @IBOutlet weak var assettoImage: UIImageView!
-    
     
     //MARK: outlet della view 1
     @IBOutlet weak var oView1: UIView!
     @IBOutlet weak var oView2: UIView!
     @IBOutlet weak var oView3: UIView!
-    @IBOutlet weak var containerView0: UIView!
     
     var frame123 = CGRect()
     var frame0 = CGRect()
@@ -49,10 +37,7 @@ class TutorialThirdViewController: UIViewController {
     //MARK: elementi contenuti nelle altre view
     
     //---------------- view 1
-    let firstSubviewView1 = UIImageView(image: #imageLiteral(resourceName: "autoSenzaRuote"))
-    let containerView1 = UIView()
-    let averageLabelTitleView1 = UILabel()
-    let lineaDiSeparazioneView1 = UIImageView(image: #imageLiteral(resourceName: "lineaSeparazione"))
+   
     
     
     override func viewDidLoad() {
@@ -73,6 +58,7 @@ class TutorialThirdViewController: UIViewController {
     override func viewDidLayoutSubviews() {
     }
     
+    /*
     func settingsForAnimation() {
         axis.center.x = firstSubviewView0.center.x - 3
         assettoImage.center.x = axis.center.x
@@ -84,7 +70,7 @@ class TutorialThirdViewController: UIViewController {
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         })
-    }
+    }*/
 
   
 }

@@ -20,7 +20,8 @@
 		4938C2F41EFBD1DA0035CD44 /* MyCustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */; };
 		4938C2F61EFC15DA0035CD44 /* ViewRuoteUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */; };
 		4938C2F81EFC161A0035CD44 /* ViewGforceUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */; };
-		4938C2FA1EFC162D0035CD44 /* ViewLockedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F91EFC162D0035CD44 /* ViewLockedUIView.swift */; };
+		4938C2FA1EFC162D0035CD44 /* ViewAccelerazioneUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */; };
+		4938C2FC1EFC1AB70035CD44 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */; };
 		49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D4E1ECDD10200950662 /* AppDelegate.swift */; };
 		49744D511ECDD10200950662 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D501ECDD10200950662 /* StartViewController.swift */; };
 		49744D541ECDD10200950662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D521ECDD10200950662 /* Main.storyboard */; };
@@ -43,7 +44,8 @@
 		4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomUIView.swift; sourceTree = "<group>"; };
 		4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRuoteUIView.swift; sourceTree = "<group>"; };
 		4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGforceUIView.swift; sourceTree = "<group>"; };
-		4938C2F91EFC162D0035CD44 /* ViewLockedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLockedUIView.swift; sourceTree = "<group>"; };
+		4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAccelerazioneUIView.swift; sourceTree = "<group>"; };
+		4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
 		49744D4B1ECDD10200950662 /* GialApp_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GialApp_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49744D4E1ECDD10200950662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49744D501ECDD10200950662 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 				49744D501ECDD10200950662 /* StartViewController.swift */,
 				340D0A751EF95AAB00B8FD7C /* TutorialFistViewController.swift */,
 				4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */,
-				4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */,
+				4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */,
 				4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */,
 				340D0A731EF95A1E00B8FD7C /* ProfileViewController.swift */,
 				340D0A6F1EF958B100B8FD7C /* ProfileTableViewCell.swift */,
@@ -114,13 +116,14 @@
 				4914FB891EE41C4900CDF3AE /* View Controllers */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
 				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
-				4938C2F91EFC162D0035CD44 /* ViewLockedUIView.swift */,
+				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
 				4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */,
 				49CBE5C71EEB220100F5327F /* MyCustomImageView.swift */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
 				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
+				4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */,
 				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
 			);
 			path = GialApp_App;
@@ -204,10 +207,11 @@
 				4938C2F61EFC15DA0035CD44 /* ViewRuoteUIView.swift in Sources */,
 				4914FB8F1EE41CEF00CDF3AE /* TutorialFourthViewController.swift in Sources */,
 				340D0A6E1EF9587400B8FD7C /* Definitions.swift in Sources */,
-				4938C2FA1EFC162D0035CD44 /* ViewLockedUIView.swift in Sources */,
+				4938C2FA1EFC162D0035CD44 /* ViewAccelerazioneUIView.swift in Sources */,
 				4938C2F81EFC161A0035CD44 /* ViewGforceUIView.swift in Sources */,
 				4914FB8B1EE41C7300CDF3AE /* TutorialSecondViewController.swift in Sources */,
 				340D0A701EF958B100B8FD7C /* ProfileTableViewCell.swift in Sources */,
+				4938C2FC1EFC1AB70035CD44 /* MainUIViewController.swift in Sources */,
 				340D0A761EF95AAB00B8FD7C /* TutorialFistViewController.swift in Sources */,
 				49744D511ECDD10200950662 /* StartViewController.swift in Sources */,
 				6821B7B41EF56E190027D5C0 /* MegarideSingleton.swift in Sources */,

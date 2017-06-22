@@ -10,12 +10,29 @@ import UIKit
 
 class ViewRuoteUIView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+    @IBOutlet weak var auto: UIImageView!
+    @IBOutlet weak var axis: UIImageView!
+    
+    @IBOutlet weak var temp1: UILabel!
+    @IBOutlet weak var temp2: UILabel!
+    @IBOutlet weak var temp3: UILabel!
+    @IBOutlet weak var temp4
+    : UILabel!
+    
+    @IBOutlet weak var ruota1: UIView!
+    @IBOutlet weak var ruota2: UIView!
+    @IBOutlet weak var ruota3: UIView!
+    @IBOutlet weak var ruota4: UIView!
 
+    @IBOutlet weak var angoloDiAssetto: UILabel!
+    
+    
+    
+    func setView(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+    
+    
+    
 }

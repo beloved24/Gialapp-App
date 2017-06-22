@@ -406,7 +406,7 @@
         <!--Tutorial Third-->
         <scene sceneID="iIx-dR-Eu4">
             <objects>
-                <viewController id="id9-tz-FYW" userLabel="Tutorial Third" customClass="TutorialThirdViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="id9-tz-FYW" userLabel="Tutorial Third" customClass="MainUIViewController" customModule="GialApp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LzV-jT-bCH"/>
                         <viewControllerLayoutGuide type="bottom" id="d4T-9L-KQ7"/>
@@ -417,88 +417,17 @@
                         <subviews>
                             <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
                                 <rect key="frame" x="7.5" y="64" width="360" height="420"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
-                                        <rect key="frame" x="122" y="53" width="130" height="233"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGq-gq-8FW" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="ov5-Jr-uxj" userLabel="Gradi Ruota AvantiSx">
-                                                <rect key="frame" x="23" y="53" width="96" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="zJg-9M-hsD" userLabel="Gradi Ruota AvantiDx">
-                                                <rect key="frame" x="261" y="53" width="96" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="0gU-c5-ZxU" userLabel="Gradi Ruota DietroDx">
-                                                <rect key="frame" x="261" y="194" width="96" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sox-7R-ke6" userLabel="Gradi Ruota DietroSx">
-                                                <rect key="frame" x="25" y="194" width="90" height="46"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lineaSeparazione" translatesAutoresizingMaskIntoConstraints="NO" id="JYq-sl-tCP">
-                                                <rect key="frame" x="0.0" y="305" width="360" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="axis" translatesAutoresizingMaskIntoConstraints="NO" id="6M0-Do-iad">
-                                                <rect key="frame" x="97" y="89" width="174" height="104"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assetto" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-Dt-bMW">
-                                                <rect key="frame" x="179" y="130" width="10" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assetto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-i6-tpm">
-                                                <rect key="frame" x="154" y="315" width="59" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-yz-LNP">
-                                                <rect key="frame" x="139" y="330" width="82" height="73"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="55"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="0.10932693969641179" green="0.46383063036739736" blue="0.58598392248071063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ZGq-gq-8FW" secondAttribute="trailing" id="D5s-VD-1XP"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZGq-gq-8FW" secondAttribute="bottom" id="cDb-UK-e2w"/>
-                                    <constraint firstItem="ZGq-gq-8FW" firstAttribute="leading" secondItem="tC8-yG-LmF" secondAttribute="leading" id="p6e-O5-anh"/>
-                                    <constraint firstAttribute="top" secondItem="ZGq-gq-8FW" secondAttribute="top" id="rv7-JO-XIR"/>
-                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
                                 <rect key="frame" x="130" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3">
                                 <rect key="frame" x="252.5" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1">
                                 <rect key="frame" x="7.5" y="490" width="115" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -526,24 +455,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="assettoImage" destination="YAL-Dt-bMW" id="y5I-au-zdH"/>
-                        <outlet property="assettoNumber" destination="pHd-yz-LNP" id="ISG-el-M2I"/>
-                        <outlet property="axis" destination="6M0-Do-iad" id="Bue-XH-ube"/>
-                        <outlet property="containerView0" destination="ZGq-gq-8FW" id="TMK-y2-bXm"/>
-                        <outlet property="firstSubviewView0" destination="Pdd-v1-szw" id="jTN-sY-EsK"/>
-                        <outlet property="lineaDiSeparazioneView0" destination="JYq-sl-tCP" id="SKU-2S-2EZ"/>
-                        <outlet property="oGradiRuotaAvDx" destination="zJg-9M-hsD" id="HAC-dK-dZP"/>
-                        <outlet property="oGradiRuotaAvSx" destination="ov5-Jr-uxj" id="XT9-1G-ic5"/>
-                        <outlet property="oGradiRuotaDieDx" destination="0gU-c5-ZxU" id="hOz-fR-LNW"/>
-                        <outlet property="oGradiRuotaDieSx" destination="sox-7R-ke6" id="kpY-SH-KCf"/>
-                        <outlet property="oView0" destination="tC8-yG-LmF" id="QgB-V6-R1J"/>
-                        <outlet property="oView1" destination="qbd-cR-994" id="AWJ-dJ-bIm"/>
-                        <outlet property="oView2" destination="g8s-h8-lfs" id="0gK-Rc-pjp"/>
-                        <outlet property="oView3" destination="Des-7W-YhJ" id="pjs-4L-foq"/>
+                        <outlet property="view0" destination="tC8-yG-LmF" id="r4P-xU-l3f"/>
+                        <outlet property="view1" destination="qbd-cR-994" id="trw-1h-O1Q"/>
+                        <outlet property="view2" destination="g8s-h8-lfs" id="ntc-gI-0X8"/>
+                        <outlet property="view3" destination="Des-7W-YhJ" id="6a7-FV-fc8"/>
+                        <outlet property="viewAccelerazione" destination="la5-eK-wDE" id="q8f-9W-FCh"/>
+                        <outlet property="viewGforce" destination="hO2-vh-OUg" id="NFw-ep-cHI"/>
+                        <outlet property="viewRuote" destination="UNM-bm-cCt" id="7AZ-64-FTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM5-LM-4Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="UNM-bm-cCt" userLabel="View Ruote">
+                <view contentMode="scaleToFill" id="UNM-bm-cCt" userLabel="View Ruote" customClass="ViewRuoteUIView" customModule="GialApp_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -574,7 +496,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-is-dq3" userLabel="temp1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-is-dq3">
                             <rect key="frame" x="262" y="74" width="73.5" height="43.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="temp2">
@@ -587,7 +509,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-jO-4Lg" userLabel="temp1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-jO-4Lg">
                             <rect key="frame" x="17.5" y="222" width="73.5" height="43.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="temp3">
@@ -600,7 +522,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cms-2s-UND" userLabel="temp1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cms-2s-UND">
                             <rect key="frame" x="262" y="222" width="73.5" height="43.5"/>
                             <attributedString key="attributedText">
                                 <fragment content="temp4">
@@ -613,33 +535,33 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvF-Ty-Lzj">
-                            <rect key="frame" x="95" y="212" width="29" height="63"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m24-jh-HsF" userLabel="Ruota1">
+                            <rect key="frame" x="95" y="64" width="29" height="63"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="FvF-Ty-Lzj" secondAttribute="height" multiplier="29:63" id="JWB-Rq-dvV"/>
+                                <constraint firstAttribute="width" secondItem="m24-jh-HsF" secondAttribute="height" multiplier="29:63" id="GdG-SE-1kI"/>
+                                <constraint firstAttribute="height" constant="63" id="IuV-tV-RHZ"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-1o-kJj">
-                            <rect key="frame" x="229" y="212" width="29" height="63"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="LZw-1o-kJj" secondAttribute="height" multiplier="29:63" id="pML-kI-kxn"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-0d-Ilp">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-0d-Ilp" userLabel="Ruota2">
                             <rect key="frame" x="229" y="64" width="29" height="63"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="UBl-0d-Ilp" secondAttribute="height" multiplier="29:63" id="Q7Z-pF-3z1"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m24-jh-HsF">
-                            <rect key="frame" x="95" y="64" width="29" height="63"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvF-Ty-Lzj" userLabel="Ruota3">
+                            <rect key="frame" x="95" y="212" width="29" height="63"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="m24-jh-HsF" secondAttribute="height" multiplier="29:63" id="GdG-SE-1kI"/>
-                                <constraint firstAttribute="height" constant="63" id="IuV-tV-RHZ"/>
+                                <constraint firstAttribute="width" secondItem="FvF-Ty-Lzj" secondAttribute="height" multiplier="29:63" id="JWB-Rq-dvV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-1o-kJj" userLabel="Ruota4">
+                            <rect key="frame" x="229" y="212" width="29" height="63"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="LZw-1o-kJj" secondAttribute="height" multiplier="29:63" id="pML-kI-kxn"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lineaSeparazione" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-6n-TQJ">
@@ -704,8 +626,21 @@
                         <constraint firstItem="cms-2s-UND" firstAttribute="centerX" secondItem="R4L-is-dq3" secondAttribute="centerX" id="xvs-xV-Mtn"/>
                         <constraint firstItem="bbL-6n-TQJ" firstAttribute="top" secondItem="UNM-bm-cCt" secondAttribute="top" constant="338" id="zVO-6v-ntP"/>
                     </constraints>
+                    <connections>
+                        <outlet property="angoloDiAssetto" destination="dx4-DE-70T" id="pZl-Ld-xOV"/>
+                        <outlet property="auto" destination="m14-uO-YTk" id="CXI-8J-iyF"/>
+                        <outlet property="axis" destination="1HS-Tv-Ip9" id="R6a-3M-w22"/>
+                        <outlet property="ruota1" destination="m24-jh-HsF" id="8tJ-oe-3Nh"/>
+                        <outlet property="ruota2" destination="UBl-0d-Ilp" id="hsT-dF-y8C"/>
+                        <outlet property="ruota3" destination="FvF-Ty-Lzj" id="6ph-hu-DmK"/>
+                        <outlet property="ruota4" destination="LZw-1o-kJj" id="5Bw-uO-Mfp"/>
+                        <outlet property="temp1" destination="WSz-2H-Zl0" id="pDE-37-zJP"/>
+                        <outlet property="temp2" destination="R4L-is-dq3" id="FjT-O4-hHh"/>
+                        <outlet property="temp3" destination="O0z-jO-4Lg" id="4C4-Yj-Xdu"/>
+                        <outlet property="temp4" destination="cms-2s-UND" id="NGn-Fs-WAP"/>
+                    </connections>
                 </view>
-                <view contentMode="scaleToFill" id="hO2-vh-OUg" userLabel="View Gforce">
+                <view contentMode="scaleToFill" id="hO2-vh-OUg" userLabel="View Gforce" customClass="ViewGforceUIView" customModule="GialApp_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -759,7 +694,7 @@
                         <constraint firstItem="JpW-WQ-eYH" firstAttribute="top" secondItem="hO2-vh-OUg" secondAttribute="top" constant="338" id="rEf-Jy-Asg"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" id="la5-eK-wDE" userLabel="View Locked">
+                <view contentMode="scaleToFill" id="la5-eK-wDE" userLabel="View Accelerazione" customClass="ViewAccelerazioneUIView" customModule="GialApp_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -1076,7 +1011,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="C89-Fg-8oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
