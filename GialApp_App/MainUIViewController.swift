@@ -59,7 +59,7 @@ class MainUIViewController: UIViewController {
 
         frame0 = view0.frame
         
-
+        print(frame0)
         
     }
 
@@ -94,33 +94,37 @@ extension MainUIViewController {
             print("ho toccato la view delle ruote")
             let gestureView = movingView.subviews.first as! ViewRuoteUIView
             //questa gesture view è quella da allargare
-            animaAlCentro(movingView: gestureView, ofType: .ViewRuoteUIView)
+            movingView.tag = animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("ho toccato la view dell'accelerazione")
 
             let gestureView = movingView.subviews.first as! ViewAccelerazioneUIView
-            animaAlCentro(movingView: gestureView, ofType: .ViewAccelerazioneUIView)
+            movingView.tag = animaAlCentro(movingView: gestureView, subViewOfType: .ViewAccelerazioneUIView)
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("ho toccato la view dell FORZA G")
 
             let gestureView = movingView.subviews.first as! ViewGforceUIView
-            animaAlCentro(movingView: gestureView, ofType: .ViewGforceUIView)
+            movingView.tag = animaAlCentro(movingView: gestureView, subViewOfType: .ViewGforceUIView)
         }
         
     }
+
+    /// per evitare ridondanza ho fatto a parte un'altra funzione che contiente l'animazione vera e propria. essa a seconda dei vari casi, oltre ad eseguire sempre la stessa parte di codice ogni volta (che pure si poteva mettere in una funzione a parte ma non volevo esagerare con le funzioni innestate)  che mi sposta la view, esegue a seconda del tipo anche il codice che ti allarga propriamente il contenuto
+   ///
+   /// - Parameters:
+   ///   - movingView: la view presa dal gesture recognizer, quindi la view che è stata tappata
+   ///   - subViewOfType:  questo serve per sapere quale view sto allargando in modo da pter disporre correttamente il contenuto della subview
+   /// - Returns: il tag da assegnare alla view LA CUI SUBVIEW  è stata castata.
     
-  
-    /// per evitare ridondanza ho fatto a aprte un'altra funzione che contiente l'animazione vera e propria. essa a seconda dei vari casi, oltre ad eseguire sempre la stessa parte di codice ogni volta (che pure si poteva mettere in una funzione a parte ma non volevo esagerare con le funzioni innestate)  che mi sposta la view, esegue a seconda del tipo anche il codice che ti allarga propriamente il contenuto 
-    ///
-    /// - Parameters:
-    ///   - movingView: la view presa dal gesture recognizer, quindi la view che è stata tappata
-    ///   - ofType: questo serve per sapere quale view sto allargando in modo da pter disporre correttamente il contenuto
-    func animaAlCentro(movingView: UIView, ofType: typeOfClass) {
-        switch ofType {
+    func animaAlCentro(movingView: UIView, subViewOfType: typeOfClass) -> Int {
+        
+        var tagToAssignToView = Int()
+        switch subViewOfType {
         case .ViewAccelerazioneUIView:
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
                 let center = movingView.center
                 movingView.frame.size.width *= 2
                 movingView.frame.size.height *= 2
@@ -128,6 +132,7 @@ extension MainUIViewController {
                 //quì devi allargare il contenuto della view
             }, completion: {
                 if $0 {
+                    //qui gestisco il movimento verso il centro vero e proprio
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
@@ -135,23 +140,22 @@ extension MainUIViewController {
                         
                     }, completion: {
                         if $0 {
-                            movingView.tag = 99
+                            tagToAssignToView = 99
                         }
                     })
                     
                 }
                 
             })
-
-            break
+            return tagToAssignToView
         case .ViewGforceUIView:
         
-            break
+            return tagToAssignToView
         case .ViewRuoteUIView:
-            break
+            return tagToAssignToView
         default:
             print("fratè fatt a rot")
-            
+            break
         }
                 movingView.isUserInteractionEnabled = false
     }
