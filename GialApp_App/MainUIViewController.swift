@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class MainUIViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class MainUIViewController: UIViewController {
     @IBOutlet var viewGforce: ViewGforceUIView!
     @IBOutlet var viewAccelerazione: ViewAccelerazioneUIView!
     
+    let motionManager = CMMotionManager()
     
     
     override func viewDidLoad() {
