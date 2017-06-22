@@ -78,12 +78,11 @@ class TutorialThirdViewController: UIViewController {
         assettoImage.frame.origin.y = axis.center.y + 16
 
         assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(Float.pi/6))
 
-//        var angle = Float.pi/2
-//        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-//            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
-//        })
+        var angle = Float.pi/2
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        })
     }
 
   

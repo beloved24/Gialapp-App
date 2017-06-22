@@ -64,17 +64,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     @IBAction func changeImage(_ sender: Any) {
         let choiceAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let library = UIAlertAction(title: "Photo library", style: .default, handler: { _ in
+        let library = UIAlertAction(title: "Galleria foto", style: .default, handler: { _ in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true)
         })
         
-        let camera = UIAlertAction(title: "Shoot a photo", style: .default, handler: { _ in
+        let camera = UIAlertAction(title: "Scatta una foto", style: .default, handler: { _ in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker, animated: true)
         })
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: "Annulla", style: .cancel)
         
         choiceAlert.addAction(camera)
         choiceAlert.addAction(library)
@@ -118,11 +118,11 @@ extension ProfileViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 130
         
-        racerNumber.attributedPlaceholder = NSAttributedString(string: "RACE NUMBER", attributes: [NSForegroundColorAttributeName: placeholderGrey])
-        racerName.attributedPlaceholder = NSAttributedString(string: "NAME", attributes: [NSForegroundColorAttributeName: placeholderGrey])
-        racerSurname.attributedPlaceholder = NSAttributedString(string: "SURNAME", attributes: [NSForegroundColorAttributeName: placeholderGrey])
-        favouriteCar.attributedPlaceholder = NSAttributedString(string: "PREFERED CAR", attributes: [NSForegroundColorAttributeName: placeholderGrey])
-        otherCar.attributedPlaceholder = NSAttributedString(string: "OTHER CAR", attributes: [NSForegroundColorAttributeName: placeholderGrey])
+        racerNumber.attributedPlaceholder = NSAttributedString(string: "Numero di gara", attributes: [NSForegroundColorAttributeName: placeholderGrey])
+        racerName.attributedPlaceholder = NSAttributedString(string: "Nome", attributes: [NSForegroundColorAttributeName: placeholderGrey])
+        racerSurname.attributedPlaceholder = NSAttributedString(string: "Cognome", attributes: [NSForegroundColorAttributeName: placeholderGrey])
+        favouriteCar.attributedPlaceholder = NSAttributedString(string: "Auto preferita", attributes: [NSForegroundColorAttributeName: placeholderGrey])
+        otherCar.attributedPlaceholder = NSAttributedString(string: "Altra auto", attributes: [NSForegroundColorAttributeName: placeholderGrey])
     }
     
     func printFonts() {
