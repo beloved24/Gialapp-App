@@ -28,11 +28,11 @@ class ViewRuoteUIView: UIView {
     @IBOutlet weak var angoloDiAssetto: UILabel!
     
     
-    
+    /*
     func setView(<#parameters#>) -> <#return type#> {
         <#function body#>
     }
-    
+    */
     
     
 }

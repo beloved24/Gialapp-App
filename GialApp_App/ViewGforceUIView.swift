@@ -23,7 +23,7 @@ class ViewGforceUIView: UIView {
             super.init(frame: frame)
             
             for i in 0..<numeroDiFrecce {
-                let frecciaccia: UIImageView = UIImageView(image: #imageLiteral(resourceName: "fveccia.png"))
+                let frecciaccia: UIImageView = UIImageView(image: #imageLiteral(resourceName: "frecciaGiu"))
                 leFrecce.append(frecciaccia)
                 leFrecce[i].contentMode = .scaleToFill
                 leFrecce[i].frame.origin = .zero
