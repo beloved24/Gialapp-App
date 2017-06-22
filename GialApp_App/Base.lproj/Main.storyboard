@@ -693,9 +693,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-Pf-cg7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-Pf-cg7">
                             <rect key="frame" x="121" y="237" width="118" height="72"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="ADB-lX-MH7"/>
+                                <constraint firstAttribute="width" secondItem="eD1-Pf-cg7" secondAttribute="height" multiplier="59:36" id="hOF-sj-qPI"/>
+                            </constraints>
                             <attributedString key="attributedText">
                                 <fragment content="km/h">
                                     <attributes>
@@ -707,9 +710,12 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-lq-B1O">
-                            <rect key="frame" x="88" y="105" width="184" height="98"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-lq-B1O">
+                            <rect key="frame" x="100" y="125" width="161" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="Tga-DD-WEV"/>
+                                <constraint firstAttribute="width" secondItem="WmZ-lq-B1O" secondAttribute="height" multiplier="161:72" id="cC0-lA-zgf"/>
+                            </constraints>
                             <attributedString key="attributedText">
                                 <fragment content="Label">
                                     <attributes>
@@ -723,6 +729,12 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="eD1-Pf-cg7" firstAttribute="top" secondItem="WmZ-lq-B1O" secondAttribute="bottom" constant="40" id="9Wi-K8-zXS"/>
+                        <constraint firstItem="WmZ-lq-B1O" firstAttribute="centerX" secondItem="la5-eK-wDE" secondAttribute="centerX" id="UjQ-CV-pqy"/>
+                        <constraint firstItem="WmZ-lq-B1O" firstAttribute="top" secondItem="la5-eK-wDE" secondAttribute="top" constant="125" id="Y5C-a4-2Oj"/>
+                        <constraint firstItem="eD1-Pf-cg7" firstAttribute="centerX" secondItem="la5-eK-wDE" secondAttribute="centerX" id="bEg-fT-y7r"/>
+                    </constraints>
                 </view>
             </objects>
             <point key="canvasLocation" x="4466" y="252"/>
@@ -752,7 +764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jx3-18-5qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5447" y="-62"/>
+            <point key="canvasLocation" x="5922" y="85"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="M9g-dL-GZz">
