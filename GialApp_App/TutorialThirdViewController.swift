@@ -147,7 +147,7 @@ extension TutorialThirdViewController {
     
     }
     
-    func movingBackFunction (movingView: MyCustomUIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
+    func "..."{
         //la moving view quì è quella che sta al centro e che deve spostarsi in basso
         movingView.isUserInteractionEnabled = true
         
