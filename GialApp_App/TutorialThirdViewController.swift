@@ -14,7 +14,7 @@ class TutorialThirdViewController: UIViewController {
     //MARK: outlet and properties
     
     //MARK: outlet della view 0
-    @IBOutlet weak var oView0: UIView!
+    @IBOutlet weak var oView0: MyCustomUIView!
     @IBOutlet weak var firstSubviewView0: UIImageView!
     @IBOutlet weak var oGradiRuotaAvSx: UILabel!
     @IBOutlet weak var oGradiRuotaAvDx: UILabel!
@@ -28,9 +28,12 @@ class TutorialThirdViewController: UIViewController {
     
     
     //MARK: outlet della view 1
-    @IBOutlet weak var oView1: UIView!
-    @IBOutlet weak var oView2: UIView!
-    @IBOutlet weak var oView3: UIView!
+    @IBOutlet weak var oView1: MyCustomUIView!
+   
+    @IBOutlet weak var oView2: MyCustomUIView!
+    
+    @IBOutlet weak var oView3: MyCustomUIView!
+    
     @IBOutlet weak var containerView0: UIView!
     
     var frame123 = CGRect()
@@ -43,6 +46,8 @@ class TutorialThirdViewController: UIViewController {
     var frameGRANDEfirstSubviewView0 = CGRect()
     var frameContainersViewGrandi = CGRect()
     
+    var view1AlreadySetted : Bool = false
+    
     
     //MARK: elementi contenuti nelle altre view
     
@@ -51,6 +56,7 @@ class TutorialThirdViewController: UIViewController {
     let containerView1 = UIView()
     let averageLabelTitleView1 = UILabel()
     let lineaDiSeparazioneView1 = UIImageView(image: #imageLiteral(resourceName: "lineaSeparazione"))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,16 +99,17 @@ extension TutorialThirdViewController {
         let destinationFrame = gesture.view!.frame
         let destinationCenter = gesture.view?.center
         
-        movingBackFunction(movingView: self.view.viewWithTag(99)!, at: destinationCenter!, with: destinationFrame)
-        movingViewAtCenter(movingView: gesture.view!)
+        movingBackFunction(movingView: self.view.viewWithTag(99)! as! MyCustomUIView, at: destinationCenter!, with: destinationFrame)
+        movingViewAtCenter(movingView: gesture.view! as! MyCustomUIView)
         
     }
     
-    func movingViewAtCenter (movingView: UIView) {
+    func movingViewAtCenter (movingView: MyCustomUIView) {
         
         if let _  = movingView.subviews.first {
-             //movingView.subviews.first!.alpha = 0
-             // quella che contiente tutte le cose che non servono quando è piccola adesso deve tornare ad essere visibile
+            //quì gestisco la cafonata
+            //movingView.subviews.first!.alpha = 0
+            // quella che contiente tutte le cose che non servono quando è piccola adesso deve tornare ad essere visibile
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 let center = movingView.center
                 movingView.frame.size.width *= 2
@@ -110,26 +117,16 @@ extension TutorialThirdViewController {
                 movingView.center = center
                 movingView.subviews.first?.frame.size.width *= 2
                 movingView.subviews.first?.frame.size.height *= 2
-                movingView.subviews[1].frame.size.width *= 2
-                movingView.subviews[1].frame.size.height *= 2
-                
             }, completion: {
                 if $0 {
+                    //quì gestisco lo spostamento vero e proprio
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         movingView.subviews.first?.frame = self.frameGRANDEfirstSubviewView0
-                        movingView.subviews[1].alpha = 1
-                        movingView.subviews[1].frame = self.frameContainersViewGrandi
-                        
-                        self.lineaDiSeparazioneView1.frame.size.width = movingView.bounds.width*0.98
-                        self.lineaDiSeparazioneView1.frame.size.height = 1
-                        self.lineaDiSeparazioneView1.center.x = (movingView.subviews[1].center.x)
-                        self.lineaDiSeparazioneView1.center.y = (movingView.subviews.first?.center.y)! + (movingView.subviews.first?.frame.height)!/2 + 10
-                     movingView.subviews[1].addSubview(self.lineaDiSeparazioneView1)
-        
-                        movingView.alpha = 1
-//                        movingView.subviews[1].center = self.center0
+                        self.setView(movingView: movingView)
+                        movingView.subviews[1].alpha = 1 //rendo il containre visibile dopo che l'ho settato in moveview
+
                     }, completion: {
                         if $0 {
                             movingView.tag = 99
@@ -167,7 +164,7 @@ extension TutorialThirdViewController {
     
     }
     
-    func movingBackFunction (movingView: UIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
+    func movingBackFunction (movingView: MyCustomUIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
         //la moving view quì è quella che sta al centro e che deve spostarsi in basso
         movingView.isUserInteractionEnabled = true
         
@@ -193,6 +190,7 @@ extension TutorialThirdViewController {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //DEVI SETTARE IL FRAME DEL CONTAINER VIEW 
+                        
                         movingView.subviews[1].frame = movingView.bounds
                         movingView.subviews.first!.frame = movingView.bounds
                         movingView.subviews.first?.frame.size.width = movingView.bounds.width*0.9
@@ -277,7 +275,10 @@ extension TutorialThirdViewController {
         oView3.layer.borderWidth = 1.0
         oView3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
-        
+        oView0.identificativoView = 0
+        oView1.identificativoView = 1
+        oView2.identificativoView = 2
+        oView3.identificativoView = 3
         
         
         //MARK: setting degli elementi della view 0
@@ -292,7 +293,6 @@ extension TutorialThirdViewController {
         firstSubviewView0.center.y = oView0.center.y - firstSubviewView0.frame.height/2.5
         
         frameGRANDEfirstSubviewView0 = firstSubviewView0.frame
-        print("stampo il frameGRANDEfirstSubviewView0 dalla view did load prima di fare ogni altra modifica nella tap to enlarge: \n \(frameGRANDEfirstSubviewView0)")
         
         //-------------- labels
         
@@ -337,49 +337,58 @@ extension TutorialThirdViewController {
         
         //-------------- contaner view
         frameContainersViewGrandi = containerView0.frame
-        lineaDiSeparazioneView0.center.x = containerView0.center.x
+        //lineaDiSeparazioneView0.center.x = containerView0.center.x
         
         settingsDelleAltreView()
         
     }
     
     func settingsDelleAltreView() {
-        //--------- view1
+        //MARK: impostazioni iniziali della VIEW1
+        //adesso mi aggiungo alla view uno tutte le cose che questa contiene
+        oView1.addSubview(firstSubviewView1) //questa sarebbe l'immagine
+        oView1.addSubview(containerView1)
+        containerView1.addSubview( averageLabelTitleView1)
+        containerView1.addSubview(lineaDiSeparazioneView1)
+        //lineaDiSeparazioneView1.alpha = 1
+        
         firstSubviewView1.frame.size.width = oView1.bounds.width*0.9
         firstSubviewView1.frame.size.height = oView1.bounds.height*0.9
         firstSubviewView1.center.x = oView1.bounds.midX
         firstSubviewView1.center.y = oView1.bounds.midY
         firstSubviewView1.contentMode = .scaleAspectFit
-        oView1.addSubview(firstSubviewView1)
-        
-        containerView1.frame.size.width = oView1.bounds.width
-        containerView1.frame.size.height = oView1.bounds.height
-        containerView1.center.x = oView1.bounds.midX
-        containerView1.center.y = oView1.bounds.midY
-        containerView1.backgroundColor = UIColor.clear
-        containerView1.alpha = 1
-        oView1.addSubview(containerView1)
-//        
-//        lineaDiSeparazioneView1.frame.size.width = oView1.bounds.width*0.98
-//        lineaDiSeparazioneView1.frame.size.height = 1
-//
-//        lineaDiSeparazioneView1.center.x = containerView1.bounds.midX
-//        lineaDiSeparazioneView1.center.y = firstSubviewView1.bounds.midY + firstSubviewView1.bounds.height/2 + 10
+
         
         
-         averageLabelTitleView1.frame.size.width = firstSubviewView1.frame.width - 5
-         averageLabelTitleView1.frame.size.height = firstSubviewView1.frame.height/5
-         averageLabelTitleView1.contentMode = .bottomRight
-         averageLabelTitleView1.center.x = firstSubviewView1.bounds.midX - firstSubviewView1.bounds.width/2 -  averageLabelTitleView1.bounds.width/2
-         averageLabelTitleView1.center.y = lineaDiSeparazioneView1.bounds.midY + 10
-        averageLabelTitleView1.text = "AVERAGE"
-        averageLabelTitleView1.font = UIFont(name: "BebasNeue", size: 50)
-        averageLabelTitleView1.adjustsFontSizeToFitWidth = true
-        containerView1.addSubview( averageLabelTitleView1)
-        
-        
-        
-        
+    }
+    
+    
+    func setView(movingView: MyCustomUIView) {
+        switch movingView.identificativoView {
+        case 1:
+            print("sto settando il contenuto della view uno che si è appena spostata al centro")
+            
+            //per prima cosa inizio a settare le dimensioni del container
+            containerView1.frame = movingView.frame
+            averageLabelTitleView1.center = containerView1.center
+            averageLabelTitleView1.frame.size.width = 30
+            averageLabelTitleView1.frame.size.height = 10
+            
+            //adesso setto le dimensioni delle cose all'interno del container
+            lineaDiSeparazioneView1.frame.size.width = containerView1.bounds.width*0.9
+            lineaDiSeparazioneView1.frame.size.height = 1
+    
+            lineaDiSeparazioneView1.center.x = containerView1.bounds.midX
+            lineaDiSeparazioneView1.center.y = containerView1.bounds.midY + firstSubviewView1.bounds.height/2 + 10
+            
+            
+            break
+            
+        default:
+            //fdkj ddfjfdf  g o gsos o sgos ois o i
+            break
+            
+        }
     }
     
    
