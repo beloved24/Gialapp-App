@@ -75,7 +75,7 @@ class TutorialThirdViewController: UIViewController {
         assettoImage.center.x = axis.center.x
         axis.center.y = firstSubviewView0.center.y - 30
         assettoImage.frame.origin.y = axis.center.y + 16
-        
+
         assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         var angle = Float.pi/2
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
@@ -286,10 +286,10 @@ extension TutorialThirdViewController {
         
         //-------------- elemento principale
         
-        firstSubviewView0.frame.size.width = self.view.frame.width/2.5
-        firstSubviewView0.frame.size.height = self.view.frame.height/2.5
-        firstSubviewView0.center.x = self.view.center.x
-        firstSubviewView0.center.y = self.oView0.center.y - firstSubviewView0.frame.height/5
+        firstSubviewView0.frame.size.width = oView0.frame.width/2.5
+        firstSubviewView0.frame.size.height = oView0.frame.height/1.6
+        firstSubviewView0.center.x = oView0.center.x
+        firstSubviewView0.center.y = oView0.center.y - firstSubviewView0.frame.height/2.5
         
         frameGRANDEfirstSubviewView0 = firstSubviewView0.frame
         print("stampo il frameGRANDEfirstSubviewView0 dalla view did load prima di fare ogni altra modifica nella tap to enlarge: \n \(frameGRANDEfirstSubviewView0)")
