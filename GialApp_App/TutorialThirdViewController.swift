@@ -28,12 +28,9 @@ class TutorialThirdViewController: UIViewController {
     
     
     //MARK: outlet della view 1
-    @IBOutlet weak var oView1: MyCustomUIView!
-   
-    @IBOutlet weak var oView2: MyCustomUIView!
-    
-    @IBOutlet weak var oView3: MyCustomUIView!
-    
+    @IBOutlet weak var oView1: UIView!
+    @IBOutlet weak var oView2: UIView!
+    @IBOutlet weak var oView3: UIView!
     @IBOutlet weak var containerView0: UIView!
     
     var frame123 = CGRect()
@@ -83,7 +80,7 @@ class TutorialThirdViewController: UIViewController {
         assettoImage.frame.origin.y = axis.center.y + 16
 
         assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        var angle = Float.pi/2
+        let angle = Float.pi/2
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         })
@@ -276,9 +273,9 @@ extension TutorialThirdViewController {
         oView3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         
         oView0.identificativoView = 0
-        oView1.identificativoView = 1
-        oView2.identificativoView = 2
-        oView3.identificativoView = 3
+//        oView1.identificativoView = 1
+//        oView2.identificativoView = 2
+//        oView3.identificativoView = 3
         
         
         //MARK: setting degli elementi della view 0
