@@ -70,7 +70,6 @@
 		4914FB891EE41C4900CDF3AE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				340D0A6D1EF9587400B8FD7C /* Definitions.swift */,
 				49744D501ECDD10200950662 /* StartViewController.swift */,
 				340D0A751EF95AAB00B8FD7C /* TutorialFistViewController.swift */,
 				4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */,
@@ -113,7 +112,6 @@
 			children = (
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
 				4914FB901EE578EA00CDF3AE /* fonts */,
-				4914FB891EE41C4900CDF3AE /* View Controllers */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
 				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
 				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
@@ -125,6 +123,8 @@
 				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
 				4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */,
 				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
+				340D0A6D1EF9587400B8FD7C /* Definitions.swift */,
+				4914FB891EE41C4900CDF3AE /* View Controllers */,
 			);
 			path = GialApp_App;
 			sourceTree = "<group>";
