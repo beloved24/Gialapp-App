@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hgh-l9-uet">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Ru-w1-FOK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -415,8 +415,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
-                                <rect key="frame" x="7.5" y="18" width="360" height="460"/>
+                            <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
+                                <rect key="frame" x="7.5" y="64" width="360" height="420"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
                                         <rect key="frame" x="122" y="53" width="130" height="233"/>
@@ -543,8 +543,100 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM5-LM-4Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="UNM-bm-cCt" userLabel="View Ruote">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="axis" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-Tv-Ip9" userLabel="Axis">
+                            <rect key="frame" x="60" y="116" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assetto" translatesAutoresizingMaskIntoConstraints="NO" id="0cj-23-mcZ">
+                            <rect key="frame" x="175" y="182" width="10" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="m14-uO-YTk" userLabel="auto">
+                            <rect key="frame" x="90" y="40" width="180" height="285.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="m14-uO-YTk" secondAttribute="height" multiplier="53:84" id="fwl-5J-bGk"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-2H-Zl0" userLabel="temp1">
+                            <rect key="frame" x="7" y="75" width="84" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="temp1">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="36" name="BebasNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-is-dq3" userLabel="temp1">
+                            <rect key="frame" x="263" y="75" width="84" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="temp2">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="36" name="BebasNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0z-jO-4Lg" userLabel="temp1">
+                            <rect key="frame" x="0.0" y="224" width="85" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="temp3">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="36" name="BebasNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cms-2s-UND" userLabel="temp1">
+                            <rect key="frame" x="263" y="224" width="84" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="temp4">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="36" name="BebasNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="m14-uO-YTk" firstAttribute="width" secondItem="UNM-bm-cCt" secondAttribute="width" multiplier="1/2" id="WPH-3M-oEl"/>
+                        <constraint firstItem="m14-uO-YTk" firstAttribute="centerX" secondItem="UNM-bm-cCt" secondAttribute="centerX" id="gQY-BU-mHY"/>
+                        <constraint firstItem="m14-uO-YTk" firstAttribute="top" secondItem="UNM-bm-cCt" secondAttribute="top" constant="40" id="n5n-ob-vPt"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="hO2-vh-OUg" userLabel="View Gforce">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" id="la5-eK-wDE" userLabel="View Locked">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="4264.8000000000002" y="-60.719640179910051"/>
+            <point key="canvasLocation" x="4466" y="252"/>
         </scene>
         <!--Tutorial Fourth-->
         <scene sceneID="Hoa-J1-sq2">
