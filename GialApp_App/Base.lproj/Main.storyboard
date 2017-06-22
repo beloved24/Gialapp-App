@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="id9-tz-FYW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hgh-l9-uet">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -419,44 +419,66 @@
                                 <rect key="frame" x="7.5" y="18" width="360" height="460"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoRuoteTemperatura" translatesAutoresizingMaskIntoConstraints="NO" id="Pdd-v1-szw">
-                                        <rect key="frame" x="122" y="104" width="130" height="233"/>
+                                        <rect key="frame" x="122" y="53" width="130" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGq-gq-8FW" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="360" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="ov5-Jr-uxj" userLabel="Gradi Ruota AvantiSx">
-                                                <rect key="frame" x="23" y="103" width="96" height="46"/>
+                                                <rect key="frame" x="23" y="53" width="96" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="zJg-9M-hsD" userLabel="Gradi Ruota AvantiDx">
-                                                <rect key="frame" x="261" y="103" width="96" height="46"/>
+                                                <rect key="frame" x="261" y="53" width="96" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="0gU-c5-ZxU" userLabel="Gradi Ruota DietroDx">
-                                                <rect key="frame" x="261" y="244" width="96" height="46"/>
+                                                <rect key="frame" x="261" y="194" width="96" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="sox-7R-ke6" userLabel="Gradi Ruota DietroSx">
-                                                <rect key="frame" x="25" y="244" width="90" height="46"/>
+                                                <rect key="frame" x="25" y="194" width="90" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="60"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lineaSeparazione" translatesAutoresizingMaskIntoConstraints="NO" id="JYq-sl-tCP">
-                                                <rect key="frame" x="0.0" y="354" width="360" height="1"/>
+                                                <rect key="frame" x="0.0" y="305" width="360" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="axis" translatesAutoresizingMaskIntoConstraints="NO" id="6M0-Do-iad">
+                                                <rect key="frame" x="97" y="89" width="174" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assetto" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-Dt-bMW">
+                                                <rect key="frame" x="179" y="130" width="10" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assetto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-i6-tpm">
+                                                <rect key="frame" x="154" y="315" width="59" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-yz-LNP">
+                                                <rect key="frame" x="139" y="330" width="82" height="73"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="55"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -488,7 +510,7 @@
                         <constraints>
                             <constraint firstItem="qbd-cR-994" firstAttribute="bottom" secondItem="d4T-9L-KQ7" secondAttribute="top" multiplier="0.985" id="0d9-cQ-Kca"/>
                             <constraint firstItem="tC8-yG-LmF" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.96" id="2fv-1Y-QN6"/>
-                            <constraint firstItem="tC8-yG-LmF" firstAttribute="height" secondItem="vfd-iA-9G5" secondAttribute="height" multiplier="0.69" id="3Ck-C6-aEX"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="height" secondItem="vfd-iA-9G5" secondAttribute="height" multiplier="0.63" id="3Ck-C6-aEX"/>
                             <constraint firstItem="Des-7W-YhJ" firstAttribute="width" secondItem="g8s-h8-lfs" secondAttribute="width" id="5iL-iO-jJG"/>
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="centerX" secondItem="vfd-iA-9G5" secondAttribute="centerX" id="62o-iA-3sg"/>
                             <constraint firstItem="Des-7W-YhJ" firstAttribute="trailing" secondItem="vfd-iA-9G5" secondAttribute="trailing" multiplier="0.98" id="6dS-BQ-AIV"/>
@@ -498,12 +520,15 @@
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="bottom" secondItem="qbd-cR-994" secondAttribute="bottom" id="LxU-vr-MDc"/>
                             <constraint firstItem="qbd-cR-994" firstAttribute="leading" secondItem="vfd-iA-9G5" secondAttribute="trailing" multiplier="0.02" id="Oc0-NJ-dvi"/>
                             <constraint firstItem="tC8-yG-LmF" firstAttribute="centerX" secondItem="vfd-iA-9G5" secondAttribute="centerX" id="Sio-Om-1RB"/>
-                            <constraint firstItem="tC8-yG-LmF" firstAttribute="top" secondItem="vfd-iA-9G5" secondAttribute="topMargin" constant="18" id="Z5W-gZ-h1K"/>
+                            <constraint firstItem="tC8-yG-LmF" firstAttribute="top" secondItem="vfd-iA-9G5" secondAttribute="top" constant="64" id="Z5W-gZ-h1K"/>
                             <constraint firstItem="g8s-h8-lfs" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.92/3" id="mow-OO-wxc"/>
                             <constraint firstItem="qbd-cR-994" firstAttribute="width" secondItem="vfd-iA-9G5" secondAttribute="width" multiplier="0.92/3" id="qJn-OJ-Nhy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="assettoImage" destination="YAL-Dt-bMW" id="y5I-au-zdH"/>
+                        <outlet property="assettoNumber" destination="pHd-yz-LNP" id="ISG-el-M2I"/>
+                        <outlet property="axis" destination="6M0-Do-iad" id="Bue-XH-ube"/>
                         <outlet property="containerView0" destination="ZGq-gq-8FW" id="TMK-y2-bXm"/>
                         <outlet property="firstSubviewView0" destination="Pdd-v1-szw" id="jTN-sY-EsK"/>
                         <outlet property="lineaDiSeparazioneView0" destination="JYq-sl-tCP" id="SKU-2S-2EZ"/>
@@ -1074,9 +1099,11 @@
     <resources>
         <image name="antonio_landscape" width="505" height="425"/>
         <image name="antonio_portrait" width="444" height="376"/>
+        <image name="assetto" width="11" height="231"/>
         <image name="autoRuoteTemperatura" width="346" height="544"/>
         <image name="auto_posizione" width="680" height="562"/>
         <image name="auto_start" width="691" height="190"/>
+        <image name="axis" width="619" height="434"/>
         <image name="conferma_button" width="534" height="49"/>
         <image name="imageView:Z61-Tn-gli:image" width="505" height="425">
             <mutableData key="keyedArchiveRepresentation">

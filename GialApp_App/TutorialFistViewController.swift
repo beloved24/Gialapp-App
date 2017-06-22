@@ -24,11 +24,7 @@ class TutorialFistViewController: UIViewController {
         super.didReceiveMemoryWarning()
       
     }
-    
-  
 }
-
-
 
 extension TutorialFistViewController {
     
