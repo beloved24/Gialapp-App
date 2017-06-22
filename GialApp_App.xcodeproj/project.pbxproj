@@ -22,6 +22,7 @@
 		4938C2F81EFC161A0035CD44 /* ViewGforceUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */; };
 		4938C2FA1EFC162D0035CD44 /* ViewAccelerazioneUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */; };
 		4938C2FC1EFC1AB70035CD44 /* MainUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */; };
+		4938C3001EFC70790035CD44 /* ViewLockedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */; };
 		49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D4E1ECDD10200950662 /* AppDelegate.swift */; };
 		49744D511ECDD10200950662 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49744D501ECDD10200950662 /* StartViewController.swift */; };
 		49744D541ECDD10200950662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49744D521ECDD10200950662 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGforceUIView.swift; sourceTree = "<group>"; };
 		4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAccelerazioneUIView.swift; sourceTree = "<group>"; };
 		4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainUIViewController.swift; sourceTree = "<group>"; };
+		4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLockedUIView.swift; sourceTree = "<group>"; };
 		49744D4B1ECDD10200950662 /* GialApp_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GialApp_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49744D4E1ECDD10200950662 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49744D501ECDD10200950662 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
 				4914FB901EE578EA00CDF3AE /* fonts */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
+				4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */,
 				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
 				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
 				4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */,
@@ -219,6 +222,7 @@
 				4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */,
 				4938C2F41EFBD1DA0035CD44 /* MyCustomUIView.swift in Sources */,
 				49CBE5C81EEB220100F5327F /* MyCustomImageView.swift in Sources */,
+				4938C3001EFC70790035CD44 /* ViewLockedUIView.swift in Sources */,
 				49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
