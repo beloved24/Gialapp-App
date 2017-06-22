@@ -457,6 +457,28 @@
                                                 <rect key="frame" x="0.0" y="354" width="360" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="axis" translatesAutoresizingMaskIntoConstraints="NO" id="6M0-Do-iad">
+                                                <rect key="frame" x="97" y="139" width="174" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assetto" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-Dt-bMW">
+                                                <rect key="frame" x="179" y="180" width="10" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Assetto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53b-i6-tpm">
+                                                <rect key="frame" x="150" y="369" width="59" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHd-yz-LNP">
+                                                <rect key="frame" x="149" y="390" width="70" height="62"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="55"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </view>
                                 </subviews>
@@ -504,6 +526,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="assettoImage" destination="YAL-Dt-bMW" id="y5I-au-zdH"/>
+                        <outlet property="assettoNumber" destination="pHd-yz-LNP" id="ISG-el-M2I"/>
+                        <outlet property="axis" destination="6M0-Do-iad" id="Bue-XH-ube"/>
                         <outlet property="containerView0" destination="ZGq-gq-8FW" id="TMK-y2-bXm"/>
                         <outlet property="firstSubviewView0" destination="Pdd-v1-szw" id="jTN-sY-EsK"/>
                         <outlet property="lineaDiSeparazioneView0" destination="JYq-sl-tCP" id="SKU-2S-2EZ"/>
@@ -1074,9 +1099,11 @@
     <resources>
         <image name="antonio_landscape" width="505" height="425"/>
         <image name="antonio_portrait" width="444" height="376"/>
+        <image name="assetto" width="11" height="231"/>
         <image name="autoRuoteTemperatura" width="346" height="544"/>
         <image name="auto_posizione" width="680" height="562"/>
         <image name="auto_start" width="691" height="190"/>
+        <image name="axis" width="619" height="434"/>
         <image name="conferma_button" width="534" height="49"/>
         <image name="imageView:Z61-Tn-gli:image" width="505" height="425">
             <mutableData key="keyedArchiveRepresentation">

@@ -22,14 +22,15 @@ class TutorialThirdViewController: UIViewController {
     @IBOutlet weak var oGradiRuotaDieDx: UILabel!
     @IBOutlet weak var lineaDiSeparazioneView0: UIImageView!
     
+    @IBOutlet weak var assettoNumber: UILabel!
+    @IBOutlet weak var axis: UIImageView!
+    @IBOutlet weak var assettoImage: UIImageView!
+    
     
     //MARK: outlet della view 1
     @IBOutlet weak var oView1: UIView!
-   
     @IBOutlet weak var oView2: UIView!
-    
     @IBOutlet weak var oView3: UIView!
-    
     @IBOutlet weak var containerView0: UIView!
     
     var frame123 = CGRect()
@@ -51,18 +52,15 @@ class TutorialThirdViewController: UIViewController {
     let averageLabelTitleView1 = UILabel()
     let lineaDiSeparazioneView1 = UIImageView(image: #imageLiteral(resourceName: "lineaSeparazione"))
     
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsForSwitchingViews()
-  
+        
+        assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        var angle = Float.pi/2
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {
