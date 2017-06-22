@@ -496,7 +496,7 @@ di fronte a te</string>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
-                                <rect key="frame" x="252.5" y="490" width="115" height="167"/>
+                                <rect key="frame" x="253" y="490" width="114.5" height="167"/>
                                 <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1" customClass="MyCustomUIView" customModule="GialApp_App" customModuleProvider="target">
@@ -984,46 +984,79 @@ di fronte a te</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX TEMP. gomme" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff0-k5-w3s">
-                                                            <rect key="frame" x="8" y="49" width="198.5" height="17"/>
+                                                            <rect key="frame" x="8" y="49" width="118.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX forza g" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KJ-lO-Zq7">
-                                                            <rect key="frame" x="8" y="73" width="198.5" height="17"/>
+                                                            <rect key="frame" x="8" y="73" width="118.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX velocità" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgF-fe-GER">
-                                                            <rect key="frame" x="8" y="97" width="198.5" height="17"/>
+                                                            <rect key="frame" x="8" y="97" width="118.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-nn-LWt">
+                                                            <rect key="frame" x="126" y="49" width="80.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 G" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hq6-h9-39k">
+                                                            <rect key="frame" x="126" y="73" width="80.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 KM\h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-RW-ebk">
+                                                            <rect key="frame" x="126" y="97" width="80.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="jgF-fe-GER" secondAttribute="trailing" id="41A-EO-40o"/>
+                                                        <constraint firstItem="DQM-RW-ebk" firstAttribute="leading" secondItem="jgF-fe-GER" secondAttribute="trailing" id="A6R-s2-16N"/>
                                                         <constraint firstItem="4KJ-lO-Zq7" firstAttribute="leading" secondItem="vP4-fq-kmp" secondAttribute="leading" constant="8" id="EaX-io-5Lz"/>
+                                                        <constraint firstItem="XFh-nn-LWt" firstAttribute="leading" secondItem="ff0-k5-w3s" secondAttribute="trailing" id="Eml-DF-GCf"/>
                                                         <constraint firstItem="73J-gq-Yu9" firstAttribute="top" secondItem="vP4-fq-kmp" secondAttribute="top" constant="3" id="IiV-A8-IfT"/>
                                                         <constraint firstItem="ff0-k5-w3s" firstAttribute="top" secondItem="73J-gq-Yu9" secondAttribute="bottom" constant="12" id="M6t-Kr-BjV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ff0-k5-w3s" secondAttribute="trailing" constant="80" id="NgG-rR-Zat"/>
+                                                        <constraint firstItem="Hq6-h9-39k" firstAttribute="leading" secondItem="4KJ-lO-Zq7" secondAttribute="trailing" id="Rhp-qp-Uh8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DQM-RW-ebk" secondAttribute="bottom" constant="7" id="Sny-By-78l"/>
+                                                        <constraint firstItem="Hq6-h9-39k" firstAttribute="top" secondItem="XFh-nn-LWt" secondAttribute="bottom" constant="7" id="VZj-Xf-c1b"/>
                                                         <constraint firstAttribute="bottom" secondItem="jgF-fe-GER" secondAttribute="bottom" constant="7" id="Vtv-hU-m1b"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4KJ-lO-Zq7" secondAttribute="trailing" constant="80" id="Y1A-p5-qaV"/>
                                                         <constraint firstItem="jgF-fe-GER" firstAttribute="leading" secondItem="vP4-fq-kmp" secondAttribute="leading" constant="8" id="cuE-iP-ysH"/>
                                                         <constraint firstItem="ff0-k5-w3s" firstAttribute="leading" secondItem="vP4-fq-kmp" secondAttribute="leading" constant="8" id="eHl-h2-iCA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XFh-nn-LWt" secondAttribute="trailing" id="gbA-Y7-e3S"/>
                                                         <constraint firstAttribute="trailing" secondItem="73J-gq-Yu9" secondAttribute="trailing" id="hPf-kg-8x2"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4KJ-lO-Zq7" secondAttribute="trailing" id="jQw-Gm-VP1"/>
                                                         <constraint firstItem="4KJ-lO-Zq7" firstAttribute="top" secondItem="ff0-k5-w3s" secondAttribute="bottom" constant="7" id="lsQ-Sz-MdN"/>
                                                         <constraint firstItem="jgF-fe-GER" firstAttribute="top" secondItem="4KJ-lO-Zq7" secondAttribute="bottom" constant="7" id="oMh-3T-fQx"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ff0-k5-w3s" secondAttribute="trailing" id="pUY-S3-uOU"/>
                                                         <constraint firstItem="73J-gq-Yu9" firstAttribute="leading" secondItem="vP4-fq-kmp" secondAttribute="leading" constant="8" id="v1X-2H-eMh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jgF-fe-GER" secondAttribute="trailing" constant="80" id="w0M-ZD-wM7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="DQM-RW-ebk" secondAttribute="trailing" id="x6N-4F-foG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hq6-h9-39k" secondAttribute="trailing" id="xZp-mt-Ugs"/>
+                                                        <constraint firstItem="DQM-RW-ebk" firstAttribute="top" secondItem="Hq6-h9-39k" secondAttribute="bottom" constant="7" id="y0W-aX-aPQ"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9d-Xi-0rG">
                                                     <rect key="frame" x="211.5" y="2" width="163.5" height="121"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="durata sessione" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqF-o6-HBn">
-                                                            <rect key="frame" x="-0.5" y="49" width="163.5" height="24"/>
+                                                            <rect key="frame" x="-0.5" y="18.5" width="163.5" height="24"/>
+                                                            <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                                            <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N. minuti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSE-6x-xPh">
+                                                            <rect key="frame" x="0.5" y="80" width="163.5" height="24"/>
                                                             <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
                                                             <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1031,9 +1064,12 @@ di fronte a te</string>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="cSE-6x-xPh" secondAttribute="bottom" constant="17" id="7xZ-h1-Apy"/>
                                                         <constraint firstItem="yqF-o6-HBn" firstAttribute="centerX" secondItem="g9d-Xi-0rG" secondAttribute="centerX" id="8oX-Xj-sHO"/>
-                                                        <constraint firstItem="yqF-o6-HBn" firstAttribute="centerY" secondItem="g9d-Xi-0rG" secondAttribute="centerY" id="8yE-d4-0RD"/>
+                                                        <constraint firstItem="yqF-o6-HBn" firstAttribute="top" secondItem="g9d-Xi-0rG" secondAttribute="top" constant="18.5" id="YqM-Yt-YRU"/>
+                                                        <constraint firstItem="cSE-6x-xPh" firstAttribute="centerX" secondItem="g9d-Xi-0rG" secondAttribute="centerX" id="fhH-zp-RLE"/>
                                                         <constraint firstItem="yqF-o6-HBn" firstAttribute="width" secondItem="g9d-Xi-0rG" secondAttribute="width" id="rdw-rN-4Y3"/>
+                                                        <constraint firstItem="cSE-6x-xPh" firstAttribute="width" secondItem="g9d-Xi-0rG" secondAttribute="width" id="wv5-RX-vwI"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1049,6 +1085,13 @@ di fronte a te</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="durataSessione" destination="cSE-6x-xPh" id="JfG-sa-9GP"/>
+                                            <outlet property="maxGForce" destination="Hq6-h9-39k" id="sAK-nC-V45"/>
+                                            <outlet property="maxTempGomme" destination="XFh-nn-LWt" id="KQS-Rr-SUF"/>
+                                            <outlet property="maxVelocità" destination="DQM-RW-ebk" id="5cW-kW-YxO"/>
+                                            <outlet property="nomeSessione" destination="73J-gq-Yu9" id="Hfz-lf-JSs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -1060,13 +1103,13 @@ di fronte a te</string>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647060000004" green="0.3921568627" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Red-Sk-fLs" secondAttribute="trailing" id="9AJ-mR-Kp3"/>
+                            <constraint firstAttribute="trailing" secondItem="Red-Sk-fLs" secondAttribute="trailing" constant="5" id="9AJ-mR-Kp3"/>
                             <constraint firstAttribute="bottom" secondItem="T0U-ML-vSA" secondAttribute="bottom" id="ARa-on-ReY"/>
                             <constraint firstItem="Red-Sk-fLs" firstAttribute="leading" secondItem="T0U-ML-vSA" secondAttribute="trailing" constant="5" id="D5V-an-RKw"/>
                             <constraint firstItem="T0U-ML-vSA" firstAttribute="top" secondItem="9QM-1a-x5h" secondAttribute="bottom" id="DmM-lv-5hx"/>
                             <constraint firstItem="T0U-ML-vSA" firstAttribute="top" secondItem="9QM-1a-x5h" secondAttribute="bottom" id="GSN-bS-Sfe"/>
                             <constraint firstItem="ofP-Op-fWS" firstAttribute="top" secondItem="Red-Sk-fLs" secondAttribute="bottom" id="HoU-Wn-rPM"/>
-                            <constraint firstItem="T0U-ML-vSA" firstAttribute="leading" secondItem="RNA-3a-lBb" secondAttribute="leading" id="M0j-oq-MEj"/>
+                            <constraint firstItem="T0U-ML-vSA" firstAttribute="leading" secondItem="RNA-3a-lBb" secondAttribute="leading" constant="5" id="M0j-oq-MEj"/>
                             <constraint firstItem="ofP-Op-fWS" firstAttribute="top" secondItem="Red-Sk-fLs" secondAttribute="bottom" id="VpU-fk-VOk"/>
                             <constraint firstAttribute="trailing" secondItem="Red-Sk-fLs" secondAttribute="trailing" id="W8k-F8-HbF"/>
                             <constraint firstItem="T0U-ML-vSA" firstAttribute="height" secondItem="RNA-3a-lBb" secondAttribute="height" multiplier="2/5" id="bTw-uA-waM"/>
@@ -1139,7 +1182,7 @@ di fronte a te</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1911" y="-867"/>
+            <point key="canvasLocation" x="1909.5999999999999" y="-867.61619190404804"/>
         </scene>
     </scenes>
     <resources>

@@ -28,6 +28,20 @@ class ProfileViewController: UIViewController {
         tableView.backgroundColor = blueMegaride
         imagePicker.delegate = self
         configureProfile()
+        
+        racerImage.image = loadImageFromPath(path: "profilo.png")
+        loadStrings()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        let defaults: UserDefaults = UserDefaults.standard
+        
+        defaults.set(racerNumber.text, forKey: "number")
+        defaults.set(racerName.text, forKey: "name")
+        defaults.set(racerSurname.text, forKey: "surname")
+        defaults.set(favouriteCar.text, forKey: "favouriteCar")
+        defaults.set(otherCar.text, forKey: "otherCar")
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,13 +61,13 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell") as! ProfileTableViewCell
-        cell.configure()
+        cell.configure(index: indexPath)
         
         return cell
     }
@@ -87,6 +101,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             racerImage.contentMode = .scaleAspectFit
             racerImage.image = pickedImage
+            print(getDocumentsURL(filename: "profilo.png"))
+            saveImage(image: pickedImage, path: getDocumentsURL(filename: "profilo.png"))
         }
         dismiss(animated: true, completion: nil)
     }
@@ -112,6 +128,8 @@ extension ProfileViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: Settaggio Placeholder e rowheight
+
 extension ProfileViewController {
     
     func configureProfile() {
@@ -135,6 +153,55 @@ extension ProfileViewController {
             {
                 print(" == \(names)")
             }
+        }
+    }
+}
+
+// MARK: Caricamento/Salvataggio dati
+
+extension ProfileViewController {
+    
+    func getDocumentsURL(filename: String) -> URL {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent(filename)
+        return fileURL
+    }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        let file = getDocumentsURL(filename: path).path
+        print("\necco il file " + file)
+        var image = UIImage(contentsOfFile: file)
+        
+        if image == nil {
+            print("missing image at: \(path)")
+            image = UIImage(named: "pilota-con-fotocamera.png")
+        }
+        return image
+    }
+    
+    func saveImage (image: UIImage, path: URL ) {
+        let pngImageData = UIImagePNGRepresentation(image)!
+        //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
+        try! pngImageData.write(to: path)
+    }
+    
+    func loadStrings() {
+        let defaults: UserDefaults = UserDefaults.standard
+
+        if let number = defaults.string(forKey: "number") {
+            racerNumber.text = number
+        }
+        if let name = defaults.string(forKey: "name") {
+            racerName.text = name
+        }
+        if let surname = defaults.string(forKey: "surname") {
+            racerSurname.text = surname
+        }
+        if let favCar = defaults.string(forKey: "favouriteCar") {
+            favouriteCar.text = favCar
+        }
+        if let other = defaults.string(forKey: "otherCar") {
+            otherCar.text = other
         }
     }
 }
