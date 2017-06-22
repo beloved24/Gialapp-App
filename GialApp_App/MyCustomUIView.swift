@@ -17,7 +17,11 @@ class MyCustomUIView: UIView {
         // Drawing code
     }
     */
-    
+   /*
+    override func addSubview(_ view: UIView) {
+        <#code#>
+    }
+    */
     var identificativoView : Int = 999
 
 }

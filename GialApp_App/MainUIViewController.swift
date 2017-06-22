@@ -25,11 +25,11 @@ class MainUIViewController: UIViewController {
         super.viewDidLoad()
         view0.addSubview(viewRuote)
         view1.addSubview(viewGforce)
-        view3.addSubview(viewAccelerazione)
+        viewGforce.frame.size.width = view1.frame.width
+        viewGforce.frame.size.height = view1.frame.height
+     
         
-        //viewAccelerazione.frame.size.width = view0
         
-    
 
         
     }

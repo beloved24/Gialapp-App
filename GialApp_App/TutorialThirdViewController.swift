@@ -43,7 +43,7 @@ class TutorialThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsForSwitchingViews()
-        settingsForAnimation()
+       // settingsForAnimation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -270,58 +270,14 @@ extension TutorialThirdViewController {
         
         //-------------- elemento principale
         
-        firstSubviewView0.frame.size.width = oView0.frame.width/2.5
-        firstSubviewView0.frame.size.height = oView0.frame.height/1.6
-        firstSubviewView0.center.x = oView0.center.x
-        firstSubviewView0.center.y = oView0.center.y - firstSubviewView0.frame.height/2.5
-        
-        frameGRANDEfirstSubviewView0 = firstSubviewView0.frame
         
         //-------------- labels
         
-        oGradiRuotaAvSx.frame.size.width = firstSubviewView0.frame.width - 5
-        oGradiRuotaAvSx.frame.size.height = firstSubviewView0.frame.height/5
-        oGradiRuotaAvSx.contentMode = .bottomRight
-        oGradiRuotaAvSx.frame.origin.x = firstSubviewView0.frame.origin.x - oGradiRuotaAvSx.frame.width - 5
-        oGradiRuotaAvSx.frame.origin.y = firstSubviewView0.frame.origin.y
-        oGradiRuotaAvSx.text = "0.0°"
-        oGradiRuotaAvSx.adjustsFontSizeToFitWidth = true
-        //oGradiRuotaAvSx.backgroundColor = UIColor.red
+               //oGradiRuotaAvSx.backgroundColor = UIColor.red
         
         
-        oGradiRuotaAvDx.frame.size.width = oGradiRuotaAvSx.frame.width
-        oGradiRuotaAvDx.frame.size.height = oGradiRuotaAvSx.frame.height
-        //oGradiRuotaAvDx.contentMode = .bottomRight
-        oGradiRuotaAvDx.frame.origin.x = firstSubviewView0.frame.origin.x + firstSubviewView0.frame.width
-        oGradiRuotaAvDx.frame.origin.y = firstSubviewView0.frame.origin.y
-        oGradiRuotaAvDx.text = "0.0°"
-        oGradiRuotaAvDx.adjustsFontSizeToFitWidth = true
-        //oGradiRuotaAvDx.backgroundColor = UIColor.red
-        
-        oGradiRuotaDieSx.frame.size.width = oGradiRuotaAvSx.frame.width
-        oGradiRuotaDieSx.frame.size.height = oGradiRuotaAvSx.frame.height
-        oGradiRuotaDieSx.frame.origin.x = oGradiRuotaAvSx.frame.origin.x
-        oGradiRuotaDieSx.frame.origin.y = firstSubviewView0.frame.origin.y + firstSubviewView0.frame.height - oGradiRuotaDieSx.frame.height
-        oGradiRuotaDieSx.text = "0.0°"
-        //oGradiRuotaDieSx.backgroundColor = UIColor.red
-        
-        oGradiRuotaDieDx.frame.size.width = oGradiRuotaAvSx.frame.width
-        oGradiRuotaDieDx.frame.size.height = oGradiRuotaAvDx.frame.height
-        oGradiRuotaDieDx.frame.origin.x = oGradiRuotaAvDx.frame.origin.x
-        oGradiRuotaDieDx.frame.origin.y = oGradiRuotaDieSx.frame.origin.y
-        oGradiRuotaDieDx.text = "0.0°"
-        //oGradiRuotaDieDx.backgroundColor = UIColor.red
-        
-        //----------------- linea di separazione 
-        
-        lineaDiSeparazioneView0.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
-        lineaDiSeparazioneView0.frame.size.width = oView0.frame.size.width*0.98
-        lineaDiSeparazioneView0.frame.size.height = 1
-        
-        //-------------- contaner view
-        frameContainersViewGrandi = containerView0.frame
-        //lineaDiSeparazioneView0.center.x = containerView0.center.x
-        
+    
+       
         settingsDelleAltreView()
         
     }
@@ -329,19 +285,6 @@ extension TutorialThirdViewController {
     func settingsDelleAltreView() {
         //MARK: impostazioni iniziali della VIEW1
         //adesso mi aggiungo alla view uno tutte le cose che questa contiene
-        oView1.addSubview(firstSubviewView1) //questa sarebbe l'immagine
-        oView1.addSubview(containerView1)
-        containerView1.addSubview( averageLabelTitleView1)
-        containerView1.addSubview(lineaDiSeparazioneView1)
-        //lineaDiSeparazioneView1.alpha = 1
-        
-        firstSubviewView1.frame.size.width = oView1.bounds.width*0.9
-        firstSubviewView1.frame.size.height = oView1.bounds.height*0.9
-        firstSubviewView1.center.x = oView1.bounds.midX
-        firstSubviewView1.center.y = oView1.bounds.midY
-        firstSubviewView1.contentMode = .scaleAspectFit
-
-        
         
     }
     
@@ -352,18 +295,7 @@ extension TutorialThirdViewController {
             print("sto settando il contenuto della view uno che si è appena spostata al centro")
             
             //per prima cosa inizio a settare le dimensioni del container
-            containerView1.frame = movingView.frame
-            averageLabelTitleView1.center = containerView1.center
-            averageLabelTitleView1.frame.size.width = 30
-            averageLabelTitleView1.frame.size.height = 10
-            
-            //adesso setto le dimensioni delle cose all'interno del container
-            lineaDiSeparazioneView1.frame.size.width = containerView1.bounds.width*0.9
-            lineaDiSeparazioneView1.frame.size.height = 1
-    
-            lineaDiSeparazioneView1.center.x = containerView1.bounds.midX
-            lineaDiSeparazioneView1.center.y = containerView1.bounds.midY + firstSubviewView1.bounds.height/2 + 10
-            
+          
             
             break
             
