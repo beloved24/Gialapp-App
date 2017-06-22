@@ -660,6 +660,33 @@
                 <view contentMode="scaleToFill" id="hO2-vh-OUg" userLabel="View Gforce">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc3-qu-trB">
+                            <rect key="frame" x="121" y="346" width="118" height="63"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Label">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="60" name="BebasNeue"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="autoSenzaRuote" translatesAutoresizingMaskIntoConstraints="NO" id="bSI-mn-41d">
+                            <rect key="frame" x="111" y="32" width="139" height="273"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lineaSeparazione" translatesAutoresizingMaskIntoConstraints="NO" id="JpW-WQ-eYH">
+                            <rect key="frame" x="16" y="337" width="318" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frecciaGiù" translatesAutoresizingMaskIntoConstraints="NO" id="RSb-wg-3Fh">
+                            <rect key="frame" x="58" y="77" width="244" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="la5-eK-wDE" userLabel="View Locked">
@@ -1225,10 +1252,12 @@
         <image name="antonio_portrait" width="444" height="376"/>
         <image name="assetto" width="11" height="231"/>
         <image name="autoRuoteTemperatura" width="346" height="544"/>
+        <image name="autoSenzaRuote" width="276" height="527"/>
         <image name="auto_posizione" width="680" height="562"/>
         <image name="auto_start" width="691" height="190"/>
         <image name="axis" width="619" height="434"/>
         <image name="conferma_button" width="534" height="49"/>
+        <image name="frecciaGiù" width="440" height="319"/>
         <image name="imageView:Z61-Tn-gli:image" width="505" height="425">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
