@@ -55,12 +55,7 @@ class TutorialThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsForSwitchingViews()
-        
-        assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        var angle = Float.pi/2
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
-        })
+        settingsForAnimation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +68,19 @@ class TutorialThirdViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+    }
+    
+    func settingsForAnimation() {
+        axis.center.x = firstSubviewView0.center.x - 3
+        assettoImage.center.x = axis.center.x
+        axis.center.y = firstSubviewView0.center.y - 30
+        assettoImage.frame.origin.y = axis.center.y + 16
+        
+        assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        var angle = Float.pi/2
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        })
     }
 
   
