@@ -31,8 +31,8 @@ class ViewRuoteUIView: UIView {
     /*
     func setView(<#parameters#>) -> <#return type#> {
         <#function body#>
-    }
-    */
+    }*/
+    
     
     
 }
