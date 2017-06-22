@@ -12,6 +12,10 @@ import Accelerate
 
 class Megaride {
     
+    struct Sterzo {
+        var sinistra: Double = 0
+        var destra: Double = 0
+    }
     struct Slip {
         class Assale {
             var sinistra: Double = 0
@@ -180,7 +184,7 @@ class Megaride {
         var slipAngle = Slip()
         var slipRatio = Slip()
         var angoloAssetto: Double = 0
-        var angoloSterzo: Double = 0
+        var angoloSterzo: Sterzo = Sterzo()
         var slittamentoPneumatici: Double = 0
         var temperatura: Double = 0
         var velocitaVeicolo: VelocitaVeicolo = VelocitaVeicolo()
@@ -340,15 +344,30 @@ class Megaride {
         }
         func calcolatoreAngoloSterzo(dati: Sensoristica, output: inout Output) {
             
+            let U = output.velocitaVeicolo.U
+            let V = output.velocitaVeicolo.V
+            let r = output.velocitaVeicolo.r
+            
+            let alpha11 = output.slipAngle.anteriore.sinistra
+            let alpha12 = output.slipAngle.anteriore.destra
+            
+            let y_sinistra = (V + r * automobile.semipasso.anteriore)/(U - r*automobile.carreggiata.anteriore)
+            
+            let y_destra = (V - r * automobile.semipasso.anteriore)/(U - r*automobile.carreggiata.anteriore)
+            
+            output.angoloSterzo.sinistra = y_sinistra + alpha11
+            output.angoloSterzo.destra = y_destra + alpha12
 
         }
         
+        
+    
         
         
         
         let ultimoFeed: FeedSensoristica? = feeds.last
         var output: Output = Output()
-        
+    
         output.accelerazioneImbardata = derivatoreImbardata()
         calcolatoreForzaZ(dati: (ultimoFeed?.dati)!, output: &output)
         calcolatoreForzaX(dati: (ultimoFeed?.dati)!, output: &output)
