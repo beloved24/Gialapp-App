@@ -15,6 +15,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var favouriteCar: UITextField!
     @IBOutlet weak var otherCar: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var racerImage: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ class ProfileViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = blueMegaride
         navigationItem.title = "Reports"
         tableView.backgroundColor = blueMegaride
+        imagePicker.delegate = self
         configureProfile()
     }
 
@@ -55,11 +59,64 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBAction func changeImage(_ sender: Any) {
+        let choiceAlert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let library = UIAlertAction(title: "Photo library", style: .default, handler: { _ in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true)
+        })
+        
+        let camera = UIAlertAction(title: "Shoot a photo", style: .default, handler: { _ in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true)
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        choiceAlert.addAction(camera)
+        choiceAlert.addAction(library)
+        choiceAlert.addAction(cancel)
+        self.present(choiceAlert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            racerImage.contentMode = .scaleAspectFit
+            racerImage.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
+    }
+}
+
 extension ProfileViewController {
     
     func configureProfile() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 101
+        tableView.estimatedRowHeight = 130
         
         racerNumber.attributedPlaceholder = NSAttributedString(string: "RACE NUMBER", attributes: [NSForegroundColorAttributeName: placeholderGrey])
         racerName.attributedPlaceholder = NSAttributedString(string: "NAME", attributes: [NSForegroundColorAttributeName: placeholderGrey])

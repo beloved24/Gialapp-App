@@ -20,6 +20,7 @@ class TutorialThirdViewController: UIViewController {
     @IBOutlet weak var oGradiRuotaAvDx: UILabel!
     @IBOutlet weak var oGradiRuotaDieSx: UILabel!
     @IBOutlet weak var oGradiRuotaDieDx: UILabel!
+    @IBOutlet weak var lineaDiSeparazione: UIImageView!
     
     //MARK: outlet della view 1
     @IBOutlet weak var oView1: UIView!
@@ -30,7 +31,7 @@ class TutorialThirdViewController: UIViewController {
     
     @IBOutlet weak var containterView: UIView!
     
-    let lineaSeparatrice = UIImageView()
+    
     
     
     var frame123 = CGRect()
@@ -40,7 +41,7 @@ class TutorialThirdViewController: UIViewController {
     var center2 = CGPoint()
     var center3 = CGPoint()
     let durationOfAnimation = 0.3
-    var frameThumbFirstSubviewView0 = CGRect()
+    var frameGRANDEfirstSubviewView0 = CGRect()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,8 @@ class TutorialThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+    }
 
   
 }
@@ -74,31 +77,53 @@ extension TutorialThirdViewController {
     }
     
     func movingViewAtCenter (movingView: UIView) {
+        
         if let _  = movingView.subviews.first {
-            //movingView.subviews.first!.alpha = 0
-            UIView.animate(withDuration: 0.5, animations: {
-                movingView.center = self.center0
-                movingView.frame = self.frame0
-                movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
-                
+             //movingView.subviews.first!.alpha = 0
+             // quella che contiente tutte le cose che non servono quando è piccola adesso deve tornare ad essere visibile
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                let center = movingView.center
+                movingView.frame.size.width *= 2
+                movingView.frame.size.height *= 2
+                movingView.center = center
+                movingView.subviews.first?.frame.size.width *= 2
+                movingView.subviews.first?.frame.size.height *= 2
             }, completion: {
                 if $0 {
-                    UIView.animate(withDuration: 0.25, animations: { 
-//                        movingView.subviews.first?.frame = self.frameThumbFirstSubviewView0
-//                        movingView.subviews.first!.alpha = 1
-                        //movingView.subviews[1].alpha = 1
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
+                        movingView.center = self.center0
+                        movingView.frame = self.frame0
+                        movingView.subviews.first?.frame = self.frameGRANDEfirstSubviewView0
+                        movingView.subviews[1].alpha = 1
+                    }, completion: {
+                        if $0 {
+                            movingView.tag = 99
+                        }
                     })
-                    movingView.tag = 99
+                    
                 }
             })
         }
+            
         else {
-            UIView.animate(withDuration: 0.5, animations: {
-                movingView.center = self.center0
-                movingView.frame = self.frame0
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: { 
+                let center = movingView.center
+                movingView.frame.size.width *= 2
+                movingView.frame.size.height *= 2
+                movingView.center = center
+
             }, completion: {
                 if $0 {
-                    movingView.tag = 99
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
+                        movingView.center = self.center0
+                        movingView.frame = self.frame0
+                        //movingView.subviews.first?.frame = self.frameGRANDEfirstSubviewView0
+                        //movingView.subviews[1].alpha = 1
+                    }, completion: {
+                        if $0 {
+                            movingView.tag = 99
+                        }
+                    })
                 }
             })
         }
@@ -107,48 +132,81 @@ extension TutorialThirdViewController {
     }
     
     func movingBackFunction (movingView: UIView, at destinationCenter: CGPoint, with destinationFrame: CGRect){
+        //la moving view quì è quella che sta al centro e che deve spostarsi in basso
         movingView.isUserInteractionEnabled = true
-
+        
         if let _ = movingView.subviews.first {
-            //movingView.subviews.first!.alpha = 0
-            movingView.subviews[1].alpha = 0
-            UIView.animate(withDuration: 0.5, animations: {
-                self.frameThumbFirstSubviewView0 = (movingView.subviews.first?.frame)!
-                movingView.center = destinationCenter
-                movingView.frame = destinationFrame
-                movingView.subviews.first!.frame = movingView.bounds
-                movingView.subviews.first?.contentMode = .scaleAspectFit
+            
+            
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                movingView.subviews[1].alpha = 0 //questo è per oscurare tutte le cose che non servono quando la view è piccola
+                movingView.frame.size.width /= 2
+                movingView.frame.size.height /= 2
+                movingView.center.x *= 2
+                movingView.center.y *= 2
                 
+                movingView.subviews.first?.frame.size.width = destinationFrame.width*0.9
+                movingView.subviews.first?.frame.size.height = destinationFrame.height*0.9
+                movingView.subviews.first?.center.x = movingView.frame.width/2
+                movingView.subviews.first?.center.y = movingView.frame.height/2
+                
+
             }, completion: {
                 if $0 {
-                    UIView.animate(withDuration: 0.25, animations: { 
-                        //movingView.subviews.first!.frame = movingView.bounds
-//                        movingView.subviews.first?.contentMode = .scaleAspectFit
-                        //movingView.subviews.first!.alpha = 1
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
+                        movingView.center = destinationCenter
+                        movingView.frame = destinationFrame
+                        
+                        movingView.subviews.first!.frame = movingView.bounds
+                        movingView.subviews.first?.frame.size.width = movingView.bounds.width*0.9
+                        movingView.subviews.first?.frame.size.height = movingView.bounds.height*0.9
+                        //queste ultime tre righe ti mettno la macchinina o chi per essa al posto giusto e la ridimensionano come la vogliamo noi
+                        movingView.subviews.first?.center.x = movingView.frame.width/2
+                        movingView.subviews.first?.center.y = movingView.frame.height/2
+                        //queste ultime due invece la mettono al centro
+                        
+                        
+                        movingView.subviews.first?.contentMode = UIViewContentMode.scaleAspectFit
+                    }, completion: {
+                        if $0 {
+                            movingView.tag = 500
+                        }
                     })
-                    movingView.tag = 500
-                    
-                    print(movingView.frame)
-                    print(movingView.subviews.first!.frame)
                 }
             })
         }
         else {
-                UIView.animate(withDuration: 0.5, animations: {
-                movingView.center = destinationCenter
-                movingView.frame = destinationFrame
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                
+                movingView.frame.size.width /= 2
+                movingView.frame.size.height /= 2
+                movingView.center.x *= 2
+                movingView.center.y *= 2
+                
             }, completion: {
                 if $0 {
-                    movingView.tag = 500
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
+                        movingView.center = destinationCenter
+                        movingView.frame = destinationFrame
+                        //movingView.subviews.first!.frame = movingView.bounds
+                        //movingView.subviews.first?.contentMode = .scaleAspectFit
+                    }, completion: {
+                        if $0 {
+                            movingView.tag = 500
+                        }
+                    })
                 }
             })
         }
         
     }
+        
 
     
     func settingsForSwitchingViews () {
         frame0 = oView0.frame
+        
+        
         frame123 = oView1.frame
         center0 = oView0.center
         center1 = oView1.center
@@ -196,7 +254,8 @@ extension TutorialThirdViewController {
         firstSubviewView0.center.x = self.view.center.x
         firstSubviewView0.center.y = self.oView0.center.y - firstSubviewView0.frame.height/5
         
-        frameThumbFirstSubviewView0 = firstSubviewView0.frame
+        frameGRANDEfirstSubviewView0 = firstSubviewView0.frame
+        print("stampo il frameGRANDEfirstSubviewView0 dalla view did load prima di fare ogni altra modifica nella tap to enlarge: \n \(frameGRANDEfirstSubviewView0)")
         
         //-------------- labels
         
@@ -235,13 +294,14 @@ extension TutorialThirdViewController {
         
         //----------------- linea di separazione 
         
-        lineaSeparatrice.image = UIImage(named: "lineaSeparazione")
-        lineaSeparatrice.center.x = firstSubviewView0.center.x
-        lineaSeparatrice.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
-        lineaSeparatrice.backgroundColor = UIColor.red
-        oView0.addSubview(lineaSeparatrice)
+       
+        lineaDiSeparazione.center.x = oView0.center.x
+        lineaDiSeparazione.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
+        lineaDiSeparazione.frame.size.width = oView0.frame.size.width*0.98
+        lineaDiSeparazione.frame.size.height = 1
         
-     
+        
+        
     }
     
    
