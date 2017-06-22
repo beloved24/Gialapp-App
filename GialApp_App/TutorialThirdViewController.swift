@@ -20,7 +20,8 @@ class TutorialThirdViewController: UIViewController {
     @IBOutlet weak var oGradiRuotaAvDx: UILabel!
     @IBOutlet weak var oGradiRuotaDieSx: UILabel!
     @IBOutlet weak var oGradiRuotaDieDx: UILabel!
-    @IBOutlet weak var lineaDiSeparazione: UIImageView!
+    @IBOutlet weak var lineaDiSeparazioneView0: UIImageView!
+    
     
     //MARK: outlet della view 1
     @IBOutlet weak var oView1: UIView!
@@ -29,10 +30,7 @@ class TutorialThirdViewController: UIViewController {
     
     @IBOutlet weak var oView3: UIView!
     
-    @IBOutlet weak var containterView: UIView!
-    
-    
-    
+    @IBOutlet weak var containerView0: UIView!
     
     var frame123 = CGRect()
     var frame0 = CGRect()
@@ -42,6 +40,24 @@ class TutorialThirdViewController: UIViewController {
     var center3 = CGPoint()
     let durationOfAnimation = 0.3
     var frameGRANDEfirstSubviewView0 = CGRect()
+    var frameContainersViewGrandi = CGRect()
+    
+    
+    //MARK: elementi contenuti nelle altre view
+    
+    //---------------- view 1
+    let firstSubviewView1 = UIImageView(image: #imageLiteral(resourceName: "autoSenzaRuote"))
+    let containerView1 = UIView()
+    let averageLabelTitleView1 = UILabel()
+    let lineaDiSeparazioneView1 = UIImageView(image: #imageLiteral(resourceName: "lineaSeparazione"))
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,13 +104,26 @@ extension TutorialThirdViewController {
                 movingView.center = center
                 movingView.subviews.first?.frame.size.width *= 2
                 movingView.subviews.first?.frame.size.height *= 2
+                movingView.subviews[1].frame.size.width *= 2
+                movingView.subviews[1].frame.size.height *= 2
+                
             }, completion: {
                 if $0 {
-                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         movingView.subviews.first?.frame = self.frameGRANDEfirstSubviewView0
                         movingView.subviews[1].alpha = 1
+                        movingView.subviews[1].frame = self.frameContainersViewGrandi
+                        
+                        self.lineaDiSeparazioneView1.frame.size.width = movingView.bounds.width*0.98
+                        self.lineaDiSeparazioneView1.frame.size.height = 1
+                        self.lineaDiSeparazioneView1.center.x = (movingView.subviews[1].center.x)
+                        self.lineaDiSeparazioneView1.center.y = (movingView.subviews.first?.center.y)! + (movingView.subviews.first?.frame.height)!/2 + 10
+                     movingView.subviews[1].addSubview(self.lineaDiSeparazioneView1)
+        
+                        movingView.alpha = 1
+//                        movingView.subviews[1].center = self.center0
                     }, completion: {
                         if $0 {
                             movingView.tag = 99
@@ -117,6 +146,7 @@ extension TutorialThirdViewController {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
                         movingView.center = self.center0
                         movingView.frame = self.frame0
+                        
                         //movingView.subviews.first?.frame = self.frameGRANDEfirstSubviewView0
                         //movingView.subviews[1].alpha = 1
                     }, completion: {
@@ -156,7 +186,8 @@ extension TutorialThirdViewController {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: { 
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
-                        
+                        //DEVI SETTARE IL FRAME DEL CONTAINER VIEW 
+                        movingView.subviews[1].frame = movingView.bounds
                         movingView.subviews.first!.frame = movingView.bounds
                         movingView.subviews.first?.frame.size.width = movingView.bounds.width*0.9
                         movingView.subviews.first?.frame.size.height = movingView.bounds.height*0.9
@@ -294,11 +325,52 @@ extension TutorialThirdViewController {
         
         //----------------- linea di separazione 
         
-       
-        lineaDiSeparazione.center.x = oView0.center.x
-        lineaDiSeparazione.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
-        lineaDiSeparazione.frame.size.width = oView0.frame.size.width*0.98
-        lineaDiSeparazione.frame.size.height = 1
+        lineaDiSeparazioneView0.center.y = firstSubviewView0.center.y + firstSubviewView0.frame.height/2 + 10
+        lineaDiSeparazioneView0.frame.size.width = oView0.frame.size.width*0.98
+        lineaDiSeparazioneView0.frame.size.height = 1
+        
+        //-------------- contaner view
+        frameContainersViewGrandi = containerView0.frame
+        lineaDiSeparazioneView0.center.x = containerView0.center.x
+        
+        settingsDelleAltreView()
+        
+    }
+    
+    func settingsDelleAltreView() {
+        //--------- view1
+        firstSubviewView1.frame.size.width = oView1.bounds.width*0.9
+        firstSubviewView1.frame.size.height = oView1.bounds.height*0.9
+        firstSubviewView1.center.x = oView1.bounds.midX
+        firstSubviewView1.center.y = oView1.bounds.midY
+        firstSubviewView1.contentMode = .scaleAspectFit
+        oView1.addSubview(firstSubviewView1)
+        
+        containerView1.frame.size.width = oView1.bounds.width
+        containerView1.frame.size.height = oView1.bounds.height
+        containerView1.center.x = oView1.bounds.midX
+        containerView1.center.y = oView1.bounds.midY
+        containerView1.backgroundColor = UIColor.clear
+        containerView1.alpha = 1
+        oView1.addSubview(containerView1)
+//        
+//        lineaDiSeparazioneView1.frame.size.width = oView1.bounds.width*0.98
+//        lineaDiSeparazioneView1.frame.size.height = 1
+//
+//        lineaDiSeparazioneView1.center.x = containerView1.bounds.midX
+//        lineaDiSeparazioneView1.center.y = firstSubviewView1.bounds.midY + firstSubviewView1.bounds.height/2 + 10
+        
+        
+         averageLabelTitleView1.frame.size.width = firstSubviewView1.frame.width - 5
+         averageLabelTitleView1.frame.size.height = firstSubviewView1.frame.height/5
+         averageLabelTitleView1.contentMode = .bottomRight
+         averageLabelTitleView1.center.x = firstSubviewView1.bounds.midX - firstSubviewView1.bounds.width/2 -  averageLabelTitleView1.bounds.width/2
+         averageLabelTitleView1.center.y = lineaDiSeparazioneView1.bounds.midY + 10
+        averageLabelTitleView1.text = "AVERAGE"
+        averageLabelTitleView1.font = UIFont(name: "BebasNeue", size: 50)
+        averageLabelTitleView1.adjustsFontSizeToFitWidth = true
+        containerView1.addSubview( averageLabelTitleView1)
+        
         
         
         
