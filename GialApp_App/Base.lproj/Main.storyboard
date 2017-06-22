@@ -659,9 +659,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-B8-nHK" userLabel="temp1">
-                            <rect key="frame" x="157" y="343" width="46.5" height="30"/>
+                            <rect key="frame" x="106" y="343" width="148" height="30"/>
                             <attributedString key="attributedText">
-                                <fragment content="LABEL">
+                                <fragment content="ANGOLO DI ASSETTO">
                                     <attributes>
                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="25" name="BebasNeue"/>
@@ -744,6 +744,18 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linea" translatesAutoresizingMaskIntoConstraints="NO" id="pRF-Ac-nBq">
+                            <rect key="frame" x="-70" y="107" width="360" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linea" translatesAutoresizingMaskIntoConstraints="NO" id="98F-c2-qHc">
+                            <rect key="frame" x="190" y="57" width="2" height="420"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="palla" translatesAutoresizingMaskIntoConstraints="NO" id="aJL-sK-8bU">
+                            <rect key="frame" x="253" y="148" width="70" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -1076,7 +1088,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgh-l9-uet" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C89-Fg-8oR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="C89-Fg-8oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -15732,9 +15744,11 @@ AA0j1QANI90ADSPgAA0j5QANI+0ADSPwAA0kAgANJAUADSQKAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAA
 AAAAAAANJAw
 </mutableData>
         </image>
+        <image name="linea" width="371" height="2"/>
         <image name="lineaSeparazione" width="695" height="2"/>
         <image name="logo_megaride" width="117" height="113"/>
         <image name="megaride" width="316" height="24"/>
+        <image name="palla" width="67" height="67"/>
         <image name="pilota-con-fotocamera" width="324" height="400"/>
         <image name="profilo" width="124" height="120"/>
     </resources>
