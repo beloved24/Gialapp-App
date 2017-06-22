@@ -680,11 +680,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linea" translatesAutoresizingMaskIntoConstraints="NO" id="pRF-Ac-nBq">
-                            <rect key="frame" x="-70" y="107" width="360" height="2"/>
+                            <rect key="frame" x="0.0" y="210" width="360" height="2"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linea" translatesAutoresizingMaskIntoConstraints="NO" id="98F-c2-qHc">
-                            <rect key="frame" x="190" y="57" width="2" height="420"/>
+                            <rect key="frame" x="180" y="0.0" width="2" height="420"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="palla" translatesAutoresizingMaskIntoConstraints="NO" id="aJL-sK-8bU">
@@ -705,6 +705,11 @@
                         <constraint firstItem="gLE-ar-Dbq" firstAttribute="centerX" secondItem="hO2-vh-OUg" secondAttribute="centerX" id="l5F-Cb-eyw"/>
                         <constraint firstItem="JpW-WQ-eYH" firstAttribute="top" secondItem="hO2-vh-OUg" secondAttribute="top" constant="338" id="rEf-Jy-Asg"/>
                     </constraints>
+                    <connections>
+                        <outlet property="lineaOrizzontale" destination="pRF-Ac-nBq" id="8Wp-fg-AXJ"/>
+                        <outlet property="lineaVerticale" destination="98F-c2-qHc" id="jm0-m6-3gO"/>
+                        <outlet property="pallino" destination="aJL-sK-8bU" id="xPa-xb-YBG"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="la5-eK-wDE" userLabel="View Accelerazione" customClass="ViewAccelerazioneUIView" customModule="GialApp_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>

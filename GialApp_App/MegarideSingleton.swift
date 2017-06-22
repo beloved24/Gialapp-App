@@ -361,8 +361,6 @@ class Megaride {
         }
         
         
-    
-        
         
         
         let ultimoFeed: FeedSensoristica? = feeds.last

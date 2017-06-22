@@ -79,18 +79,23 @@ class ViewGforceUIView: UIView {
         
         super.init(frame: frame)
         self.addSubview(frecce)
-        
+        frecce.center = (superview?.center)!
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder)
+    {
+        print(aDecoder)
+        super.init(coder: aDecoder)
+    
+    
     }
+    
     
     func animazione(x: Double, y: Double, z: Double) {
         
         lineaVerticale.center.x = pallino.center.x
         lineaOrizzontale.center.y = pallino.center.y
-        
+        print(frecce.frame)
         UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseInOut], animations: {
             
             self.pallino.center.x = self.center.x + self.frame.width*CGFloat(x)/4

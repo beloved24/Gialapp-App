@@ -14,7 +14,6 @@
 		340D0A761EF95AAB00B8FD7C /* TutorialFistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340D0A751EF95AAB00B8FD7C /* TutorialFistViewController.swift */; };
 		49107E871EE718CF00CB48C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49107E861EE718CF00CB48C9 /* Assets.xcassets */; };
 		4914FB8B1EE41C7300CDF3AE /* TutorialSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */; };
-		4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */; };
 		4914FB8F1EE41CEF00CDF3AE /* TutorialFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */; };
 		4938C2EE1EF8297F0035CD44 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4938C2ED1EF8289C0035CD44 /* BebasNeue.otf */; };
 		4938C2F41EFBD1DA0035CD44 /* MyCustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */; };
@@ -38,7 +37,6 @@
 		340D0A751EF95AAB00B8FD7C /* TutorialFistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialFistViewController.swift; sourceTree = "<group>"; };
 		49107E861EE718CF00CB48C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSecondViewController.swift; sourceTree = "<group>"; };
-		4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialThirdViewController.swift; sourceTree = "<group>"; };
 		4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialFourthViewController.swift; sourceTree = "<group>"; };
 		4938C2ED1EF8289C0035CD44 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeue.otf; path = GialApp_App/911porscha/BebasNeue.otf; sourceTree = SOURCE_ROOT; };
 		4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomUIView.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 				4938C2F31EFBD1DA0035CD44 /* MyCustomUIView.swift */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
 				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
-				4914FB8C1EE41C9300CDF3AE /* TutorialThirdViewController.swift */,
 				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
 			);
 			path = GialApp_App;
@@ -216,7 +213,6 @@
 				49744D511ECDD10200950662 /* StartViewController.swift in Sources */,
 				6821B7B41EF56E190027D5C0 /* MegarideSingleton.swift in Sources */,
 				340D0A741EF95A1E00B8FD7C /* ProfileViewController.swift in Sources */,
-				4914FB8D1EE41C9300CDF3AE /* TutorialThirdViewController.swift in Sources */,
 				4938C2F41EFBD1DA0035CD44 /* MyCustomUIView.swift in Sources */,
 				49CBE5C81EEB220100F5327F /* MyCustomImageView.swift in Sources */,
 				49744D4F1ECDD10200950662 /* AppDelegate.swift in Sources */,
