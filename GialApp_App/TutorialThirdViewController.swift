@@ -56,6 +56,7 @@ class TutorialThirdViewController: UIViewController {
         super.viewDidLoad()
         settingsForSwitchingViews()
         settingsForAnimation()
+        navigationItem.title = "RACÉ"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -77,10 +78,12 @@ class TutorialThirdViewController: UIViewController {
         assettoImage.frame.origin.y = axis.center.y + 16
 
         assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        var angle = Float.pi/2
-        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
-        })
+        self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(Float.pi/6))
+
+//        var angle = Float.pi/2
+//        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+//            self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+//        })
     }
 
   
@@ -301,7 +304,7 @@ extension TutorialThirdViewController {
         oGradiRuotaAvSx.contentMode = .bottomRight
         oGradiRuotaAvSx.frame.origin.x = firstSubviewView0.frame.origin.x - oGradiRuotaAvSx.frame.width - 5
         oGradiRuotaAvSx.frame.origin.y = firstSubviewView0.frame.origin.y
-        oGradiRuotaAvSx.text = "0.0°"
+        oGradiRuotaAvSx.text = "75.0°"
         oGradiRuotaAvSx.adjustsFontSizeToFitWidth = true
         //oGradiRuotaAvSx.backgroundColor = UIColor.red
         
@@ -311,7 +314,7 @@ extension TutorialThirdViewController {
         //oGradiRuotaAvDx.contentMode = .bottomRight
         oGradiRuotaAvDx.frame.origin.x = firstSubviewView0.frame.origin.x + firstSubviewView0.frame.width
         oGradiRuotaAvDx.frame.origin.y = firstSubviewView0.frame.origin.y
-        oGradiRuotaAvDx.text = "0.0°"
+        oGradiRuotaAvDx.text = "75.0°"
         oGradiRuotaAvDx.adjustsFontSizeToFitWidth = true
         //oGradiRuotaAvDx.backgroundColor = UIColor.red
         
@@ -319,14 +322,14 @@ extension TutorialThirdViewController {
         oGradiRuotaDieSx.frame.size.height = oGradiRuotaAvSx.frame.height
         oGradiRuotaDieSx.frame.origin.x = oGradiRuotaAvSx.frame.origin.x
         oGradiRuotaDieSx.frame.origin.y = firstSubviewView0.frame.origin.y + firstSubviewView0.frame.height - oGradiRuotaDieSx.frame.height
-        oGradiRuotaDieSx.text = "0.0°"
+        oGradiRuotaDieSx.text = "60.0°"
         //oGradiRuotaDieSx.backgroundColor = UIColor.red
         
         oGradiRuotaDieDx.frame.size.width = oGradiRuotaAvSx.frame.width
         oGradiRuotaDieDx.frame.size.height = oGradiRuotaAvDx.frame.height
         oGradiRuotaDieDx.frame.origin.x = oGradiRuotaAvDx.frame.origin.x
         oGradiRuotaDieDx.frame.origin.y = oGradiRuotaDieSx.frame.origin.y
-        oGradiRuotaDieDx.text = "0.0°"
+        oGradiRuotaDieDx.text = "60.0°"
         //oGradiRuotaDieDx.backgroundColor = UIColor.red
         
         //----------------- linea di separazione 
@@ -376,10 +379,6 @@ extension TutorialThirdViewController {
         averageLabelTitleView1.font = UIFont(name: "BebasNeue", size: 50)
         averageLabelTitleView1.adjustsFontSizeToFitWidth = true
         containerView1.addSubview( averageLabelTitleView1)
-        
-        
-        
-        
     }
     
    

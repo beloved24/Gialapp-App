@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = blueMegaride
-        navigationItem.title = "Reports"
+        navigationItem.title = "REPORTS"
         tableView.backgroundColor = blueMegaride
         imagePicker.delegate = self
         configureProfile()

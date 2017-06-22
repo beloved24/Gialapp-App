@@ -15,15 +15,11 @@ class TutorialSecondViewController: UIViewController {
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         print("per l'iphone modello: \(UIDevice.current.name) \n con orientazione \(String(describing: UIDevice.current.orientation))  \nsi ha per l'immagine dell'auto:\nlarghezza: \(oAuto.frame.width) \nlunghezza \(oAuto.frame.height) ")
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //setNavigationBar()
+        setNavigationBar()
         // Do any additional setup after loading the view.
     }
 
@@ -43,14 +39,16 @@ class TutorialSecondViewController: UIViewController {
 extension TutorialSecondViewController {
     
     func setNavigationBar () {
-        let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
-        navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
-        navBarImageTitle.contentMode = .scaleAspectFit
+        //let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
+        //navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
+        //navBarImageTitle.contentMode = .scaleAspectFit
         //navBarImageTitle.center = navigationItem.titleView?.center
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        navigationItem.titleView = navBarImageTitle
+        //navigationItem.titleView = navBarImageTitle
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationItem.title = "RACÉ"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     
