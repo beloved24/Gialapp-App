@@ -84,8 +84,6 @@ class TutorialThirdViewController: UIViewController {
             self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         })
     }
-
-  
 }
 
 extension TutorialThirdViewController {
