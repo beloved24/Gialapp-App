@@ -31,7 +31,7 @@ class ViewRuoteUIView: UIView {
     var temperature: [Int] = [20,20,20,20]
     var temperatureTesti: [UILabel] = []
     
-    let posizioniGrandi: [CGRect] = [CGRect(x: 94.5, y: 64, width: 305, height: 66)]
+    let posizioniGrandi: [CGRect] = [CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66)]
     var grado: Int = 0
     
     var timer = Timer()
@@ -44,7 +44,6 @@ class ViewRuoteUIView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
     
     
