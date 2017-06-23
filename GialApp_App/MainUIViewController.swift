@@ -9,8 +9,6 @@
 import UIKit
 import CoreMotion
 
-
-
 class MainUIViewController: UIViewController {
 
     @IBOutlet weak var view0: UIView!
@@ -42,12 +40,14 @@ class MainUIViewController: UIViewController {
         super.viewDidLoad()
         motionManager.accelerometerUpdateInterval = 0.1
         
+        
+        
         motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
-            
             
             if let data = data {
             self.viewGforce.animazione(x: data.gravity.x, y: data.gravity.y, z: data.gravity.z)
                 self.viewGforce.aggiornaLabel(numero: sqrt(pow(data.gravity.x,2) + pow(data.gravity.y,2) + pow(data.gravity.z,2)))
+                
             }
             
         }
@@ -155,7 +155,7 @@ extension MainUIViewController {
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
             print("ho toccato la view delle ruote")
             //questa gesture view è quella da allargare
-            viewRuote.timer.invalidate()
+//            viewRuote.timer.invalidate()
             animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
             movingView.tag = 99
         }
@@ -183,6 +183,7 @@ extension MainUIViewController {
             print("la view al centro è la view delle ruote")
             //questa gesture view è quella da allargare
             viewRuote.timer.invalidate()
+
             animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
@@ -380,6 +381,8 @@ extension MainUIViewController {
 
                 //quì devi allargare il contenuto della view
                
+                self.viewGforce.ingrandisci()
+                /*
                 self.viewGforce.frame.size = self.frame0.size
                 self.viewGforce.inMiniatura = false
                 self.viewGforce.frecce.alpha = 1
@@ -390,7 +393,7 @@ extension MainUIViewController {
                 self.viewGforce.macchina.alpha = 1
                 self.viewGforce.gNumero.alpha = 1
                 self.viewGforce.gTesto.alpha = 1
-                
+                */
             }, completion: {
                 self.viewGforce.adattaPallinoELinee()
 
@@ -424,6 +427,7 @@ extension MainUIViewController {
                 movingView.frame.size.height *= 2
                 movingView.center = center
                 //quì devi allargare il contenuto della view
+                
             }, completion: {
                 if $0 {
                     //qui gestisco il movimento verso il centro vero e proprio

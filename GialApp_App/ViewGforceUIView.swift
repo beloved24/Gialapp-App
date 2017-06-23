@@ -139,6 +139,7 @@ class ViewGforceUIView: UIView {
         }
     }
     
+    
 
     func adattaPallinoELinee() {
         print(self.frame.size)
@@ -159,9 +160,12 @@ class ViewGforceUIView: UIView {
         
 //        self.lineaVerticale.alpha = 0
 //        self.lineaOrizzontale.alpha = 0
+        
         self.pallino.frame.size.width /= 2
         self.pallino.frame.size.height /= 2
+        
         self.macchina.alpha = 0
+        
         self.gTesto.alpha = 0
         self.gNumero.alpha = 0
         adattaPallinoELinee()
@@ -175,7 +179,7 @@ class ViewGforceUIView: UIView {
         
         self.pallino.frame.size.width *= 2
         self.pallino.frame.size.height *= 2
-        
+
         self.macchina.alpha = 1
         self.gNumero.alpha = 1
         self.gTesto.alpha = 1
