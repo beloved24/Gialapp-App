@@ -29,10 +29,12 @@ class TutorialFistViewController: UIViewController {
 extension TutorialFistViewController {
     
     func setNavigationBar () {
-        let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
-        navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
-        navBarImageTitle.contentMode = .scaleAspectFit
-        navigationItem.titleView = navBarImageTitle
+        //let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "megaride"))
+        //navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
+        //navBarImageTitle.contentMode = .scaleAspectFit
+        //navigationItem.titleView = navBarImageTitle
+        navigationItem.title = "RACÉ"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

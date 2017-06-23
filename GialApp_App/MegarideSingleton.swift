@@ -370,7 +370,7 @@ class Megaride {
         calcolatoreForzaZ(dati: (ultimoFeed?.dati)!, output: &output)
         calcolatoreForzaX(dati: (ultimoFeed?.dati)!, output: &output)
         calcolatoreForzaY(dati: (ultimoFeed?.dati)!, output: &output)
-        
     }
-
 }
+
+
