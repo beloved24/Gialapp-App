@@ -38,6 +38,8 @@ class MainUIViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        navigationItem.title = "TEMPERATURA"
+        
         super.viewDidLoad()
         motionManager.accelerometerUpdateInterval = 0.1
         
@@ -70,6 +72,7 @@ class MainUIViewController: UIViewController {
         view0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view0.layer.borderWidth = 1.0
         viewRuote.backgroundColor = .clear
+        viewRuote.temperaturaMini.alpha = 0
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
@@ -155,14 +158,10 @@ extension MainUIViewController {
         
     }
     
-    
-    
-    
-    
-    
     /// questa funzione prende la view in ingresso e la sposta al centro. gli elementi contenuti all'interno delle singole view vengono gestiti dalle relative funzioni che stanno nelle classi personalizzate che abbiamo cerato.
     ///
     /// - Parameter movingView: la moving view è la view tappata, quindi la prendiamo dal gesture recognizer. prima pero di assergnarla alle varie funzioni delle classi personalizzate, viene castata al tipo corrispondente (individuato tramite la funzione is kind of).
+    
     func movingViewAtCenter (movingView: UIView) {
 
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
@@ -170,21 +169,25 @@ extension MainUIViewController {
             //questa gesture view è quella da allargare
 //            viewRuote.timer.invalidate()
             animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            navigationItem.title = "TEMPERATURA"
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("ho toccato la view dell'accelerazione")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewAccelerazioneUIView)
+            navigationItem.title = "VELOCITÀ"
             movingView.tag = 99
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("ho toccato la view dell FORZA G")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewGforceUIView)
+            navigationItem.title = "FORZA G"
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)) {
             print("ho toccato la view bloccata")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewLockedUIView)
+            navigationItem.title = "BLOCCATO"
             movingView.tag = 99
         }
         
@@ -280,7 +283,6 @@ self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
-                        self.viewGforce.frame.size = destinationFrame.size
                         self.viewGforce.adattaPallinoELinee()
                        }, completion: {
                         if $0 {
@@ -299,16 +301,23 @@ self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
                 movingView.center.y *= 2
                 //qui devo diminuire la dimensione del contenuto
                 
+                
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
-                        //quì devi settare le impostazioni del contenuto
+                        
+                        self.viewRuote.miniaturizza()
+                        //qui devi settare le impostazioni del contenuto
+                        self.viewRuote.temperaturaMini.center = CGPoint(x: 57.5, y: 83.5)
                         
                     }, completion: {
                         if $0 {
+                            
+                            
                             movingView.isUserInteractionEnabled = true
+
                         }
                     })
                 }
@@ -394,6 +403,7 @@ self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
             })
             break
         case .ViewGforceUIView:
+            viewGforce.backgroundColor = UIColor.black
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
                 let center = movingView.center
@@ -457,6 +467,9 @@ self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
+                        self.viewRuote.ingrandisci()
+                        self.viewRuote.temperaturaMini.center = self.center0
+
                         
                     }, completion: {
                         if $0 {
