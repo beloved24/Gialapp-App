@@ -74,13 +74,25 @@ class MainUIViewController: UIViewController {
         
         //MARK: adding view0
         view0.addSubview(viewRuote)
+        
+        viewRuote.axis.center.x = viewRuote.center.x - 3
+        viewRuote.assettoImage.center.x = viewRuote.axis.center.x
+        viewRuote.axis.center.y = viewRuote.center.y - 70
+        viewRuote.assettoImage.frame.origin.y = viewRuote.axis.center.y + 26
+        viewRuote.assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+        
         viewRuote.preparaTutto()
+        
         view0.addGestureRecognizer(tapToEnlarge0)
         view0.layer.cornerRadius = 10.0
         view0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view0.layer.borderWidth = 1.0
         viewRuote.backgroundColor = .clear
         viewRuote.temperaturaMini.alpha = 0
+        
+        
+        
+        
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
@@ -213,7 +225,8 @@ extension MainUIViewController {
             print("la view al centro è la view delle ruote")
             //questa gesture view è quella da allargare
             viewRuote.timer.invalidate()
-
+            viewRuote.timerAngolo.invalidate()
+            
             animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
@@ -518,6 +531,9 @@ extension MainUIViewController {
                         if $0 {
                             movingView.isUserInteractionEnabled = false
                             self.viewRuote.preparaTutto()
+                         
+
+
                         }
                     })
                     

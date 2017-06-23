@@ -85,7 +85,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="assetto" translatesAutoresizingMaskIntoConstraints="NO" id="0cj-23-mcZ">
-                            <rect key="frame" x="175" y="182" width="10" height="55"/>
+                            <rect key="frame" x="175" y="119" width="10" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-2H-Zl0" userLabel="temp1">
@@ -173,9 +173,9 @@
                             <rect key="frame" x="3.5" y="338" width="353" height="2"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dx4-DE-70T" userLabel="temp1">
-                            <rect key="frame" x="133.5" y="363" width="93" height="60"/>
+                            <rect key="frame" x="121" y="363" width="118" height="60"/>
                             <attributedString key="attributedText">
-                                <fragment content="LABEL">
+                                <fragment content="Angolo">
                                     <attributes>
                                         <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="50" name="BebasNeue"/>
@@ -246,7 +246,9 @@
                         <constraint firstItem="bbL-6n-TQJ" firstAttribute="top" secondItem="UNM-bm-cCt" secondAttribute="top" constant="338" id="zVO-6v-ntP"/>
                     </constraints>
                     <connections>
+                        <outlet property="angoloAssetto" destination="dx4-DE-70T" id="WTH-gU-pdP"/>
                         <outlet property="angoloDiAssetto" destination="dx4-DE-70T" id="pZl-Ld-xOV"/>
+                        <outlet property="assettoImage" destination="0cj-23-mcZ" id="k28-BR-oiQ"/>
                         <outlet property="auto" destination="m14-uO-YTk" id="CXI-8J-iyF"/>
                         <outlet property="axis" destination="1HS-Tv-Ip9" id="R6a-3M-w22"/>
                         <outlet property="ruota1" destination="m24-jh-HsF" id="8tJ-oe-3Nh"/>
@@ -433,7 +435,7 @@
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3982" y="-34"/>
+            <point key="canvasLocation" x="3959" y="-61"/>
         </scene>
         <!--Tutorial Fourth-->
         <scene sceneID="Hoa-J1-sq2">
