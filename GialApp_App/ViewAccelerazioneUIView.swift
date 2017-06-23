@@ -11,5 +11,7 @@ import UIKit
 class ViewAccelerazioneUIView: UIView {
 
   
+    @IBOutlet weak var velocitaIsta: UILabel!
+    @IBOutlet weak var velocitaMax: UILabel
 
 }
