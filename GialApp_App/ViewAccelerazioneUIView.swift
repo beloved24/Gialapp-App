@@ -38,12 +38,42 @@ class ViewAccelerazioneUIView: UIView {
         
     }
     
-    func setInitialFrame(initialFrame: CGRect, initialCenter: CGPoint)  {
-        frame = initialFrame
-        center = initialCenter
-        velocitaIsta.center = initialCenter
-        velocitaIsta.frame.size.width = initialFrame.width/2
-        velocitaIsta.frame.size.height = initialFrame.height/2
+    func setInitialFrame(initialFrame: CGRect)  {
+        frame.size = initialFrame.size
+        velocitaIsta.alpha = 1
+        velocitaMax.alpha = 0
+        velocitaMedia.alpha = 0
+        massimaLabel.alpha = 0
+        mediaLabel.alpha = 0
+        velocitaIsta.center = center
+    }
+    
+    func setInMiniatura(initialFrame: CGRect) {
+        print("sto dentro la setInitialFrame \(frame)")
+        self.frame.size.width /= 2
+        self.frame.size.height /= 2
+        velocitaIsta.center = center
+        
+        velocitaMax.alpha = 0
+        velocitaMedia.alpha = 0
+        massimaLabel.alpha = 0
+        mediaLabel.alpha = 0
+    }
+    
+    func setFullSize (destinationFrame: CGRect) {
+        print("sto dentro la setInitialFrame \(frame)")
+        self.frame.size = destinationFrame.size
+        velocitaIsta.frame.size.width = frame.width/2
+        velocitaIsta.adjustsFontSizeToFitWidth = true
+        
+        velocitaMax.center.x = destinationFrame.width/4
+        velocitaMax.center.y = 420 - velocitaMax.frame.height
+        
+        
+        velocitaMax.alpha = 1
+        velocitaMedia.alpha = 1
+        massimaLabel.alpha = 1
+        mediaLabel.alpha = 1
     }
 
 }

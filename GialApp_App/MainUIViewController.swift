@@ -79,7 +79,7 @@ class MainUIViewController: UIViewController {
         view1.layer.cornerRadius = 10.0
         view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view1.layer.borderWidth = 1.0
-        viewAccelerazione.backgroundColor = .clear
+        //viewAccelerazione.backgroundColor = .clear
 
 
         //MARK: adding view2
@@ -119,15 +119,16 @@ class MainUIViewController: UIViewController {
         
         print(frame0)
         
-        initialFrameVelocita = view1.bounds
+        
+        
+        
+        initialFrameVelocita = view1.frame
         center1 = view1.center
         print("initialFrameVelocita \(initialFrameVelocita)")
-        viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita, initialCenter: center1)
-        print("initialFrameVelocita \(view1.bounds)")
+        viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita)
+        print("initialboundsVelocita \(view1.bounds)")
+        print(center1)
 
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -219,23 +220,27 @@ extension MainUIViewController {
     func animaIndietro(movingView: UIView, subViewOfType: typeOfClass, destinationCenter: CGPoint, destinationFrame: CGRect) {
         switch subViewOfType {
         case .ViewAccelerazioneUIView:
+            let movingViewSubview = movingView.subviews.first as! ViewAccelerazioneUIView
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                
                 movingView.frame.size.width /= 2
                 movingView.frame.size.height /= 2
                 movingView.center.x *= 2
                 movingView.center.y *= 2
-                //qui devo diminuire la dimensione del contenuto
-                
+                //movingViewSubview.changeTheSize(scaleFactor: 0.5)
+                movingViewSubview.setInMiniatura(initialFrame: self.initialFrameVelocita)
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
-
+                        self.viewAccelerazione.frame.size = destinationFrame.size
+self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = true
+                            
                         }
                     })
                 }
@@ -354,19 +359,20 @@ extension MainUIViewController {
     
     func animaAlCentro(movingView: UIView, subViewOfType: typeOfClass) {
         
-        var tagToAssignToView = Int()
+//        var tagToAssignToView = Int()
         switch subViewOfType {
-        case .ViewAccelerazioneUIView:
             
+        case .ViewAccelerazioneUIView:
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
-                let movingViewSubview = movingView.subviews.first as! ViewAccelerazioneUIView
-                
                 let center = movingView.center
                 movingView.frame.size.width *= 2
                 movingView.frame.size.height *= 2
-                movingView.center = center
-                movingViewSubview.changeTheSize(scaleFactor: 0.5)
+//                movingView.center = center
+////                movingView.frame.size = self.frame0.size
+//                self.viewAccelerazione.changeTheSize(scaleFactor: 2)
+                self.viewAccelerazione.setFullSize(destinationFrame: self.frame0
+                )
             }, completion: {
                 if $0 {
                     //qui gestisco il movimento verso il centro vero e proprio
@@ -374,7 +380,9 @@ extension MainUIViewController {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
+                        self.viewAccelerazione.setFullSize(destinationFrame: self.frame0)
                         
+                        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = false
