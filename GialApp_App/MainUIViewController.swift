@@ -25,29 +25,43 @@ class MainUIViewController: UIViewController {
     let motionManager = CMMotionManager()
     
     
+    //MARK: andrew
+    var center0 = CGPoint()
+    var center1 = CGPoint()
+    var center2 = CGPoint()
+    var center3 = CGPoint()
+    var frame0 = CGRect()
+    
+    
+    
     
     override func viewDidLoad() {
 
         
         super.viewDidLoad()
         view0.addSubview(viewRuote)
-
-        view0.addSubview(viewGforce)
-        view3.addSubview(viewAccelerazione)
+        view1.addSubview(viewAccelerazione)
+        viewAccelerazione.frame.size.width = view1.frame.width
+        viewAccelerazione.frame.size.height = view1.frame.height
         
         let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         
-//        viewAccelerazione.frame.size.width = view0.widt
+        view0.addGestureRecognizer(tapToEnlarge0)
+        view1.addGestureRecognizer(tapToEnlarge1)
+        view2.addGestureRecognizer(tapToEnlarge2)
+        view3.addGestureRecognizer(tapToEnlarge3)
         
-        motionManager.accelerometerUpdateInterval = 0.1
+        center0 = view0.center
+        center1 = view1.center
+        center2 = view2.center
+        center3 = view3.center
+
+        frame0 = view0.frame
         
-        motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
-        
-            self.viewGforce.animazione(x: (data?.gravity.x)!, y: (data?.gravity.y)!, z: (data?.gravity.z)!)
-        }
+        print(frame0)
         
     }
 
