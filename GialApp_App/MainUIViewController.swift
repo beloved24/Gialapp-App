@@ -32,6 +32,7 @@ class MainUIViewController: UIViewController {
     var center3 = CGPoint()
     var frame0 = CGRect()
     
+    var initialFrameVelocita = CGRect()
     
     
     
@@ -51,6 +52,8 @@ class MainUIViewController: UIViewController {
             }
             
         }
+        
+
         
         
         //MARK: creating TAP GESTURE RECOGNIZER
@@ -107,7 +110,7 @@ class MainUIViewController: UIViewController {
         
         
         center0 = view0.center
-        center1 = view1.center
+        
         center2 = view2.center
         center3 = view3.center
 
@@ -115,6 +118,15 @@ class MainUIViewController: UIViewController {
         viewGforce.frame0 = view0.frame
         
         print(frame0)
+        
+        initialFrameVelocita = view1.bounds
+        center1 = view1.center
+        print("initialFrameVelocita \(initialFrameVelocita)")
+        viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita, initialCenter: center1)
+        print("initialFrameVelocita \(view1.bounds)")
+
+        
+        
         
     }
 
@@ -348,11 +360,13 @@ extension MainUIViewController {
             
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
+                let movingViewSubview = movingView.subviews.first as! ViewAccelerazioneUIView
+                
                 let center = movingView.center
                 movingView.frame.size.width *= 2
                 movingView.frame.size.height *= 2
                 movingView.center = center
-                //quì devi allargare il contenuto della view
+                movingViewSubview.changeTheSize(scaleFactor: 0.5)
             }, completion: {
                 if $0 {
                     //qui gestisco il movimento verso il centro vero e proprio

@@ -25,6 +25,7 @@ class ViewLockedUIView: UIView, ViewLockedUIViewProtocol {
         lucchetto.frame.size.width *= scaleFactor
         lucchetto.frame.size.height *= scaleFactor
         lucchetto.center = luccettoCenterSaved
+        
     }
    
    

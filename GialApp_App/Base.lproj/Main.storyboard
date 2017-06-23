@@ -401,7 +401,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sa-p5-Kxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125.5999999999999" y="-61.619190404797607"/>
+            <point key="canvasLocation" x="2943" y="305"/>
         </scene>
         <!--Tutorial Third-->
         <scene sceneID="iIx-dR-Eu4">
@@ -718,34 +718,6 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VBT-KX-xNm">
-                            <rect key="frame" x="219" y="227" width="62" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText">
-                                <fragment content="FORZA G">
-                                    <attributes>
-                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <font key="NSFont" size="25" name="BebasNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xYo-fs-nSp">
-                            <rect key="frame" x="219" y="265" width="62" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText">
-                                <fragment content="FORZA G">
-                                    <attributes>
-                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <font key="NSFont" size="25" name="BebasNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lineaSeparazione" translatesAutoresizingMaskIntoConstraints="NO" id="OQf-KT-fvW">
                             <rect key="frame" x="3" y="338" width="353" height="2"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -808,6 +780,13 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="massimaLabel" destination="ByD-sf-Zcz" id="R6s-La-pll"/>
+                        <outlet property="mediaLabel" destination="Fd6-HO-Hk4" id="tlD-a8-4Xd"/>
+                        <outlet property="velocitaIsta" destination="WmZ-lq-B1O" id="9Tv-i9-kdF"/>
+                        <outlet property="velocitaMax" destination="5eE-IK-oLj" id="Svu-Wp-ugq"/>
+                        <outlet property="velocitaMedia" destination="Kie-Mz-y1j" id="EvO-fV-NnA"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="hMJ-tX-1km" userLabel="View Locked" customClass="ViewLockedUIView" customModule="GialApp_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
