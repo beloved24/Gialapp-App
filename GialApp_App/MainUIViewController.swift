@@ -43,8 +43,16 @@ class MainUIViewController: UIViewController {
         super.viewDidLoad()
         motionManager.accelerometerUpdateInterval = 0.1
         
-        
-        
+        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+            
+            if let data = data {
+                self.viewGforce.animazione(x: data.acceleration.x, y: data.acceleration.y, z: data.acceleration.z)
+                self.viewGforce.aggiornaLabel(numero: sqrt(pow(data.acceleration.x,2) + pow(data.acceleration.y,2) + pow(data.acceleration.z,2)))
+                
+            }
+            
+        }
+        /*
         motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
             
             if let data = data {
@@ -53,7 +61,7 @@ class MainUIViewController: UIViewController {
                 
             }
             
-        }
+        }*/
         
 
         
@@ -274,6 +282,7 @@ extension MainUIViewController {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
+                        self.viewGforce.frame.size = destinationFrame.size
                         //quì devi settare le impostazioni del contenuto
                         self.viewGforce.adattaPallinoELinee()
                        }, completion: {
@@ -392,7 +401,7 @@ extension MainUIViewController {
             })
             break
         case .ViewGforceUIView:
-            viewGforce.backgroundColor = UIColor.black
+//            viewGforce.backgroundColor = UIColor.black
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
                 let center = movingView.center
