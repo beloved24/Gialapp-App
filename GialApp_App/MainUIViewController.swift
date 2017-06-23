@@ -21,6 +21,8 @@ class MainUIViewController: UIViewController {
     @IBOutlet var viewRuote: ViewRuoteUIView!
     @IBOutlet var viewGforce: ViewGforceUIView!
     @IBOutlet var viewAccelerazione: ViewAccelerazioneUIView!
+    @IBOutlet var viewLocked: ViewLockedUIView!
+    
     
     let motionManager = CMMotionManager()
     
@@ -39,20 +41,49 @@ class MainUIViewController: UIViewController {
 
         
         super.viewDidLoad()
+        
+        //MARK: creating TAP GESTURE RECOGNIZER
+        let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        //let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        
+        //MARK: adding view0
         view0.addSubview(viewRuote)
+        view0.addGestureRecognizer(tapToEnlarge0)
+        viewRuote.layer.cornerRadius = 10.0
+        viewRuote.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        viewRuote.layer.borderWidth = 1.0
+        
+        
+        //MARK: adding view1
         view1.addSubview(viewAccelerazione)
         viewAccelerazione.frame.size.width = view1.frame.width
         viewAccelerazione.frame.size.height = view1.frame.height
-        
-        let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        
-        view0.addGestureRecognizer(tapToEnlarge0)
         view1.addGestureRecognizer(tapToEnlarge1)
-        view2.addGestureRecognizer(tapToEnlarge2)
+        viewAccelerazione.layer.cornerRadius = 10.0
+        viewAccelerazione.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        viewAccelerazione.layer.borderWidth = 1.0
+
+
+
+        //MARK: adding view2
+//        view2.addSubview(viewGforce)
+//        view2.addGestureRecognizer(tapToEnlarge2)
+
+        
+        //MARK: adding view3
+        view3.addSubview(viewLocked)
+        viewLocked.frame.size.width = view3.frame.width
+        viewLocked.frame.size.height = view3.frame.height
         view3.addGestureRecognizer(tapToEnlarge3)
+        viewLocked.layer.cornerRadius = 10.0
+        viewLocked.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        viewLocked.layer.borderWidth = 1.0
+
+        
+        
+        
         
         center0 = view0.center
         center1 = view1.center
@@ -94,24 +125,30 @@ extension MainUIViewController {
     
     
     
-    /// questa funzione prende la view in ingresso e la sposta al centro. gli elementi contenuti all'interno delle singole view vengono gestiti dalle relative funzioni che stanno nelle classi personalizzate che abbiamo cerato
+    /// questa funzione prende la view in ingresso e la sposta al centro. gli elementi contenuti all'interno delle singole view vengono gestiti dalle relative funzioni che stanno nelle classi personalizzate che abbiamo cerato.
     ///
     /// - Parameter movingView: la moving view è la view tappata, quindi la prendiamo dal gesture recognizer. prima pero di assergnarla alle varie funzioni delle classi personalizzate, viene castata al tipo corrispondente (individuato tramite la funzione is kind of).
     func movingViewAtCenter (movingView: UIView) {
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
             print("ho toccato la view delle ruote")
             //questa gesture view è quella da allargare
-            movingView.tag = animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("ho toccato la view dell'accelerazione")
-
-            movingView.tag = animaAlCentro(movingView: movingView, subViewOfType: .ViewAccelerazioneUIView)
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            movingView.tag = 99
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("ho toccato la view dell FORZA G")
-
-            movingView.tag = animaAlCentro(movingView: movingView, subViewOfType: .ViewGforceUIView)
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            movingView.tag = 99
+        }
+        else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)) {
+            print("ho toccato la view bloccata")
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewLockedUIView)
+            movingView.tag = 99
         }
         
     }
@@ -134,6 +171,11 @@ extension MainUIViewController {
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("la view al centro è la view dell FORZA G")
             animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
+            movingView.tag = 500
+        }
+        else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)){
+            print("la view al centro è la view bloccata")
+            animaIndietro(movingView: movingView, subViewOfType: .ViewLockedUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
     }
@@ -178,7 +220,7 @@ extension MainUIViewController {
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
                         
-                    }, completion: {
+                       }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = true
                         }
@@ -210,6 +252,34 @@ extension MainUIViewController {
                 }
             })
             break
+        case .ViewLockedUIView:
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                movingView.frame.size.width /= 2
+                movingView.frame.size.height /= 2
+                movingView.center.x *= 2
+                movingView.center.y *= 2
+                //ViewLockedUIView.changeTheSize(<#T##ViewLockedUIView#> usando i protoolli ma non ci sono riuscito purtroppo
+                let movingViewSubview = movingView.subviews.first as! ViewLockedUIView
+                movingViewSubview.changeTheSize(scaleFactor: 0.5)
+                
+                
+                
+            }, completion: {
+                if $0 {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+                        movingView.center = destinationCenter
+                        movingView.frame = destinationFrame
+                        //quì devi settare le impostazioni del contenuto
+                        
+                    }, completion: {
+                        if $0 {
+                            movingView.isUserInteractionEnabled = true
+                        }
+                    })
+                }
+            })
+
+            
         }
     }
     
@@ -225,7 +295,7 @@ extension MainUIViewController {
    ///   - subViewOfType:  questo serve per sapere quale view sto allargando in modo da pter disporre correttamente il contenuto della subview
    /// - Returns: il tag da assegnare alla view LA CUI SUBVIEW  è stata castata. si pu evitare, ma almento così posso fare una scrittura più compatta
     
-    func animaAlCentro(movingView: UIView, subViewOfType: typeOfClass) -> Int {
+    func animaAlCentro(movingView: UIView, subViewOfType: typeOfClass) {
         
         var tagToAssignToView = Int()
         switch subViewOfType {
@@ -247,7 +317,6 @@ extension MainUIViewController {
                         
                     }, completion: {
                         if $0 {
-                            tagToAssignToView = 99
                             movingView.isUserInteractionEnabled = false
                         }
                     })
@@ -255,7 +324,7 @@ extension MainUIViewController {
                 }
                 
             })
-            return tagToAssignToView
+            break
         case .ViewGforceUIView:
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
@@ -274,7 +343,6 @@ extension MainUIViewController {
                         
                     }, completion: {
                         if $0 {
-                            tagToAssignToView = 99
                             movingView.isUserInteractionEnabled = false
                         }
                     })
@@ -282,7 +350,7 @@ extension MainUIViewController {
                 }
                 
             })
-            return tagToAssignToView
+            break
         case .ViewRuoteUIView:
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
@@ -301,7 +369,6 @@ extension MainUIViewController {
                         
                     }, completion: {
                         if $0 {
-                            tagToAssignToView = 99
                             movingView.isUserInteractionEnabled = false
                         }
                     })
@@ -309,7 +376,35 @@ extension MainUIViewController {
                 }
                 
             })
-            return tagToAssignToView
+            break
+        case .ViewLockedUIView:
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
+                //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
+                let movingViewSubview = movingView.subviews.first as! ViewLockedUIView
+
+                let center = movingView.center
+                movingView.frame.size.width *= 2
+                movingView.frame.size.height *= 2
+                movingView.center = center
+                movingViewSubview.changeTheSize(scaleFactor: 2)
+            }, completion: {
+                if $0 {
+                    //qui gestisco il movimento verso il centro vero e proprio
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+                        movingView.center = self.center0
+                        movingView.frame = self.frame0
+                        //quì devi spostare il contenuto della view
+                        
+                    }, completion: {
+                        if $0 {
+                            movingView.isUserInteractionEnabled = false
+                        }
+                    })
+                    
+                }
+                
+            })
+            
         }
         
     }

@@ -17,4 +17,5 @@ enum typeOfClass: String {
     case ViewGforceUIView = "ViewGforceUIView"
     case ViewAccelerazioneUIView = "ViewAccelerazioneUIView"
     case ViewRuoteUIView = "ViewRuoteUIView"
+    case ViewLockedUIView = "ViewLockedUIView"
 }

@@ -417,22 +417,18 @@
                         <subviews>
                             <view clipsSubviews="YES" tag="99" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC8-yG-LmF" userLabel="View 0">
                                 <rect key="frame" x="7.5" y="64" width="360" height="420"/>
-                                <color key="backgroundColor" red="0.10932693969641179" green="0.46383063036739736" blue="0.58598392248071063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbd-cR-994" userLabel="View 1">
                                 <rect key="frame" x="7" y="490" width="115" height="167"/>
-                                <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qbd-cR-994" secondAttribute="height" multiplier="115:167" id="mq1-Ys-jIt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8s-h8-lfs" userLabel="View 2">
                                 <rect key="frame" x="130" y="490" width="115" height="167"/>
-                                <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Des-7W-YhJ" userLabel="View 3">
                                 <rect key="frame" x="252.5" y="490" width="115" height="167"/>
-                                <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.093046866359999994" green="0.39074665310000001" blue="0.4951469302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -461,6 +457,7 @@
                         <outlet property="view3" destination="Des-7W-YhJ" id="6a7-FV-fc8"/>
                         <outlet property="viewAccelerazione" destination="la5-eK-wDE" id="q8f-9W-FCh"/>
                         <outlet property="viewGforce" destination="hO2-vh-OUg" id="NFw-ep-cHI"/>
+                        <outlet property="viewLocked" destination="hMJ-tX-1km" id="AZ5-xs-E7K"/>
                         <outlet property="viewRuote" destination="UNM-bm-cCt" id="7AZ-64-FTh"/>
                     </connections>
                 </viewController>
@@ -757,6 +754,27 @@
                         <constraint firstItem="WmZ-lq-B1O" firstAttribute="top" secondItem="la5-eK-wDE" secondAttribute="top" constant="125" id="Y5C-a4-2Oj"/>
                         <constraint firstItem="eD1-Pf-cg7" firstAttribute="centerX" secondItem="la5-eK-wDE" secondAttribute="centerX" id="bEg-fT-y7r"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="hMJ-tX-1km" userLabel="View Locked" customClass="ViewLockedUIView" customModule="GialApp_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="420"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lucchetto bianco" translatesAutoresizingMaskIntoConstraints="NO" id="EtM-SB-fpn">
+                            <rect key="frame" x="90" y="83.5" width="180" height="253"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="EtM-SB-fpn" secondAttribute="height" multiplier="419:589" id="YAs-k6-def"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1093269397" green="0.4638306304" blue="0.58598392249999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="EtM-SB-fpn" firstAttribute="centerY" secondItem="hMJ-tX-1km" secondAttribute="centerY" id="USa-er-BoJ"/>
+                        <constraint firstItem="EtM-SB-fpn" firstAttribute="centerX" secondItem="hMJ-tX-1km" secondAttribute="centerX" id="d7B-ti-v0Q"/>
+                        <constraint firstItem="EtM-SB-fpn" firstAttribute="width" secondItem="hMJ-tX-1km" secondAttribute="width" multiplier="1/2" id="ldP-Vj-Jak"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="lucchetto" destination="EtM-SB-fpn" id="pdd-DT-G3P"/>
+                    </connections>
                 </view>
             </objects>
             <point key="canvasLocation" x="4466" y="252"/>
@@ -15687,6 +15705,7 @@ AAAAAAANJAw
         <image name="linea" width="371" height="2"/>
         <image name="lineaSeparazione" width="695" height="2"/>
         <image name="logo_megaride" width="117" height="113"/>
+        <image name="lucchetto bianco" width="419" height="589"/>
         <image name="megaride" width="316" height="24"/>
         <image name="palla" width="67" height="67"/>
         <image name="pilota-con-fotocamera" width="324" height="400"/>
