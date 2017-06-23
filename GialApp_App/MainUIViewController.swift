@@ -38,6 +38,8 @@ class MainUIViewController: UIViewController {
     
     override func viewDidLoad() {
         
+        navigationItem.title = "TEMPERATURA"
+        
         super.viewDidLoad()
         motionManager.accelerometerUpdateInterval = 0.1
         
@@ -169,21 +171,25 @@ extension MainUIViewController {
             //questa gesture view è quella da allargare
 //            viewRuote.timer.invalidate()
             animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            navigationItem.title = "TEMPERATURA"
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("ho toccato la view dell'accelerazione")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewAccelerazioneUIView)
+            navigationItem.title = "VELOCITÀ"
             movingView.tag = 99
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("ho toccato la view dell FORZA G")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewGforceUIView)
+            navigationItem.title = "FORZA G"
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)) {
             print("ho toccato la view bloccata")
             animaAlCentro(movingView: movingView, subViewOfType: .ViewLockedUIView)
+            navigationItem.title = "BLOCCATO"
             movingView.tag = 99
         }
         
