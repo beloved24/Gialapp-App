@@ -14,22 +14,15 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBar()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationItem.title = ""
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func setNavigationBar () {
-        let navBarImageTitle = UIImageView(image: #imageLiteral(resourceName: "logo_megaride"))
-        navigationItem.titleView = navBarImageTitle
-    }
-
 }
 
