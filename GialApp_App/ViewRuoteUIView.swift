@@ -44,6 +44,8 @@ class ViewRuoteUIView: UIView {
     var grado: Int = 0
     
     var timer = Timer()
+    var altroTimer = Timer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,6 +63,8 @@ class ViewRuoteUIView: UIView {
             ogni.alpha = 1
         }
         temperaturaMini.alpha = 0
+        
+        altroTimer.invalidate()
     }
     
     func miniaturizza() {
@@ -68,7 +72,11 @@ class ViewRuoteUIView: UIView {
             ogni.alpha = 0
         }
         temperaturaMini.alpha = 1
-        temperaturaMini.text = String(grado+20) + "°C"
+        
+        altroTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (_) in
+            self.grado += 1
+            self.temperaturaMini.text = String(self.grado+20) + "°C"
+        })
     }
     
     

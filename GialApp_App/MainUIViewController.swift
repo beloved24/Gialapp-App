@@ -127,9 +127,6 @@ class MainUIViewController: UIViewController {
         print("initialFrameVelocita \(initialFrameVelocita)")
         viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita, initialCenter: center1)
         print("initialFrameVelocita \(view1.bounds)")
-
-        
-        
         
     }
 
@@ -278,7 +275,6 @@ extension MainUIViewController {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
-                        self.viewGforce.frame.size = destinationFrame.size
                         self.viewGforce.adattaPallinoELinee()
                        }, completion: {
                         if $0 {
@@ -305,8 +301,7 @@ extension MainUIViewController {
                         movingView.frame = destinationFrame
                         
                         self.viewRuote.miniaturizza()
-
-                        //quì devi settare le impostazioni del contenuto
+                        //qui devi settare le impostazioni del contenuto
                         self.viewRuote.temperaturaMini.center = CGPoint(x: 57.5, y: 83.5)
                         
                     }, completion: {
@@ -397,6 +392,7 @@ extension MainUIViewController {
             })
             break
         case .ViewGforceUIView:
+            viewGforce.backgroundColor = UIColor.black
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
                 let center = movingView.center
