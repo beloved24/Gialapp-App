@@ -38,49 +38,70 @@ class MainUIViewController: UIViewController {
     
     
     override func viewDidLoad() {
-
         
         super.viewDidLoad()
+        motionManager.accelerometerUpdateInterval = 0.1
+        
+        motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
+            
+            
+            if let data = data {
+            self.viewGforce.animazione(x: data.gravity.x, y: data.gravity.y, z: data.gravity.z)
+                self.viewGforce.aggiornaLabel(numero: sqrt(pow(data.gravity.x,2) + pow(data.gravity.y,2) + pow(data.gravity.z,2)))
+            }
+            
+        }
+        
         
         //MARK: creating TAP GESTURE RECOGNIZER
         let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        //let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         
         //MARK: adding view0
         view0.addSubview(viewRuote)
+        viewRuote.preparaTutto()
         view0.addGestureRecognizer(tapToEnlarge0)
-        viewRuote.layer.cornerRadius = 10.0
-        viewRuote.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-        viewRuote.layer.borderWidth = 1.0
-        
+        view0.layer.cornerRadius = 10.0
+        view0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        view0.layer.borderWidth = 1.0
+        viewRuote.backgroundColor = .clear
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
         viewAccelerazione.frame.size.width = view1.frame.width
         viewAccelerazione.frame.size.height = view1.frame.height
         view1.addGestureRecognizer(tapToEnlarge1)
-        viewAccelerazione.layer.cornerRadius = 10.0
-        viewAccelerazione.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-        viewAccelerazione.layer.borderWidth = 1.0
-
+        view1.layer.cornerRadius = 10.0
+        view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        view1.layer.borderWidth = 1.0
+        viewAccelerazione.backgroundColor = .clear
 
 
         //MARK: adding view2
-//        view2.addSubview(viewGforce)
-//        view2.addGestureRecognizer(tapToEnlarge2)
-
+        view2.addSubview(viewGforce)
+        viewGforce.frame.size.width = view2.frame.width
+        viewGforce.frame.size.height = view2.frame.height
+        viewGforce.adattaPallinoELinee()
+        viewGforce.macchina.alpha = 0
+        
+        view2.addGestureRecognizer(tapToEnlarge2)
+        view2.layer.cornerRadius = 10.0
+        view2.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        view2.layer.borderWidth = 1.0
+        viewGforce.backgroundColor = .clear
+//        viewGforce.miniaturizza()
         
         //MARK: adding view3
         view3.addSubview(viewLocked)
         viewLocked.frame.size.width = view3.frame.width
         viewLocked.frame.size.height = view3.frame.height
         view3.addGestureRecognizer(tapToEnlarge3)
-        viewLocked.layer.cornerRadius = 10.0
-        viewLocked.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-        viewLocked.layer.borderWidth = 1.0
-
+        view3.layer.cornerRadius = 10.0
+        view3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        view3.layer.borderWidth = 1.0
+        viewLocked.backgroundColor = .clear
         
         
         
@@ -91,6 +112,7 @@ class MainUIViewController: UIViewController {
         center3 = view3.center
 
         frame0 = view0.frame
+        viewGforce.frame0 = view0.frame
         
         print(frame0)
         
@@ -129,20 +151,22 @@ extension MainUIViewController {
     ///
     /// - Parameter movingView: la moving view è la view tappata, quindi la prendiamo dal gesture recognizer. prima pero di assergnarla alle varie funzioni delle classi personalizzate, viene castata al tipo corrispondente (individuato tramite la funzione is kind of).
     func movingViewAtCenter (movingView: UIView) {
+
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
             print("ho toccato la view delle ruote")
             //questa gesture view è quella da allargare
+            viewRuote.timer.invalidate()
             animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("ho toccato la view dell'accelerazione")
-            animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewAccelerazioneUIView)
             movingView.tag = 99
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("ho toccato la view dell FORZA G")
-            animaAlCentro(movingView: movingView, subViewOfType: .ViewRuoteUIView)
+            animaAlCentro(movingView: movingView, subViewOfType: .ViewGforceUIView)
             movingView.tag = 99
         }
         else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)) {
@@ -152,25 +176,24 @@ extension MainUIViewController {
         }
         
     }
-
-    
    
     func movingBackFunction(movingView: UIView, at destinationCenter: CGPoint, with destinationFrame: CGRect) {
         
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
             print("la view al centro è la view delle ruote")
             //questa gesture view è quella da allargare
+            viewRuote.timer.invalidate()
             animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
         else if (movingView.subviews.first!.isKind(of: ViewAccelerazioneUIView.self)) {
             print("la view al centro è la view dell'accelerazione")
-            animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
+            animaIndietro(movingView: movingView, subViewOfType: .ViewAccelerazioneUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
         else if  (movingView.subviews.first!.isKind(of: ViewGforceUIView.self)) {
             print("la view al centro è la view dell FORZA G")
-            animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
+            animaIndietro(movingView: movingView, subViewOfType: .ViewGforceUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
         }
         else if (movingView.subviews.first!.isKind(of: ViewLockedUIView.self)){
@@ -204,14 +227,34 @@ extension MainUIViewController {
                     })
                 }
             })
+            
             break
         case .ViewGforceUIView:
+            
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 movingView.frame.size.width /= 2
                 movingView.frame.size.height /= 2
                 movingView.center.x *= 2
                 movingView.center.y *= 2
                 //qui devo diminuire la dimensione del contenuto
+  
+                self.viewGforce.miniaturizza()
+                /*
+                self.viewGforce.inMiniatura = true
+                
+                self.viewGforce.frame.size.width /= 2
+                self.viewGforce.frame.size.height /= 2
+                
+                self.viewGforce.frecce.alpha = 0
+                
+                self.viewGforce.lineaVerticale.alpha = 0
+                self.viewGforce.lineaOrizzontale.alpha = 0
+                self.viewGforce.pallino.frame.size.width /= 2
+                self.viewGforce.pallino.frame.size.height /= 2
+                self.viewGforce.macchina.alpha = 0
+                self.viewGforce.gTesto.alpha = 0
+                self.viewGforce.gNumero.alpha = 0
+    */
                 
             }, completion: {
                 if $0 {
@@ -219,7 +262,8 @@ extension MainUIViewController {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
-                        
+                        self.viewGforce.frame.size = destinationFrame.size
+                        self.viewGforce.adattaPallinoELinee()
                        }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = true
@@ -300,6 +344,7 @@ extension MainUIViewController {
         var tagToAssignToView = Int()
         switch subViewOfType {
         case .ViewAccelerazioneUIView:
+            
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
                 let center = movingView.center
@@ -332,14 +377,34 @@ extension MainUIViewController {
                 movingView.frame.size.width *= 2
                 movingView.frame.size.height *= 2
                 movingView.center = center
+
                 //quì devi allargare il contenuto della view
+               
+                self.viewGforce.frame.size = self.frame0.size
+                self.viewGforce.inMiniatura = false
+                self.viewGforce.frecce.alpha = 1
+                
+                self.viewGforce.pallino.frame.size.width *= 2
+                self.viewGforce.pallino.frame.size.height *= 2
+                
+                self.viewGforce.macchina.alpha = 1
+                self.viewGforce.gNumero.alpha = 1
+                self.viewGforce.gTesto.alpha = 1
+                
             }, completion: {
+                self.viewGforce.adattaPallinoELinee()
+
+//                self.viewGforce.lineaOrizzontale.frame.size.width = 360
+                
                 if $0 {
                     //qui gestisco il movimento verso il centro vero e proprio
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
+                        self.viewGforce.lineaOrizzontale.alpha = 1
+                        self.viewGforce.lineaVerticale.alpha = 1
+
                         
                     }, completion: {
                         if $0 {
@@ -370,6 +435,7 @@ extension MainUIViewController {
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = false
+                            self.viewRuote.preparaTutto()
                         }
                     })
                     
