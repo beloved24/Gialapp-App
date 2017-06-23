@@ -24,21 +24,22 @@ class ViewRuoteUIView: UIView {
     @IBOutlet weak var ruota3: UIView!
     @IBOutlet weak var ruota4: UIView!
 
+    @IBOutlet weak var temperaturaMini: UILabel!
     @IBOutlet weak var angoloDiAssetto: UILabel!
     
     var leRuote: [UIView] = []
     
     var temperature: [Int] = [20,20,20,20]
     var temperatureTesti: [UILabel] = []
-    
+    /*
     let posizioneMacchinaGrande = CGRect(x: 90, y: 40, width: 180, height: 285)
     let posizioneMacchinaPiccola = CGRect(x: 90, y: 40, width: 180, height: 285)
 
     
-    let posizioniGrandi: [CGRect] = [CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66)]
+    let posizioniGrandi: [CGRect] = [CGRect(x: 94.5, y: 64, width: 30.5, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66)]
     
-    let posizioniPiccole: [CGRect] = [CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66), CGRect(x: 94.5, y: 64, width: 305, height: 66)]
-
+    let posizioniPiccole: [CGRect] = [CGRect(x: 94.5, y: 64, width: 30.5/3.13, height: 66/2.5), CGRect(x: 94.5, y: 64, width: 305/3.13, height: 66/2.5), CGRect(x: 94.5, y: 64, width: 30.5/3.13, height: 66/2.5), CGRect(x: 94.5, y: 64, width: 30.5/3.13, height: 66/2.5)]
+*/
     
     var grado: Int = 0
     
@@ -56,11 +57,18 @@ class ViewRuoteUIView: UIView {
     
     
     func ingrandisci() {
-
+        for ogni in self.subviews {
+            ogni.alpha = 1
+        }
+        temperaturaMini.alpha = 0
     }
     
     func miniaturizza() {
-    
+        for ogni in self.subviews {
+            ogni.alpha = 0
+        }
+        temperaturaMini.alpha = 1
+        temperaturaMini.text = String(grado+20) + "°C"
     }
     
     

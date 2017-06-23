@@ -70,6 +70,7 @@ class MainUIViewController: UIViewController {
         view0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view0.layer.borderWidth = 1.0
         viewRuote.backgroundColor = .clear
+        viewRuote.temperaturaMini.alpha = 0
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
@@ -154,14 +155,10 @@ extension MainUIViewController {
         
     }
     
-    
-    
-    
-    
-    
     /// questa funzione prende la view in ingresso e la sposta al centro. gli elementi contenuti all'interno delle singole view vengono gestiti dalle relative funzioni che stanno nelle classi personalizzate che abbiamo cerato.
     ///
     /// - Parameter movingView: la moving view è la view tappata, quindi la prendiamo dal gesture recognizer. prima pero di assergnarla alle varie funzioni delle classi personalizzate, viene castata al tipo corrispondente (individuato tramite la funzione is kind of).
+    
     func movingViewAtCenter (movingView: UIView) {
 
         if (movingView.subviews.first!.isKind(of: ViewRuoteUIView.self)) {
@@ -294,16 +291,24 @@ extension MainUIViewController {
                 movingView.center.y *= 2
                 //qui devo diminuire la dimensione del contenuto
                 
+                
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
+                        
+                        self.viewRuote.miniaturizza()
+
                         //quì devi settare le impostazioni del contenuto
+                        self.viewRuote.temperaturaMini.center = CGPoint(x: 57.5, y: 83.5)
                         
                     }, completion: {
                         if $0 {
+                            
+                            
                             movingView.isUserInteractionEnabled = true
+
                         }
                     })
                 }
@@ -449,6 +454,9 @@ extension MainUIViewController {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
+                        self.viewRuote.ingrandisci()
+                        self.viewRuote.temperaturaMini.center = self.center0
+
                         
                     }, completion: {
                         if $0 {
