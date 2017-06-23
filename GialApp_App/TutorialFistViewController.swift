@@ -33,6 +33,10 @@ extension TutorialFistViewController {
         //navBarImageTitle.frame = CGRect(x: 0, y: 0, width: 17, height: 17)
         //navBarImageTitle.contentMode = .scaleAspectFit
         //navigationItem.titleView = navBarImageTitle
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
         navigationItem.title = "RACÉ"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }

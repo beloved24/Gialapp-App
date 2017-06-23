@@ -14,10 +14,9 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationItem.title = ""
+        navigationController?.navigationBar.isHidden = true
+
+
     }
 
     override func didReceiveMemoryWarning() {
