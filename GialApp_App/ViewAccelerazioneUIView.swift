@@ -46,6 +46,7 @@ class ViewAccelerazioneUIView: UIView {
         massimaLabel.alpha = 0
         mediaLabel.alpha = 0
         velocitaIsta.center = center
+        
     }
     
     func setInMiniatura(initialFrame: CGRect) {
@@ -71,6 +72,8 @@ class ViewAccelerazioneUIView: UIView {
         
         
         velocitaMax.alpha = 1
+        
+        
         velocitaMedia.alpha = 1
         massimaLabel.alpha = 1
         mediaLabel.alpha = 1

@@ -90,7 +90,7 @@ class MainUIViewController: UIViewController {
         view1.layer.cornerRadius = 10.0
         view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view1.layer.borderWidth = 1.0
-        //viewAccelerazione.backgroundColor = .clear
+        viewAccelerazione.backgroundColor = .clear
 
 
         //MARK: adding view2
@@ -139,6 +139,12 @@ class MainUIViewController: UIViewController {
         viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita)
         print("initialboundsVelocita \(view1.bounds)")
         print(center1)
+        
+        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
+        self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
+        self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
+        self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)
+        self.viewAccelerazione.velocitaMedia.frame = CGRect(x: 203, y: 360, width: 136, height: 60)
 
     }
 
@@ -247,7 +253,9 @@ extension MainUIViewController {
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
                         self.viewAccelerazione.frame.size = destinationFrame.size
-self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
+                        self.viewAccelerazione.velocitaIsta.frame.size.width = self.viewAccelerazione.frame.width*0.9
+                        self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
+                        
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = true
@@ -399,8 +407,34 @@ self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
                         self.viewAccelerazione.setFullSize(destinationFrame: self.frame0)
-                        
+//                        
+//
+//                        
+//                        self.viewAccelerazione.velocitaMax.center.x = self.viewAccelerazione.frame.width/4
+//                        self.viewAccelerazione.velocitaMax.center.y = self.viewAccelerazione.frame.height - self.viewAccelerazione.velocitaMax.frame.height + 4
+//                        
+//                        self.viewAccelerazione.velocitaMax.frame.size.width = self.viewAccelerazione.velocitaIsta.frame.width/2
+//                        self.viewAccelerazione.velocitaMax.frame.size.height = self.viewAccelerazione.velocitaIsta.frame.height/2
+//                        
+//                        
+//                        self.viewAccelerazione.velocitaMedia.center.x = self.viewAccelerazione.frame.width - self.viewAccelerazione.frame.width/4
+//                        self.viewAccelerazione.velocitaMedia.frame.size.width = self.viewAccelerazione.velocitaMax.frame.width
+//                        self.viewAccelerazione.velocitaMedia.frame.size.height = 70
+//                        self.viewAccelerazione.velocitaMedia.center.y = self.viewAccelerazione.velocitaMax.center.y
+//                        
+//                        
+//                        self.viewAccelerazione.mediaLabel.center.x = self.viewAccelerazione.velocitaMedia.center.x
+//                        self.viewAccelerazione.mediaLabel.center.y = self.viewAccelerazione.velocitaMedia.center.y - self.viewAccelerazione.velocitaMedia.frame.height/2 - self.viewAccelerazione.mediaLabel.frame.height/2 - 4
+//                        self.viewAccelerazione.mediaLabel.frame.size.width = self.viewAccelerazione.velocitaMedia.frame.width/2
+//                        self.viewAccelerazione.velocitaMedia.frame.size.height = self.viewAccelerazione.velocitaMedia.frame.height/2
+//                        
                         self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
+                        self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
+                        self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
+                        self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)
+                        self.viewAccelerazione.velocitaMedia.frame = CGRect(x: 203, y: 360, width: 136, height: 60)
+                        
+                        
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = false
