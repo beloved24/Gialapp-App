@@ -13,6 +13,8 @@ class ViewRuoteUIView: UIView {
     
     @IBOutlet weak var auto: UIImageView!
     @IBOutlet weak var axis: UIImageView!
+    @IBOutlet weak var assettoImage: UIImageView!
+    @IBOutlet weak var angoloAssetto: UILabel!
     
     @IBOutlet weak var temp1: UILabel!
     @IBOutlet weak var temp2: UILabel!
@@ -31,6 +33,10 @@ class ViewRuoteUIView: UIView {
     
     var temperature: [Int] = [20,20,20,20]
     var temperatureTesti: [UILabel] = []
+    
+    var angle: Float = 0
+    var reverse = false
+
     /*
     let posizioneMacchinaGrande = CGRect(x: 90, y: 40, width: 180, height: 285)
     let posizioneMacchinaPiccola = CGRect(x: 90, y: 40, width: 180, height: 285)
@@ -44,6 +50,8 @@ class ViewRuoteUIView: UIView {
     var grado: Int = 0
     
     var timer = Timer()
+    var timerAngolo = Timer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -83,6 +91,29 @@ class ViewRuoteUIView: UIView {
             ruota.backgroundColor = UIColor.blue
         }
         
+        
+        timerAngolo = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true, block: { (_) in
+            
+            self.angoloAssetto.text = String(Double((self.angle * 180) / Float.pi).arrotonda()) + "°"
+            
+            if !self.reverse {
+                if self.angle <= (Float.pi / 2) {
+                    self.angle += (Float.pi / 320)
+                } else {
+                    self.reverse = true
+                }
+            } else {
+                if self.angle >= -(Float.pi / 2) {
+                    self.angle -= (Float.pi / 320)
+                } else {
+                    self.reverse = false
+                }
+            }
+            
+//            UIView.animateKeyframes(withDuration: 0, delay: 0, animations: {
+                self.assettoImage.transform = CGAffineTransform(rotationAngle: CGFloat(self.angle))
+//            })
+        })
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (_) in
             
             self.grado+=1
@@ -92,19 +123,17 @@ class ViewRuoteUIView: UIView {
                 self.temperatureTesti[i].text = String(self.temperature[i]) + "°C"
             }
             
+            
             for ruota in self.leRuote {
                 UIView.animate(withDuration: 0.4, animations: {
                     
                     ruota.backgroundColor = UIColor(hue: CGFloat( 0.825 - Double(self.grado%80+20)*0.66/80), saturation: 0.8, brightness: 0.8, alpha: 1)
                     
                 })
-            }
-            
-        }
-        
-        
-        
+            }        }
     }
+    
+    
     /*
     func setView(<#parameters#>) -> <#return type#> {
         <#function body#>
