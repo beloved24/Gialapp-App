@@ -180,15 +180,29 @@ class MyCustomImageView: UIImageView {
         imageArea.center = viewOfTheSelectedArea.center
         imageArea.backgroundColor = UIColor.init(red: 0.09, green: 0.39, blue: 0.49, alpha: 1.0)
         
-        let tapToclose = UITapGestureRecognizer(target: self, action: #selector(tapToCloseFunction))
-        viewOfTheSelectedArea.addGestureRecognizer(tapToclose)
+        let okButton = UIButton(type: .custom)
+        okButton.setTitle("OK", for: .normal)
+        okButton.backgroundColor = UIColor.clear
+        okButton.titleLabel?.font = UIFont(name: "BebasNeue", size: 25)
+        okButton.frame.size.width = viewOfTheSelectedArea.frame.width/2
+        okButton.frame.size.height = (okButton.frame.width*3)/17
+        okButton.titleLabel?.contentMode = .scaleAspectFit
+        okButton.center.x = viewOfTheSelectedArea.center.x
+        okButton.center.y = viewOfTheSelectedArea.frame.height - okButton.frame.height
+        okButton.addTarget(self, action: #selector(tapToCloseFunction), for: .touchUpInside)
+        viewOfTheSelectedArea.addSubview(okButton)
+        
+        
+//        let tapToclose = UITapGestureRecognizer(target: self, action: #selector(tapToCloseFunction))
+//        viewOfTheSelectedArea.addGestureRecognizer(tapToclose)
         
         viewOfTheSelectedArea.addSubview(imageArea)
         superview?.addSubview(viewOfTheSelectedArea)
     }
     
-    func tapToCloseFunction(gesture: UIGestureRecognizer) {
-        gesture.view?.removeFromSuperview()
+    func tapToCloseFunction(sender: UIButton!) {
+        sender.superview?.removeFromSuperview()
+    
     }
 
 }

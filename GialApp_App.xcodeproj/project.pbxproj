@@ -68,10 +68,10 @@
 		4914FB891EE41C4900CDF3AE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */,
 				49744D501ECDD10200950662 /* StartViewController.swift */,
 				340D0A751EF95AAB00B8FD7C /* TutorialFistViewController.swift */,
 				4914FB8A1EE41C7300CDF3AE /* TutorialSecondViewController.swift */,
-				4938C2FB1EFC1AB70035CD44 /* MainUIViewController.swift */,
 				4914FB8E1EE41CEF00CDF3AE /* TutorialFourthViewController.swift */,
 				340D0A731EF95A1E00B8FD7C /* ProfileViewController.swift */,
 				340D0A6F1EF958B100B8FD7C /* ProfileTableViewCell.swift */,
@@ -79,14 +79,35 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		4914FB901EE578EA00CDF3AE /* fonts */ = {
+		4914FB901EE578EA00CDF3AE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				4938C2ED1EF8289C0035CD44 /* BebasNeue.otf */,
 				340D0A6B1EF9581100B8FD7C /* 911porschav3.ttf */,
 			);
-			name = fonts;
+			name = Fonts;
 			path = 911porscha;
+			sourceTree = "<group>";
+		};
+		4967509A1EFEBADF004A3841 /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */,
+				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
+				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
+				4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */,
+				49CBE5C71EEB220100F5327F /* MyCustomImageView.swift */,
+			);
+			name = "Custom Class";
+			sourceTree = "<group>";
+		};
+		4967509B1EFEBB13004A3841 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
+				340D0A6D1EF9587400B8FD7C /* Definitions.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		49744D421ECDD10200950662 = {
@@ -111,16 +132,11 @@
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
 				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
-				4914FB901EE578EA00CDF3AE /* fonts */,
-				4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */,
-				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
-				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
-				4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */,
-				49CBE5C71EEB220100F5327F /* MyCustomImageView.swift */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
 				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
-				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
-				340D0A6D1EF9587400B8FD7C /* Definitions.swift */,
+				4914FB901EE578EA00CDF3AE /* Fonts */,
+				4967509A1EFEBADF004A3841 /* Custom Class */,
+				4967509B1EFEBB13004A3841 /* Model */,
 				4914FB891EE41C4900CDF3AE /* View Controllers */,
 			);
 			path = GialApp_App;
