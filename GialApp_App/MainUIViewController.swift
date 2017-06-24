@@ -152,7 +152,7 @@ class MainUIViewController: UIViewController {
         print("initialboundsVelocita \(view1.bounds)")
         print(center1)
         
-        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
+        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:57.5, y: 83.5)
         self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
         self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
         self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)

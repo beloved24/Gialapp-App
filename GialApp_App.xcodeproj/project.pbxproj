@@ -109,14 +109,14 @@
 			isa = PBXGroup;
 			children = (
 				49744D4E1ECDD10200950662 /* AppDelegate.swift */,
-				4914FB901EE578EA00CDF3AE /* fonts */,
 				49744D521ECDD10200950662 /* Main.storyboard */,
+				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
+				4914FB901EE578EA00CDF3AE /* fonts */,
 				4938C2FF1EFC70790035CD44 /* ViewLockedUIView.swift */,
 				4938C2F71EFC161A0035CD44 /* ViewGforceUIView.swift */,
 				4938C2F91EFC162D0035CD44 /* ViewAccelerazioneUIView.swift */,
 				4938C2F51EFC15DA0035CD44 /* ViewRuoteUIView.swift */,
 				49CBE5C71EEB220100F5327F /* MyCustomImageView.swift */,
-				49744D571ECDD10200950662 /* LaunchScreen.storyboard */,
 				49744D5A1ECDD10200950662 /* Info.plist */,
 				49107E861EE718CF00CB48C9 /* Assets.xcassets */,
 				6821B7B31EF56E190027D5C0 /* MegarideSingleton.swift */,
