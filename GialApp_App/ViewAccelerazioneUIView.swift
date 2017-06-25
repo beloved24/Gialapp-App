@@ -39,14 +39,9 @@ class ViewAccelerazioneUIView: UIView {
     }
     
     func setInitialFrame()  {
-        //questo è per la view
-//        backgroundColor = UIColor(colorLiteralRed: 28/255, green: 118/255, blue: 149/255, alpha: 1)
-        backgroundColor = UIColor.clear
         self.frame = boundsPiccolo
         layer.cornerRadius = 10.0
-        layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-        layer.borderWidth = 1.0
-        
+
         //questo è per i contenuti
         velocitaIsta.frame.size.width = frame.width*0.9
         velocitaIsta.adjustsFontSizeToFitWidth = true
