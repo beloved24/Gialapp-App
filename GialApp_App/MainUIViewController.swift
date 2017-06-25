@@ -23,8 +23,7 @@ class MainUIViewController: UIViewController {
     
     
     let motionManager = CMMotionManager()
-    
-    
+
     //MARK: andrew
     var center0 = CGPoint()
     var center1 = CGPoint()
@@ -41,30 +40,23 @@ class MainUIViewController: UIViewController {
         navigationItem.title = "TEMPERATURA"
         
         super.viewDidLoad()
-        motionManager.accelerometerUpdateInterval = 0.1
         
-        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
-            
-            if let data = data {
-                self.viewGforce.animazione(x: data.acceleration.x, y: data.acceleration.y, z: data.acceleration.z)
-                self.viewGforce.aggiornaLabel(numero: sqrt(pow(data.acceleration.x,2) + pow(data.acceleration.y,2) + pow(data.acceleration.z,2)))
-                
-            }
-            
-        }
-        /*
+        motionManager.deviceMotionUpdateInterval = 0.1
         motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
             
             if let data = data {
-            self.viewGforce.animazione(x: data.gravity.x, y: data.gravity.y, z: data.gravity.z)
-                self.viewGforce.aggiornaLabel(numero: sqrt(pow(data.gravity.x,2) + pow(data.gravity.y,2) + pow(data.gravity.z,2)))
+                let x = data.userAcceleration.x
+                let y = data.userAcceleration.y
+                let z = data.userAcceleration.z
+                
+                //MARK: ATTENZIONE - animazione valida solo in in portrait
+                self.viewGforce.animazione(x: x, y: z)
+                self.viewGforce.aggiornaLabel(numero: sqrt(pow(x,2) + pow(y,2) + pow(z,2)))
+                self.viewRuote.aggiornaTemperatura(x: x, y: z)
+                //self.viewRuote.aggiornaAngoloAssetto(x: x, y: z)
                 
             }
-            
-        }*/
-        
-
-        
+        }
         
         //MARK: creating TAP GESTURE RECOGNIZER
         let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
@@ -89,10 +81,6 @@ class MainUIViewController: UIViewController {
         view0.layer.borderWidth = 1.0
         viewRuote.backgroundColor = .clear
         viewRuote.temperaturaMini.alpha = 0
-        
-        
-        
-        
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
@@ -129,22 +117,14 @@ class MainUIViewController: UIViewController {
         view3.layer.borderWidth = 1.0
         viewLocked.backgroundColor = .clear
         
-        
-        
-        
         center0 = view0.center
-        
         center2 = view2.center
         center3 = view3.center
-
         frame0 = view0.frame
         viewGforce.frame0 = view0.frame
         
         print(frame0)
-        
-        
-        
-        
+    
         initialFrameVelocita = view1.frame
         center1 = view1.center
         print("initialFrameVelocita \(initialFrameVelocita)")

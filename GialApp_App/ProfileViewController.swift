@@ -181,7 +181,6 @@ extension ProfileViewController {
     
     func saveImage (image: UIImage, path: URL ) {
         let pngImageData = UIImagePNGRepresentation(image)!
-        //let jpgImageData = UIImageJPEGRepresentation(image, 1.0)   // if you want to save as JPEG
         try! pngImageData.write(to: path)
     }
     

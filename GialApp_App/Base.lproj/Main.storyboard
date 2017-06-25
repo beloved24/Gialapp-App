@@ -247,7 +247,6 @@
                     </constraints>
                     <connections>
                         <outlet property="angoloAssetto" destination="dx4-DE-70T" id="WTH-gU-pdP"/>
-                        <outlet property="angoloDiAssetto" destination="dx4-DE-70T" id="pZl-Ld-xOV"/>
                         <outlet property="assettoImage" destination="0cj-23-mcZ" id="k28-BR-oiQ"/>
                         <outlet property="auto" destination="m14-uO-YTk" id="CXI-8J-iyF"/>
                         <outlet property="axis" destination="1HS-Tv-Ip9" id="R6a-3M-w22"/>

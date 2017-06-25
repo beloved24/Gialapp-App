@@ -50,7 +50,4 @@ extension TutorialSecondViewController {
         navigationItem.title = "RACÉ"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
-    
-    
-    
 }

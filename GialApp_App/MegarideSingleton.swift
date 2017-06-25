@@ -208,10 +208,7 @@ class Megaride {
 
     private init() {
         
-        
-    
     }
-    
     
     func calcolatore() {
         func risolutoreSistemi(matriceA: [Double], vettoreB: [Double], variabili: UInt) -> [Double] {

@@ -10,10 +10,13 @@ import UIKit
 
 extension Double {
     func arrotonda()->Double {
-        return (self*100).rounded()/100
+        return (self*10).rounded()/10
+    }
+    
+    func arrotondaInt()->Int {
+        return Int(self.rounded())
     }
 }
-
 
 class Frecce: UIView {
     
@@ -61,13 +64,11 @@ class Frecce: UIView {
         //        self.layer.borderWidth = 2
         //        self.layer.borderColor = UIColor.red.cgColor
         
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }
 
@@ -108,7 +109,7 @@ class ViewGforceUIView: UIView {
         gNumero.text = String(numero.arrotonda())
     }
     
-    func animazione(x: Double, y: Double, z: Double) {
+    func animazione(x: Double, y: Double) {
         
         lineaVerticale.center.x = pallino.center.x
         lineaOrizzontale.center.y = pallino.center.y
@@ -116,13 +117,13 @@ class ViewGforceUIView: UIView {
         UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseInOut], animations: {
             
             self.pallino.center.x = self.center.x + self.frame.width*CGFloat(x)/4
-            self.pallino.center.y = self.center.y + self.frame.height*CGFloat(-y)/4
+            self.pallino.center.y = self.center.y + self.frame.height*CGFloat(y)/4
            
             
         if abs(y) > 0.1 || abs(x) > 0.1 {
             self.frecce.alpha = 1
             if y > 0 && x > 0 {
-                self.frecce.transform = CGAffineTransform.identity.rotated(by: atan(CGFloat(x/y))+CGFloat(M_PI))
+                self.frecce.transform = CGAffineTransform.identity.rotated(by: atan(CGFloat(x/y))+CGFloat.pi)
             } else if y > 0 && x < 0 {
                 self.frecce.transform = CGAffineTransform.identity.rotated(by: atan(CGFloat(x/y))+CGFloat.pi)
             } else if y < 0 && x < 0 {
