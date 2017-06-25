@@ -76,11 +76,11 @@ class MainUIViewController: UIViewController {
         let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+       // let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         view0.addGestureRecognizer(tapToEnlarge0)
         view1.addGestureRecognizer(tapToEnlarge1)
         view2.addGestureRecognizer(tapToEnlarge2)
-        view3.addGestureRecognizer(tapToEnlarge3)
+        //view3.addGestureRecognizer(tapToEnlarge3)
         
         
         //MARK: adding view0
@@ -103,9 +103,9 @@ class MainUIViewController: UIViewController {
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
-//        view1.layer.cornerRadius = 10.0
-//        view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
-//        view1.layer.borderWidth = 1.0
+        view1.layer.cornerRadius = 10.0
+        view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        view1.layer.borderWidth = 1.0
 
 
         //MARK: adding view2
