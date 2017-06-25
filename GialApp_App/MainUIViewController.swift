@@ -11,6 +11,23 @@ import CoreMotion
 
 class MainUIViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+    }
+ 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    
+    
+    
+
+    
     @IBOutlet weak var view0: UIView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -33,9 +50,16 @@ class MainUIViewController: UIViewController {
     
     var initialFrameVelocita = CGRect()
     
-    
-    
+
     override func viewDidLoad() {
+        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+        
+        
+        center0 = view0.center
+        center2 = view2.center
+        center3 = view3.center
+        
+        frame0 = view0.frame
         
         navigationItem.title = "TEMPERATURA"
         
@@ -62,35 +86,32 @@ class MainUIViewController: UIViewController {
         let tapToEnlarge0 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge1 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
         let tapToEnlarge2 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
-        let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+       // let tapToEnlarge3 : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapToEnlargeFunction))
+        view0.addGestureRecognizer(tapToEnlarge0)
+        view1.addGestureRecognizer(tapToEnlarge1)
+        view2.addGestureRecognizer(tapToEnlarge2)
+        //view3.addGestureRecognizer(tapToEnlarge3)
+        
         
         //MARK: adding view0
         view0.addSubview(viewRuote)
-        
         viewRuote.axis.center.x = viewRuote.center.x - 3
         viewRuote.assettoImage.center.x = viewRuote.axis.center.x
         viewRuote.axis.center.y = viewRuote.center.y - 70
         viewRuote.assettoImage.frame.origin.y = viewRuote.axis.center.y + 26
         viewRuote.assettoImage.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        
         viewRuote.preparaTutto()
-        
-        view0.addGestureRecognizer(tapToEnlarge0)
         view0.layer.cornerRadius = 10.0
         view0.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view0.layer.borderWidth = 1.0
         viewRuote.backgroundColor = .clear
-        viewRuote.temperaturaMini.alpha = 0
+        //viewRuote.temperaturaMini.alpha = 0
         
         //MARK: adding view1
         view1.addSubview(viewAccelerazione)
-        viewAccelerazione.frame.size.width = view1.frame.width
-        viewAccelerazione.frame.size.height = view1.frame.height
-        view1.addGestureRecognizer(tapToEnlarge1)
         view1.layer.cornerRadius = 10.0
         view1.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view1.layer.borderWidth = 1.0
-        viewAccelerazione.backgroundColor = .clear
 
 
         //MARK: adding view2
@@ -100,45 +121,40 @@ class MainUIViewController: UIViewController {
         viewGforce.adattaPallinoELinee()
         viewGforce.macchina.alpha = 0
         
-        view2.addGestureRecognizer(tapToEnlarge2)
+        
         view2.layer.cornerRadius = 10.0
         view2.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view2.layer.borderWidth = 1.0
         viewGforce.backgroundColor = .clear
 //        viewGforce.miniaturizza()
+        viewGforce.frame0 = view0.frame
         
         //MARK: adding view3
         view3.addSubview(viewLocked)
         viewLocked.frame.size.width = view3.frame.width
         viewLocked.frame.size.height = view3.frame.height
-        view3.addGestureRecognizer(tapToEnlarge3)
+        
         view3.layer.cornerRadius = 10.0
         view3.layer.borderColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         view3.layer.borderWidth = 1.0
         viewLocked.backgroundColor = .clear
         
-        center0 = view0.center
-        center2 = view2.center
-        center3 = view3.center
-        frame0 = view0.frame
-        viewGforce.frame0 = view0.frame
         
-        print(frame0)
-    
-        initialFrameVelocita = view1.frame
-        center1 = view1.center
-        print("initialFrameVelocita \(initialFrameVelocita)")
-        viewAccelerazione.setInitialFrame(initialFrame: initialFrameVelocita)
-        print("initialboundsVelocita \(view1.bounds)")
-        print(center1)
+        //MARK: settaggio view accelerazione (che sarebbe quella della velocità) con annesso slavataggio dei dati
         
-        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:57.5, y: 83.5)
-        self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
-        self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
-        self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)
-        self.viewAccelerazione.velocitaMedia.frame = CGRect(x: 203, y: 360, width: 136, height: 60)
+        viewAccelerazione.framePiccolo = view1.frame
+        viewAccelerazione.boundsPiccolo = view1.bounds
+        viewAccelerazione.frameGrande = view0.frame
+        viewAccelerazione.boundsGrande = view0.bounds
+        viewAccelerazione.setInitialFrame()
+        
+        
+        
+        
+        
 
     }
+    func canRotate() -> Void {}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -230,25 +246,28 @@ extension MainUIViewController {
     func animaIndietro(movingView: UIView, subViewOfType: typeOfClass, destinationCenter: CGPoint, destinationFrame: CGRect) {
         switch subViewOfType {
         case .ViewAccelerazioneUIView:
-            let movingViewSubview = movingView.subviews.first as! ViewAccelerazioneUIView
+            self.viewAccelerazione.velocitaMax.alpha = 0
+            self.viewAccelerazione.velocitaMedia.alpha = 0
+            self.viewAccelerazione.massimaLabel.alpha = 0
+            self.viewAccelerazione.mediaLabel.alpha = 0
+            self.viewAccelerazione.lineaSeparazione.alpha = 0
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
-                
+                //quì gestisco la cosa che piaceva ad angelo
+                let temporaryCenter = movingView.center
                 movingView.frame.size.width /= 2
                 movingView.frame.size.height /= 2
-                movingView.center.x *= 2
-                movingView.center.y *= 2
-                //movingViewSubview.changeTheSize(scaleFactor: 0.5)
-                movingViewSubview.setInMiniatura(initialFrame: self.initialFrameVelocita)
+                movingView.center = temporaryCenter
+                let newTemporaryBounds = movingView.bounds
+                self.viewAccelerazione.changeTheSize(scaleFactor: 0.5, newTemporaryBounds: newTemporaryBounds)
+               // movingViewSubview.setInMiniatura(initialFrame: self.initialFrameVelocita)
             }, completion: {
                 if $0 {
                     UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
                         movingView.center = destinationCenter
                         movingView.frame = destinationFrame
                         //quì devi settare le impostazioni del contenuto
-                        self.viewAccelerazione.frame.size = destinationFrame.size
-                        self.viewAccelerazione.velocitaIsta.frame.size.width = self.viewAccelerazione.frame.width*0.9
-                        self.viewAccelerazione.velocitaIsta.center = CGPoint(x: 57.5, y:83.5)
-                        
+                        self.viewAccelerazione.setInMiniatura()
+//
                     }, completion: {
                         if $0 {
                             movingView.isUserInteractionEnabled = true
@@ -384,14 +403,12 @@ extension MainUIViewController {
         case .ViewAccelerazioneUIView:
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 //qui raddoppio le dimenzsiono per fare la cosa che piacedva ad angelo
-                let center = movingView.center
+                let temporaryCenter = movingView.center //mi salvo il centro per poi riassegnarlo dopo il resize
                 movingView.frame.size.width *= 2
                 movingView.frame.size.height *= 2
-//                movingView.center = center
-////                movingView.frame.size = self.frame0.size
-//                self.viewAccelerazione.changeTheSize(scaleFactor: 2)
-                self.viewAccelerazione.setFullSize(destinationFrame: self.frame0
-                )
+                movingView.center = temporaryCenter
+                let newTemporaryBounds = movingView.bounds
+                self.viewAccelerazione.changeTheSize(scaleFactor: 2, newTemporaryBounds: newTemporaryBounds)
             }, completion: {
                 if $0 {
                     //qui gestisco il movimento verso il centro vero e proprio
@@ -399,33 +416,13 @@ extension MainUIViewController {
                         movingView.center = self.center0
                         movingView.frame = self.frame0
                         //quì devi spostare il contenuto della view
-                        self.viewAccelerazione.setFullSize(destinationFrame: self.frame0)
-//                        
-//
-//                        
-//                        self.viewAccelerazione.velocitaMax.center.x = self.viewAccelerazione.frame.width/4
-//                        self.viewAccelerazione.velocitaMax.center.y = self.viewAccelerazione.frame.height - self.viewAccelerazione.velocitaMax.frame.height + 4
-//                        
-//                        self.viewAccelerazione.velocitaMax.frame.size.width = self.viewAccelerazione.velocitaIsta.frame.width/2
-//                        self.viewAccelerazione.velocitaMax.frame.size.height = self.viewAccelerazione.velocitaIsta.frame.height/2
-//                        
-//                        
-//                        self.viewAccelerazione.velocitaMedia.center.x = self.viewAccelerazione.frame.width - self.viewAccelerazione.frame.width/4
-//                        self.viewAccelerazione.velocitaMedia.frame.size.width = self.viewAccelerazione.velocitaMax.frame.width
-//                        self.viewAccelerazione.velocitaMedia.frame.size.height = 70
-//                        self.viewAccelerazione.velocitaMedia.center.y = self.viewAccelerazione.velocitaMax.center.y
-//                        
-//                        
-//                        self.viewAccelerazione.mediaLabel.center.x = self.viewAccelerazione.velocitaMedia.center.x
-//                        self.viewAccelerazione.mediaLabel.center.y = self.viewAccelerazione.velocitaMedia.center.y - self.viewAccelerazione.velocitaMedia.frame.height/2 - self.viewAccelerazione.mediaLabel.frame.height/2 - 4
-//                        self.viewAccelerazione.mediaLabel.frame.size.width = self.viewAccelerazione.velocitaMedia.frame.width/2
-//                        self.viewAccelerazione.velocitaMedia.frame.size.height = self.viewAccelerazione.velocitaMedia.frame.height/2
-//                        
-                        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
-                        self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
-                        self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
-                        self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)
-                        self.viewAccelerazione.velocitaMedia.frame = CGRect(x: 203, y: 360, width: 136, height: 60)
+                        self.viewAccelerazione.setFullSize()
+                        
+//                        self.viewAccelerazione.velocitaIsta.center = CGPoint(x:180, y: 210)
+//                        self.viewAccelerazione.massimaLabel.frame = CGRect(x: 60, y: 342, width: 71, height: 30)
+//                        self.viewAccelerazione.velocitaMax.frame = CGRect(x: 18, y: 360, width: 156, height: 60)
+//                        self.viewAccelerazione.mediaLabel.frame = CGRect(x: 249, y: 342, width: 48, height: 39)
+//                        self.viewAccelerazione.velocitaMedia.frame = CGRect(x: 203, y: 360, width: 136, height: 60)
                         
                         
                     }, completion: {
