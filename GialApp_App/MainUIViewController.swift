@@ -9,8 +9,26 @@
 import UIKit
 import CoreMotion
 
+
 class MainUIViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+    }
+ 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    
+    
+    
+
+    
     @IBOutlet weak var view0: UIView!
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
@@ -34,9 +52,10 @@ class MainUIViewController: UIViewController {
     
     var initialFrameVelocita = CGRect()
     
-    
-    
+
     override func viewDidLoad() {
+        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+        
         
         center0 = view0.center
         center2 = view2.center
@@ -148,6 +167,7 @@ class MainUIViewController: UIViewController {
         
 
     }
+    func canRotate() -> Void {}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
