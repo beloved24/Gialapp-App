@@ -78,7 +78,7 @@ class MainUIViewController: UIViewController {
                 self.viewGforce.aggiornaLabel(numero: sqrt(pow(x,2) + pow(y,2) + pow(z,2)))
                 self.viewRuote.aggiornaTemperatura(x: x, y: z)
                 //self.viewRuote.aggiornaAngoloAssetto(x: x, y: z)
-                
+                self.viewAccelerazione.aggiornaVelocita()
             }
         }
         
@@ -147,13 +147,8 @@ class MainUIViewController: UIViewController {
         viewAccelerazione.frameGrande = view0.frame
         viewAccelerazione.boundsGrande = view0.bounds
         viewAccelerazione.setInitialFrame()
-        
-        
-        
-        
-        
-
-    }
+            }
+    
     func canRotate() -> Void {}
 
     override func didReceiveMemoryWarning() {
@@ -222,6 +217,7 @@ extension MainUIViewController {
             //questa gesture view è quella da allargare
             viewRuote.timer.invalidate()
             viewRuote.timerAngolo.invalidate()
+            viewRuote.inMiniatura = true
             
             animaIndietro(movingView: movingView, subViewOfType: .ViewRuoteUIView, destinationCenter: destinationCenter, destinationFrame: destinationFrame)
             movingView.tag = 500
@@ -508,8 +504,7 @@ extension MainUIViewController {
                         if $0 {
                             movingView.isUserInteractionEnabled = false
                             self.viewRuote.preparaTutto()
-                         
-
+                            self.viewRuote.inMiniatura = false
 
                         }
                     })

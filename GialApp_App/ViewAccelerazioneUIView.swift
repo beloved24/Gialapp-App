@@ -23,6 +23,7 @@ class ViewAccelerazioneUIView: UIView {
     var frameGrande = CGRect()
     var boundsGrande = CGRect()
     
+    var velocitaNumero: Int = 80
     
     
     open func changeTheSize(scaleFactor: CGFloat, newTemporaryBounds: CGRect) {
@@ -34,7 +35,6 @@ class ViewAccelerazioneUIView: UIView {
         center.y = newTemporaryBounds.height/2
         
         velocitaIsta.center = center
-        
         
     }
     
@@ -89,4 +89,15 @@ class ViewAccelerazioneUIView: UIView {
         lineaSeparazione.center.y = massimaLabel.center.y - massimaLabel.frame.height
     }
 
+    
+    func aggiornaVelocita() {
+        
+        if arc4random_uniform(2) == 0 {
+            velocitaNumero += 2
+        } else {
+            velocitaNumero -= 2
+        }
+        
+        velocitaIsta.text = String(velocitaNumero) + " KM/H"
+    }
 }

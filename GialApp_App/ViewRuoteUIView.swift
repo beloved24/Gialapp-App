@@ -28,6 +28,8 @@ class ViewRuoteUIView: UIView {
 
     @IBOutlet weak var temperaturaMini: UILabel!
     
+    var inMiniatura: Bool = false
+    
     var leRuote: [UIView] = []
     
     var temperature: [Int] = [20,20,20,20]
@@ -142,6 +144,7 @@ class ViewRuoteUIView: UIView {
 
     
     func aggiornaTemperatura(x: Double, y: Double) { // TUTTO MOLTO FAKE
+        guard !inMiniatura else {return}
         
         if y >= -0.05 { // devo partire da -0.05 (un numero epsylon arbitrariamente piccolo) a causa delle oscillazioni intorno allo zero dei dati del sensore
             for i in 0...3 {
